@@ -9,8 +9,9 @@ Route::get('/', [AuthController::class, 'index'])->name('login');
 Route::post('/', [AuthController::class, 'sendotp'])->name('sendotp');
 Route::get('/verify/{phone?}', [AuthController::class, 'verify'])->name('verify');
 Route::post('/verify', [AuthController::class, 'verifyhandel'])->name('verifyhandel');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/admin/login',[AdminAuthController::class,'index']);
+Route::get('/admin/login',[AdminAuthController::class,'index'])->name('adminlogin');
 Route::post('/admin/login',[AdminAuthController::class,'store'])->name('handellogin');
 
 
@@ -38,6 +39,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/games',function(){
             return view('admin.games');
         })->name('games');
+        Route::get('/supportform',function(){
+            return view('admin.supportform');
+        })->name('supportform');
     });
 });
 
