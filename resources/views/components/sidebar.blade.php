@@ -56,12 +56,12 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="{{ route('wallet') }}"
+                                <a class="menu-link" href="{{ route('walletsupport') }}"
                                     title="Build your layout and export HTML for server side integration">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">My Wallet</span>
+                                    <span class="menu-title">Wallet</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>

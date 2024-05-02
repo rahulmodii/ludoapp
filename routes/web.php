@@ -42,6 +42,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/supportform',function(){
             return view('admin.supportform');
         })->name('supportform');
+        Route::get('/walletsupport',function(){
+            return view('admin.walletsupport');
+        })->name('walletsupport');
     });
 });
 
