@@ -24,7 +24,7 @@
 
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script>
         // Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }
     </script>
@@ -138,8 +138,7 @@
 
 
                                 <div class="d-flex flex-center">
-                                    <button type="submit" 
-                                        class="btn btn-lg btn-primary fw-bold">
+                                    <button type="submit" class="btn btn-lg btn-primary fw-bold">
                                         <span class="indicator-label">Submit</span>
                                         <span class="indicator-progress">Please wait...
                                             <span
@@ -189,18 +188,35 @@
 
 
 
-    //
-    <script>
-        var hostUrl = "assets/";
-    </script>
-
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
 
 
     <script src="assets/js/custom/authentication/sign-in/two-factor.js"></script>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        $(function() {
+            $wire.on('post-created', () => {
+                Toastify({
+                    text: "This is a toast",
+                    duration: 3000,
+                    className: "info",
+                    close: true,
+                    gravity: "top", // 'top' or 'bottom'
+                    position: "right", // 'left', 'center', or 'right'
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                        background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    },
+                    onClick: function() {
+                        // Callback after click, can add custom code here
+                    }
+                }).showToast();
+            });
 
+        });
+    </script>
 </body>
 
 </html>

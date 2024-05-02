@@ -1,4 +1,5 @@
+{{-- @extends('layout') --}}
 @extends('components.layouts.app')
 @section('content')
-@livewire('battles')
+@livewire('game')
 @endsection

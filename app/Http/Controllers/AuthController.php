@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Verification;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 class AuthController extends Controller
 {
     /**
@@ -21,7 +25,23 @@ class AuthController extends Controller
     public function sendotp(Request $request)
     {
         // dd(['phone' => $request->mobile]);
-        return redirect()->route('verify', ['phone' => $request->mobile]);
+        $mobile = $request->mobile;
+        $user = User::where('mobile',$mobile)->first();
+        // dd($user);
+        $userid= Str::random(8);
+        if (!$user) {
+           User::create([
+            'name'=>$userid,
+            'mobile'=>$mobile,
+            'password'=>Hash::make($mobile),
+            'email'=>"$userid@ludoking.com",
+            'userid'=>$userid,
+           ]);
+        }
+        $otp = mt_rand(100000, 999999);
+        $payload = ['mobile' => $request->mobile, 'otp' => $otp];
+        Verification::create($payload);
+        return redirect()->route('verify', ['phone' => $request->mobile, 'otp' => $otp]);
     }
 
     /**
@@ -43,8 +63,16 @@ class AuthController extends Controller
 
     public function verifyhandel(Request $request)
     {
-        // dd($request->all());
-        return redirect()->route('dashboard');
+
+        $otp = $request->code_1;
+        $verification = Verification::where('otp', $otp)->first();
+        if ($verification) {
+            $user = User::where('mobile',$verification->mobile)->first();
+            // dd($user);
+            Auth::login($user);
+            return redirect()->route('dashboard');
+        }
+        
     }
     /**
      * Show the form for editing the specified resource.
