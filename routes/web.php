@@ -31,9 +31,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/referandearn', function () {
         return view('referandearn');
     })->name('referandearn');
+
     Route::get('/wallet', function () {
         return view('wallet');
     })->name('wallet');
+
+    Route::get('/transaction', function () {
+        return view('transaction');
+    })->name('transaction');
 
     Route::prefix('admin')->group(function(){
         Route::get('/games',function(){

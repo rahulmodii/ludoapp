@@ -1,4 +1,4 @@
 @extends('components.layouts.app')
 @section('content')
-@livewire('wallet')
+@livewire('transactions')
 @endsection

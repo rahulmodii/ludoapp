@@ -27,8 +27,10 @@
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="//assets/animate.css" />
+    <link rel="stylesheet" href="/assets/animate.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!--end::Global Stylesheets Bundle-->
+    @livewireScripts()
     <script>
         // Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }
     </script>
@@ -72,7 +74,8 @@
                 <div class="aside-logo flex-column-auto px-9 mb-9 mb-lg-17 mx-auto" id="kt_aside_logo">
                     <!--begin::Logo-->
                     <a href="/">
-                        <img alt="Logo" src="/assets/media/logos/default.svg" class="h-30px logo theme-light-show" />
+                        <img alt="Logo" src="/assets/media/logos/default.svg"
+                            class="h-30px logo theme-light-show" />
                         <img alt="Logo" src="/assets/media/logos/default-dark.svg"
                             class="h-30px logo theme-dark-show" />
                     </a>
@@ -95,7 +98,7 @@
                                 class="text-gray-800 text-hover-primary fs-4 fw-bolder animate__bounce">Rahul Modi</a>
                             <!--end::Username-->
                             <!--begin::Description-->
-                            <span class="text-gray-600 fw-semibold d-block fs-7 mb-1">Cash 0.00</span>
+                            <span class="text-gray-600 fw-semibold d-block fs-7 mb-1">Cash {{ auth()->user()->wallet_balance ?? '' }}.00</span>
                             <!--end::Description-->
                         </div>
                         <!--end::Info-->
@@ -104,17 +107,17 @@
                 </div>
                 <!--end::Aside user-->
                 <!--begin::Aside menu-->
-				@include('components.sidebar')
+                @include('components.sidebar')
                 <!--end::Aside menu-->
                 <!--begin::Footer-->
-                
+
                 <!--end::Footer-->
             </div>
             <!--end::Aside-->
             <!--begin::Wrapper-->
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-                
-				@yield('content')
+
+                @yield('content')
 
                 <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
                     <!--begin::Container-->
@@ -132,8 +135,7 @@
                                 <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
                             </li>
                             <li class="menu-item">
-                                <a href="https://devs.keenthemes.com" target="_blank"
-                                    class="menu-link px-2">Support</a>
+                                <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
                             </li>
                             <li class="menu-item">
                                 <a href="https://1.envato.market/EA4JP" target="_blank"
@@ -173,7 +175,7 @@
             </div>
             <!--end::Header-->
             <!--begin::Body-->
-      
+
             <!--end::Body-->
             <!--begin::Footer-->
             <div class="card-footer py-5 text-center" id="kt_activities_footer">
@@ -188,7 +190,7 @@
     </div>
     <!--end::Activities drawer-->
     <!--begin::Chat drawer-->
- 
+
     <!--end::Chat drawer-->
     <!--begin::Chat drawer-->
 
@@ -202,13 +204,15 @@
             <span class="path2"></span>
         </i>
     </div>
-    
+
     <script>
         var hostUrl = "/assets/";
     </script>
+    @livewireScripts()
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="/assets/plugins/global/plugins.bundle.js"></script>
     <script src="/assets/js/scripts.bundle.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!--end::Global Javascript Bundle-->
     <!--begin::Vendors Javascript(used for this page only)-->
     {{-- <script src="/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script> --}}
@@ -228,6 +232,34 @@
     {{-- <script src="/assets/js/custom/widgets.js"></script> --}}
     {{-- <script src="/assets/js/custom/apps/chat/chat.js"></script> --}}
     {{-- <script src="/assets/js/custom/utilities/modals/users-search.js"></script> --}}
+
+    <script>
+        // $wire.on('message', () => {
+        //     console.log("here")
+
+        // });
+
+        Livewire.on('message', (event) => {
+            Toastify({
+                text: event,
+                duration: 2000,
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                callback:function(){
+                    window.location.reload()
+                }
+            }).showToast();
+            
+            // $("#kt_add_cash").modal('close')
+       });
+
+    </script>
 </body>
 
 </html>

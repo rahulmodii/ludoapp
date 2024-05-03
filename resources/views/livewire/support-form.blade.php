@@ -50,6 +50,15 @@
                             <!--begin::Input-->
                             <input type="email" class="form-control form-control-solid" wire:model="email">
                         </div>
+
+
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold mb-2 required">UPI ID</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="text" class="form-control form-control-solid" wire:model="upi_id">
+                        </div>
                       
                         <div class="d-flex justify-content-end">
                             <!--begin::Button-->

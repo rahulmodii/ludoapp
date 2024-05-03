@@ -27,8 +27,7 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link"
-                                    href="{{ route('games') }}"
+                                <a class="menu-link" href="{{ route('games') }}"
                                     title="Check out over 200 in-house components" data-bs-toggle="tooltip"
                                     data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                                     <span class="menu-bullet">
@@ -227,8 +226,7 @@
 
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link"
-                                    href="https://preview.keenthemes.com/html/LudoKing/docs/getting-started/changelog">
+                                <a class="menu-link" href="{{ route('transaction') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
