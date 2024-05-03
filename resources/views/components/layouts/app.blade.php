@@ -98,7 +98,8 @@
                                 class="text-gray-800 text-hover-primary fs-4 fw-bolder animate__bounce">Rahul Modi</a>
                             <!--end::Username-->
                             <!--begin::Description-->
-                            <span class="text-gray-600 fw-semibold d-block fs-7 mb-1">Cash {{ auth()->user()->wallet_balance ?? '' }}.00</span>
+                            <span class="text-gray-600 fw-semibold d-block fs-7 mb-1">Cash
+                                {{ auth()->user()->wallet_balance ?? '' }}.00</span>
                             <!--end::Description-->
                         </div>
                         <!--end::Info-->
@@ -251,14 +252,28 @@
                 style: {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
                 },
-                callback:function(){
+                callback: function() {
                     window.location.reload()
                 }
             }).showToast();
-            
-            // $("#kt_add_cash").modal('close')
-       });
 
+            // $("#kt_add_cash").modal('close')
+        });
+
+        Livewire.on('messageNew', (event) => {
+            Toastify({
+                text: event,
+                duration: 2000,
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                }
+            }).showToast();
+        })
     </script>
 </body>
 

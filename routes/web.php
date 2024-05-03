@@ -40,6 +40,11 @@ Route::middleware(['auth'])->group(function () {
         return view('transaction');
     })->name('transaction');
 
+    Route::get('/myprofile', function () {
+        return view('myprofile');
+    })->name('myprofile');
+
+
     Route::prefix('admin')->group(function(){
         Route::get('/games',function(){
             return view('admin.games');

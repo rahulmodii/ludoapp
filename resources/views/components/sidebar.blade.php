@@ -173,7 +173,7 @@
                             <div class="menu-item">
                                 <!--begin:Menu link-->
                                 <a class="menu-link"
-                                    href="https://preview.keenthemes.com/html/LudoKing/docs/base/utilities"
+                                    href="{{ route('myprofile') }}"
                                     title="Check out over 200 in-house components" data-bs-toggle="tooltip"
                                     data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                                     <span class="menu-bullet">

@@ -124,89 +124,95 @@
                                                 id="kt_timeline_widget_3_tab_content_4" role="tabpanel">
                                                 <!--begin::Wrapper-->
                                                 <div wire:poll>
-                                                    <div class="d-flex align-items-center mb-6">
-                                                        <!--begin::Bullet-->
-                                                        <span data-kt-element="bullet"
-                                                            class="bullet bullet-vertical d-flex align-items-center min-h-70px mh-100 me-4 bg-info"></span>
-                                                        <!--end::Bullet-->
-                                                        <!--begin::Info-->
-                                                        <div class="flex-grow-1 me-5">
-                                                            <!--begin::Time-->
-                                                            <div class="text-gray-800 fw-semibold fs-2">CHALLENGE FROM
+                                                    @foreach ($data as $value)
+                                                        <div class="d-flex align-items-center mb-6">
+                                                            <!--begin::Bullet-->
+                                                            <span data-kt-element="bullet"
+                                                                class="bullet bullet-vertical d-flex align-items-center min-h-70px mh-100 me-4 bg-info"></span>
+                                                            <!--end::Bullet-->
+                                                            <!--begin::Info-->
+                                                            <div class="flex-grow-1 me-5">
+                                                                <!--begin::Time-->
+                                                                <div class="text-gray-800 fw-semibold fs-2">CHALLENGE
+                                                                    FROM {{ optional($value->creator)->name ?? '' }}
+                                                                    {{ $value->is_request }}
+                                                                </div>
+                                                                <!--end::Time-->
+                                                                <!--begin::Description-->
+                                                                <div class="text-gray-700 fw-semibold fs-6">Entry
+                                                                    Fees:{{ $value->amount ?? '' }}
+                                                                </div>
+                                                                <!--end::Description-->
+                                                                <!--begin::Link-->
+                                                                <div class="text-gray-700 fw-semibold fs-6">Prize Fees
+                                                                    <!--begin::Name-->
+                                                                    <a href="#"
+                                                                        class="text-primary opacity-75-hover fw-semibold">{{ $value->amount * 2 ?? '' }}</a>
+                                                                </div>
                                                             </div>
-                                                            <!--end::Time-->
-                                                            <!--begin::Description-->
-                                                            <div class="text-gray-700 fw-semibold fs-6">Entry Fees:100
-                                                            </div>
-                                                            <!--end::Description-->
-                                                            <!--begin::Link-->
-                                                            <div class="text-gray-700 fw-semibold fs-6">Prize Fees
-                                                                <!--begin::Name-->
-                                                                <a href="#"
-                                                                    class="text-primary opacity-75-hover fw-semibold">200</a>
-                                                            </div>
-                                                        </div>
-                                                        <!--end::Info-->
-                                                        <!--begin::Action-->
-                                                        <a href="#" class="btn btn-sm btn-primary">Play</a>
-                                                        <!--end::Action-->
-                                                    </div>
+                                                            <!--end::Info-->
+                                                            <!--begin::Action-->
+                                                            @if ($value->is_request == 0)
+                                                                <a class="btn btn-sm btn-danger" wire:click="onDelete('{{ $value->id }}')">Delete</a>
+                                                            @else
+                                                                <div style="display: flex;flex-direction:column">
+                                                                    <div style="display: flex;gap:10px">
+                                                                        <a href="#"
+                                                                            class="btn btn-sm btn-success">Accept</a>
+                                                                        <a class="btn btn-sm btn-danger"
+                                                                            wire:click="onReject('{{ $value->id }}')">Reject</a>
+                                                                    </div>
+                                                                    <span
+                                                                        class="text-gray-500 pt-1 fw-semibold fs-6">Request
+                                                                        from {{ $value->requestie->name }}</span>
+                                                                </div>
+                                                            @endif
 
-                                                    <div class="d-flex align-items-center mb-6">
-                                                        <!--begin::Bullet-->
-                                                        <span data-kt-element="bullet"
-                                                            class="bullet bullet-vertical d-flex align-items-center min-h-70px mh-100 me-4 bg-info"></span>
-                                                        <!--end::Bullet-->
-                                                        <!--begin::Info-->
-                                                        <div class="flex-grow-1 me-5">
-                                                            <!--begin::Time-->
-                                                            <div class="text-gray-800 fw-semibold fs-2">CHALLENGE FROM
-                                                            </div>
-                                                            <!--end::Time-->
-                                                            <!--begin::Description-->
-                                                            <div class="text-gray-700 fw-semibold fs-6">Entry Fees:100
-                                                            </div>
-                                                            <!--end::Description-->
-                                                            <!--begin::Link-->
-                                                            <div class="text-gray-700 fw-semibold fs-6">Prize Fees
-                                                                <!--begin::Name-->
-                                                                <a href="#"
-                                                                    class="text-primary opacity-75-hover fw-semibold">200</a>
-                                                            </div>
+                                                            <!--end::Action-->
                                                         </div>
-                                                        <!--end::Info-->
-                                                        <!--begin::Action-->
-                                                        <a href="#" class="btn btn-sm btn-primary">Play</a>
-                                                        <!--end::Action-->
-                                                    </div>
+                                                    @endforeach
 
-                                                    <div class="d-flex align-items-center mb-6">
-                                                        <!--begin::Bullet-->
-                                                        <span data-kt-element="bullet"
-                                                            class="bullet bullet-vertical d-flex align-items-center min-h-70px mh-100 me-4 bg-info"></span>
-                                                        <!--end::Bullet-->
-                                                        <!--begin::Info-->
-                                                        <div class="flex-grow-1 me-5">
-                                                            <!--begin::Time-->
-                                                            <div class="text-gray-800 fw-semibold fs-2">CHALLENGE FROM
+                                                    @foreach ($newData as $values)
+                                                        <div class="d-flex align-items-center mb-6">
+                                                            <!--begin::Bullet-->
+                                                            <span data-kt-element="bullet"
+                                                                class="bullet bullet-vertical d-flex align-items-center min-h-70px mh-100 me-4 bg-info"></span>
+                                                            <!--end::Bullet-->
+                                                            <!--begin::Info-->
+                                                            <div class="flex-grow-1 me-5">
+                                                                <!--begin::Time-->
+                                                                <div class="text-gray-800 fw-semibold fs-2">CHALLENGE
+                                                                    FROM {{ optional($values->creator)->name ?? '' }}
+                                                                    {{ $values->is_request }}
+                                                                </div>
+                                                                <!--end::Time-->
+                                                                <!--begin::Description-->
+                                                                <div class="text-gray-700 fw-semibold fs-6">Entry
+                                                                    Fees:{{ $values->amount ?? '' }}
+                                                                </div>
+                                                                <!--end::Description-->
+                                                                <!--begin::Link-->
+                                                                <div class="text-gray-700 fw-semibold fs-6">Prize Fees
+                                                                    <!--begin::Name-->
+                                                                    <a href="#"
+                                                                        class="text-primary opacity-75-hover fw-semibold">{{ $values->amount * 2 ?? '' }}</a>
+                                                                </div>
                                                             </div>
-                                                            <!--end::Time-->
-                                                            <!--begin::Description-->
-                                                            <div class="text-gray-700 fw-semibold fs-6">Entry Fees:100
-                                                            </div>
-                                                            <!--end::Description-->
-                                                            <!--begin::Link-->
-                                                            <div class="text-gray-700 fw-semibold fs-6">Prize Fees
-                                                                <!--begin::Name-->
-                                                                <a href="#"
-                                                                    class="text-primary opacity-75-hover fw-semibold">200</a>
-                                                            </div>
+                                                            <!--end::Info-->
+                                                            <!--begin::Action-->
+                                                            @if ($values->request_id == auth()->user()->id)
+                                                                <a class="btn btn-sm btn-secondary"
+                                                                    wire:click="onPlay('{{ $values->id }}')">Requested</a>
+                                                            @else
+                                                                <a class="btn btn-sm btn-primary"
+                                                                    wire:click="onPlay('{{ $values->id }}')">Play</a>
+                                                            @endif
+
+
+                                                            <!--end::Action-->
                                                         </div>
-                                                        <!--end::Info-->
-                                                        <!--begin::Action-->
-                                                        <a href="#" class="btn btn-sm btn-primary">Play</a>
-                                                        <!--end::Action-->
-                                                    </div>
+                                                    @endforeach
+
                                                 </div>
                                             </div>
                                             <!--end::Tap pane-->

@@ -14,4 +14,8 @@ class Battles extends Model
     public function creator(){
        return $this->belongsTo(User::class,'creator_id');
     }
+
+    public function requestie(){
+        return $this->belongsTo(User::class,'request_id');
+     }
 }
