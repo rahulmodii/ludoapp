@@ -2,12 +2,14 @@
 
 namespace App\Livewire;
 
+use App\Models\Wallet;
 use Livewire\Component;
 
 class WalletSupport extends Component
 {
     public function render()
     {
-        return view('livewire.wallet-support');
+        $data = Wallet::where('status',0)->orderBy('id','desc')->get(); 
+        return view('livewire.wallet-support',compact('data'));
     }
 }

@@ -13,6 +13,7 @@ class SupportForm extends Component
     public $mobile3;
     public $email;
     public $upi_id;
+    public $commission;
 
     public function mount(){
         $preData = Support::first();
@@ -22,6 +23,7 @@ class SupportForm extends Component
             $this->mobile3 = $preData->mobile3;
             $this->email = $preData->email;
             $this->upi_id = $preData->upi_id;
+            $this->commission = $preData->commission;
         }
 
 
@@ -33,7 +35,8 @@ class SupportForm extends Component
             'mobile2'=>$this->mobile2,
             'mobile3'=>$this->mobile3,
             'email'=>$this->email,
-            'upi_id'=>$this->upi_id
+            'upi_id'=>$this->upi_id,
+            'commission'=>$this->commission
         ];
 
         $preCheck = Support::first();

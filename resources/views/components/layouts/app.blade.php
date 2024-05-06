@@ -247,7 +247,7 @@
         })
 
         Livewire.on('refreshPage',(event)=>{
-            window.location.reload();
+            window.location.reload()
         })
     </script>
 </body>

@@ -59,11 +59,19 @@
                             <!--begin::Input-->
                             <input type="text" class="form-control form-control-solid" wire:model="upi_id">
                         </div>
+
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold mb-2 required">Commission</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="text" class="form-control form-control-solid" wire:model="commission">
+                        </div>
                       
                         <div class="d-flex justify-content-end">
                             <!--begin::Button-->
                             <button type="submit" id="kt_ecommerce_customer_profile_submit"
-                                class="btn btn-light-primary">
+                                class="btn btn-primary">
                                 <span class="indicator-label">Save</span>
                                 <span class="indicator-progress">Please wait...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>

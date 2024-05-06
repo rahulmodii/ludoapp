@@ -48,6 +48,10 @@ Route::middleware(['auth'])->group(function () {
         return view('gamedetails');
     })->name('gamedetails');
 
+    Route::get('/referalhistory', function () {
+        return view('referalhistory');
+    })->name('referalhistory');
+
     Route::prefix('admin')->group(function(){
         Route::get('/games',function(){
             return view('admin.games');
