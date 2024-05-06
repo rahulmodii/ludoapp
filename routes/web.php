@@ -52,16 +52,19 @@ Route::middleware(['auth'])->group(function () {
         return view('referalhistory');
     })->name('referalhistory');
 
-    Route::prefix('admin')->group(function(){
-        Route::get('/games',function(){
-            return view('admin.games');
-        })->name('gameform');
-        Route::get('/supportform',function(){
-            return view('admin.supportform');
-        })->name('supportform');
-        Route::get('/walletsupport',function(){
-            return view('admin.walletsupport');
-        })->name('walletsupport');
+    Route::middleware('isAdmin')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::get('/games',function(){
+                return view('admin.games');
+            })->name('gameform');
+            Route::get('/supportform',function(){
+                return view('admin.supportform');
+            })->name('supportform');
+            Route::get('/walletsupport',function(){
+                return view('admin.walletsupport');
+            })->name('walletsupport');
+        });
     });
+
 });
 

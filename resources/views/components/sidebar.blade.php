@@ -6,7 +6,60 @@
             data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_user, #kt_aside_footer"
             data-kt-scroll-wrappers="#kt_aside, #kt_aside_menu, #kt_aside_menu_wrapper" data-kt-scroll-offset="0">
             <!--begin::Menu-->
-            @if (auth()->user()->role == 0)
+            @if (auth()->user()->role == "5")
+                <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold hover show" id="#kt_aside_menu"
+                    data-kt-menu="true">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <!--begin:Menu link-->
+                        <span class="menu-link">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-briefcase fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Dashboard</span>
+                            <span class="menu-arrow"></span>
+                        </span>
+                        <!--end:Menu link-->
+                        <!--begin:Menu sub-->
+                        <div class="menu-sub menu-sub-accordion show">
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{{ route('supportform') }}"
+                                    title="Check out over 200 in-house components" data-bs-toggle="tooltip"
+                                    data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Support Form</span>
+                                </a>
+                                <a class="menu-link" href="{{ route('walletsupport') }}"
+                                    title="Check out over 200 in-house components" data-bs-toggle="tooltip"
+                                    data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Wallet Support</span>
+                                </a>
+                                <a class="menu-link" href="{{ route('gameform') }}"
+                                    title="Check out over 200 in-house components" data-bs-toggle="tooltip"
+                                    data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Games Support</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+
+                        </div>
+                        <!--end:Menu sub-->
+                    </div>
+                    <!--end:Menu item-->
+                </div>
+            @else
                 <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold hover show" id="#kt_aside_menu"
                     data-kt-menu="true">
                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -41,13 +94,13 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="{{ route('supportform') }}"
+                                <a class="menu-link" href="{{ route('myprofile') }}"
                                     title="Check out the complete documentation" data-bs-toggle="tooltip"
                                     data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">Support</span>
+                                    <span class="menu-title">My Profile</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
@@ -55,8 +108,21 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="{{ route('walletsupport') }}"
+                                <a class="menu-link" href="{{ route('dashboard') }}"
                                     title="Build your layout and export HTML for server side integration">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Win Cash</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link"
+                                    href="{{ route('wallet') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -64,8 +130,8 @@
                                 </a>
                                 <!--end:Menu link-->
                             </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
+
+
                             <div class="menu-item">
                                 <!--begin:Menu link-->
                                 <a class="menu-link"
@@ -81,7 +147,7 @@
                             <div class="menu-item">
                                 <!--begin:Menu link-->
                                 <a class="menu-link"
-                                    href="https://preview.keenthemes.com/html/LudoKing/docs/getting-started/changelog">
+                                    href="{{ route('transaction') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -103,7 +169,7 @@
 
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="{{ route('notifications') }}">
+                                <a class="menu-link" href="{{ route('referalhistory') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -146,62 +212,6 @@
                                 <!--end:Menu link-->
                             </div>
                             <!--end:Menu item-->
-                        </div>
-                        <!--end:Menu sub-->
-                    </div>
-                    <!--end:Menu item-->
-                </div>
-            @else
-                <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold hover show" id="#kt_aside_menu"
-                    data-kt-menu="true">
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                        <!--begin:Menu link-->
-                        <span class="menu-link">
-                            <span class="menu-icon">
-                                <i class="ki-duotone ki-briefcase fs-2">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                </i>
-                            </span>
-                            <span class="menu-title">Admin Dashboard</span>
-                            <span class="menu-arrow"></span>
-                        </span>
-                        <!--end:Menu link-->
-                        <!--begin:Menu sub-->
-                        <div class="menu-sub menu-sub-accordion show">
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link"
-                                    href="{{ route('supportform') }}"
-                                    title="Check out over 200 in-house components" data-bs-toggle="tooltip"
-                                    data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Support Form</span>
-                                </a>
-                                <a class="menu-link"
-                                    href="{{ route('walletsupport') }}"
-                                    title="Check out over 200 in-house components" data-bs-toggle="tooltip"
-                                    data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Wallet Support</span>
-                                </a>
-                                <a class="menu-link"
-                                href="{{ route('gameform') }}"
-                                title="Check out over 200 in-house components" data-bs-toggle="tooltip"
-                                data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Games Support</span>
-                            </a>
-                                <!--end:Menu link-->
-                            </div>
-                           
                         </div>
                         <!--end:Menu sub-->
                     </div>
