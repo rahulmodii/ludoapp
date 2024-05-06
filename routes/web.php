@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AuthController::class, 'index'])->name('login');
 Route::post('/', [AuthController::class, 'sendotp'])->name('sendotp');
-Route::get('/verify/{phone?}', [AuthController::class, 'verify'])->name('verify');
+Route::get('/verify/{phone?}/{referal?}', [AuthController::class, 'verify'])->name('verify');
 Route::post('/verify', [AuthController::class, 'verifyhandel'])->name('verifyhandel');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -44,6 +44,9 @@ Route::middleware(['auth'])->group(function () {
         return view('myprofile');
     })->name('myprofile');
 
+    Route::get('/gamedetails/{id}', function () {
+        return view('gamedetails');
+    })->name('gamedetails');
 
     Route::prefix('admin')->group(function(){
         Route::get('/games',function(){

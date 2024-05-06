@@ -165,8 +165,7 @@
                             <h4 class=" fw-bold mb-0">Total Earnings: 0</h4>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary er fs-6 px-8 py-4" data-bs-toggle="modal"
-                        data-bs-target="#kt_modal_two_factor_authentication">Share on Whatsapp</a>
+                    <a href="{{ url('/') }}?referral={{ auth()->user()->userid }}" class="btn btn-primary er fs-6 px-8 py-4" target="_blank">Share on Whatsapp</a>
                 </div>
                 <!--end::Heading-->
                 <!--begin::Illustration-->

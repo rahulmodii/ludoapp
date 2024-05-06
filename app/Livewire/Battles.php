@@ -25,29 +25,45 @@ class Battles extends Component
 
     public function onPlay($id)
     {
-        // dd($id);
+
         ModelsBattles::find($id)->update([
             'is_request' => 1,
             'request_id' => auth()->user()->id
         ]);
     }
 
-    public function onReject($id){
+    public function onReject($id)
+    {
         ModelsBattles::find($id)->update([
             'is_request' => 0,
             'request_id' => 0
         ]);
     }
 
-    public function onDelete($id){
+    public function onDelete($id)
+    {
         ModelsBattles::destroy($id);
+    }
+
+    public function onAccept($id)
+    {
+        // dd($id);
+        $preData = ModelsBattles::where('id', $id)->first();
+        ModelsBattles::where('id', $id)->update([
+            'is_request' => 2,
+            'joining_id' => $preData->request_id,
+            'is_accepted' => 1
+        ]);
+
+        return redirect()->route('gamedetails',['id'=>$id]);
     }
 
     public function render()
     {
 
-        $data = ModelsBattles::where('creator_id', auth()->user()->id)->orderBy('id','desc')->get();
-        $newData = ModelsBattles::where('creator_id', "!=", auth()->user()->id)->where('joining_id', 0)->orderBy('id','desc')->get();
-        return view('livewire.battles', compact('data', 'newData'));
+        $preData = ModelsBattles::where('joining_id', auth()->user()->id)->where('is_accepted', 1)->orderBy('id', 'desc')->get();
+        $data = ModelsBattles::where('creator_id', auth()->user()->id)->where('is_accepted', 0)->orderBy('id', 'desc')->get();
+        $newData = ModelsBattles::where('creator_id', "!=", auth()->user()->id)->where('joining_id', 0)->orderBy('id', 'desc')->get();
+        return view('livewire.battles', compact('data', 'newData','preData'));
     }
 }

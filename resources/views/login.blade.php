@@ -118,6 +118,8 @@
                               
                                 <div class="fv-row mb-8">
                                     <!--begin::Email-->
+                                    <input type="hidden" placeholder="" name="referral" value="{{ request()->get('referral') }}" autocomplete="off"
+                                        class="form-control bg-transparent" />
                                     <input type="text" placeholder="Mobile" name="mobile" autocomplete="off"
                                         class="form-control bg-transparent" />
                                     <!--end::Email-->

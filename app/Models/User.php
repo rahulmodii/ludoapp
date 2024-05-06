@@ -22,7 +22,8 @@ class User extends Authenticatable
         'password',
         'aadhar_number',
         'userid',
-        'mobile'
+        'mobile',
+        'referral'
     ];
 
     /**

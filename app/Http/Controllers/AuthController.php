@@ -26,7 +26,9 @@ class AuthController extends Controller
     public function sendotp(Request $request)
     {
         // dd(['phone' => $request->mobile]);
+        // dd($request->all());
         $mobile = $request->mobile;
+        $referral = $request->referral;
         $user = User::where('mobile', $mobile)->first();
         // dd($user);
         $userid = Str::random(8);
@@ -37,6 +39,7 @@ class AuthController extends Controller
                 'password' => Hash::make($mobile),
                 'email' => "$userid@ludoking.com",
                 'userid' => $userid,
+                'referral'=>$referral
             ]);
         }
         $otp = mt_rand(100000, 999999);
