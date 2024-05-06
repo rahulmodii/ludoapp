@@ -55,7 +55,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function(){
         Route::get('/games',function(){
             return view('admin.games');
-        })->name('games');
+        })->name('gameform');
         Route::get('/supportform',function(){
             return view('admin.supportform');
         })->name('supportform');

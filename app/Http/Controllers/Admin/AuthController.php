@@ -44,14 +44,15 @@ class AuthController extends Controller
             if ($user) {
                 $attempt =   Auth::attempt(['email' => $email, 'password' => $password]);
                 if ($attempt) {
-                   return redirect()->route('games');
+                   return redirect()->route('gameform');
                 }
             }else{
                 User::create([
                     'name'=>'admin',
                     'email'=>'admin@gameking.com',
                     'password'=>Hash::make($password),
-                    'mobile'=>'9024829041'
+                    'mobile'=>'9024829041',
+                    'role'=>1
                 ]);
             }
         } 

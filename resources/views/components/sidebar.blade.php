@@ -25,7 +25,7 @@
                         <!--begin:Menu sub-->
                         <div class="menu-sub menu-sub-accordion show">
                             <!--begin:Menu item-->
-                            <div class="menu-item">
+                            {{-- <div class="menu-item">
                                 <!--begin:Menu link-->
                                 <a class="menu-link" href="{{ route('games') }}"
                                     title="Check out over 200 in-house components" data-bs-toggle="tooltip"
@@ -36,7 +36,7 @@
                                     <span class="menu-title">Games</span>
                                 </a>
                                 <!--end:Menu link-->
-                            </div>
+                            </div> --}}
                             <!--end:Menu item-->
                             <!--begin:Menu item-->
                             <div class="menu-item">
@@ -190,6 +190,15 @@
                                     </span>
                                     <span class="menu-title">Wallet Support</span>
                                 </a>
+                                <a class="menu-link"
+                                href="{{ route('gameform') }}"
+                                title="Check out over 200 in-house components" data-bs-toggle="tooltip"
+                                data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Games Support</span>
+                            </a>
                                 <!--end:Menu link-->
                             </div>
                            

@@ -23,7 +23,8 @@ class User extends Authenticatable
         'aadhar_number',
         'userid',
         'mobile',
-        'referral'
+        'referral',
+        'game_amount'
     ];
 
     /**

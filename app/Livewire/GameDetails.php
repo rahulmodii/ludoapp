@@ -19,12 +19,18 @@ class GameDetails extends Component
     {
         $this->currentId = $id;
         $data = Battles::find($this->currentId);
-        $this->room_code = $data->room_code;
+        if ($data->room_code) {
+            $this->room_code = $data->room_code;
+        }
+     
     }
 
     public function onSubmit(){
         // dd($this->matchstatus);
-        $proof = $this->image->store('proof', 'public');
+        $proof = "";
+        if ($this->image) {
+            $proof = $this->image->store('proof', 'public');
+        }
         $data = Battles::find($this->currentId);
         $loggedInId = auth()->user()->id;
         if ($loggedInId == $data->creator_id) {

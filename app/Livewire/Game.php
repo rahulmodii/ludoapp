@@ -2,9 +2,12 @@
 
 namespace App\Livewire;
 
+use App\Models\Battles;
+use App\Models\User;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
+
 class Game extends Component
 {
 
@@ -16,29 +19,21 @@ class Game extends Component
     public $min_amount;
     public $max_amount;
 
-    public function store()
+    public function makeWinner($gameid, $id)
     {
-        
-        $validated = $this->validate([ 
-            'name' => 'required|min:3',
-            'description' => 'required|min:3',
+        // dd($id);
+        $battle = Battles::find($gameid);
+        $user =  User::find($id);
+        $user->increment('wallet_balance', $battle->game_amount);
+        $battle->update([
+            'winning_id' => $id
         ]);
-        dd($validated);
-        // dd($this->image);
-        // $image = $this->image->store('image','public');
-        // $payload = [
-        //     'image' => $image,
-        //     'name' => $this->name,
-        //     'description' => $this->description,
-        //     'status' => $this->status,
-        //     'min_amount' => $this->min_amount,
-        //     'max_amount' => $this->max_amount
-        // ];
-        // dd($payload);
+        return $this->dispatch('message', 'Update Successfully!');
     }
 
     public function render()
     {
-        return view('livewire.game');
+        $data = Battles::where('is_accepted', 1)->orderBy('id', 'desc')->get();
+        return view('livewire.game', compact('data'));
     }
 }

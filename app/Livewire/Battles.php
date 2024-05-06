@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Battles as ModelsBattles;
+use App\Models\Support;
 use Livewire\Component;
 
 class Battles extends Component
@@ -13,11 +14,18 @@ class Battles extends Component
     {
         // dd($this->amount);
         // id, creator_id, joining_id, game_id, creator_response, joining_response, amount, proof, status, created_at, updated_at
+        $config = Support::first();
+        $Amount = $this->amount * 2;
+        $commissionAmount = $Amount * $config->commission / 100;
+        $commissionAmount = ceil($commissionAmount);
+        $gameAmount = $Amount - $commissionAmount;
         $payload = [
             "creator_id" => auth()->user()->id,
             "game_id" => 1,
-            "amount" => $this->amount
+            "amount" => $this->amount,
+            'game_amount'=>$gameAmount
         ];
+        // dd($payload);
         ModelsBattles::create($payload);
         $this->amount = "";
         return $this->dispatch('messageNew', 'Game Created Successfully!');
