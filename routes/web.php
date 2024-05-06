@@ -52,6 +52,11 @@ Route::middleware(['auth'])->group(function () {
         return view('referalhistory');
     })->name('referalhistory');
 
+
+    Route::get('/gamehistory', function () {
+        return view('gamehistory');
+    })->name('gamehistory');
+
     Route::middleware('isAdmin')->group(function(){
         Route::prefix('admin')->group(function(){
             Route::get('/games',function(){

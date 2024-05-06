@@ -1,5 +1,5 @@
 <div>
-    @include('components.header', ['title' => 'Referal History'])
+    @include('components.header', ['title' => 'Game History'])
     <div class="container-fluid" id="kt_content_container">
         <div class="card card-flush ">
             <!--begin::Header-->
@@ -36,7 +36,7 @@
                         <div class="timeline-item">
                             <!--begin::Label-->
                             <div class="timeline-label fw-bold text-gray-800 fs-6">
-                                {{ $value->created_at->format('d-m-y') }}</div>
+                                {{ $value->created_at }}</div>
                             <!--end::Label-->
 
                             <!--begin::Badge-->
@@ -48,7 +48,7 @@
 
                             <!--begin::Text-->
                             <div class="fw-semibold text-gray-700 ps-3 fs-7">
-                                User {{ $value->name }} joined from your code.
+                                You won against {{ $value->joinee->name }}.
                             </div>
                             <!--end::Text-->
                         </div>
@@ -56,31 +56,7 @@
                     </div>
                 @endforeach
 
-                @foreach ($referals as $valu)
-                    <div class="timeline-label">
-                        <!--begin::Item-->
-                        <div class="timeline-item">
-                            <!--begin::Label-->
-                            <div class="timeline-label fw-bold text-gray-800 fs-6">
-                                {{ $valu->created_at->format('d-m-y') }}</div>
-                            <!--end::Label-->
 
-                            <!--begin::Badge-->
-                            <div class="timeline-badge">
-                                <i class="ki-duotone ki-abstract-8 text-gray-600 fs-3"><span class="path1"></span><span
-                                        class="path2"></span></i>
-                            </div>
-                            <!--end::Badge-->
-
-                            <!--begin::Text-->
-                            <div class="fw-semibold text-gray-700 ps-3 fs-7">
-                                You earned Rs{{ $valu->amount  ?? ''}} as a referal win.
-                            </div>
-                            <!--end::Text-->
-                        </div>
-
-                    </div>
-                @endforeach
 
                 <!--end::Timeline-->
             </div>

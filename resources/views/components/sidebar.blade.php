@@ -135,7 +135,7 @@
                             <div class="menu-item">
                                 <!--begin:Menu link-->
                                 <a class="menu-link"
-                                    href="https://preview.keenthemes.com/html/LudoKing/docs/getting-started/changelog">
+                                    href="{{ route('gamehistory') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>

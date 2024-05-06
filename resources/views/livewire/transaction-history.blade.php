@@ -1,5 +1,5 @@
 <div>
-    @include('components.header', ['title' => 'Referal History'])
+    @include('components.header', ['title' => 'Transaction History'])
     <div class="container-fluid" id="kt_content_container">
         <div class="card card-flush ">
             <!--begin::Header-->

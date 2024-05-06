@@ -36,7 +36,8 @@ class Game extends Component
             ReferalAmount::create([
                 'battle_id' => $gameid,
                 'user_id' => $id,
-                'amount' => $referalAmount
+                'amount' => $referalAmount,
+                'parent_id'=>$referalUser->id
             ]);
         }
         return $this->dispatch('message', 'Update Successfully!');

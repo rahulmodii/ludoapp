@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\ReferalAmount;
 use App\Models\User;
 use Livewire\Component;
 
@@ -11,6 +12,7 @@ class ReferalHistory extends Component
     {
         // dd(auth()->user()->userid);
         $data = User::where('referral',auth()->user()->userid)->get();
-        return view('livewire.referal-history',compact('data'));
+        $referals = ReferalAmount::where('parent_id',auth()->user()->id)->get();
+        return view('livewire.referal-history',compact('data','referals'));
     }
 }
