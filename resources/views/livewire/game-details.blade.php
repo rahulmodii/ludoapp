@@ -27,7 +27,7 @@
                                     <a href="#" class="text-gray-500 fs-6 fw-semibold">Playing For</a>
                                     <span class="text-gray-800 fw-bold d-block fs-4"><img class="mx-1"
                                             src="https://d37om4gxfn0aox.cloudfront.net/static-content/front/images/global-rupeeIcon.png"
-                                            width="21px" alt="">{{ $data->amount * 2 }}</span>
+                                            width="21px" alt="">{{ $data->game_amount }}</span>
                                 </div>
                                 <span class="badge badge-lg badge-light-success fw-bold my-2 fs-8">On Going</span>
                             </div>
