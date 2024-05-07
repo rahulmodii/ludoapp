@@ -12,7 +12,7 @@ class WalletSupport extends Component
     public function onAccept($id){
       $request = Wallet::find($id);
       $user = User::find($request->user_id)->increment('wallet_balance',$request->amount);
-      $request->update('status',1);
+      $request->update(['status'=>1]);
       return $this->message('Wallet Balance Added Succssfully!');
     }
 
