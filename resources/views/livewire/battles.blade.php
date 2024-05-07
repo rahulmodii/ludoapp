@@ -133,7 +133,7 @@
                                                                 <div class="text-gray-700 fw-semibold fs-6">Prize Fees
 
                                                                     <a href="#"
-                                                                        class="text-primary opacity-75-hover fw-semibold">{{ $value->amount * 2 ?? '' }}</a>
+                                                                        class="text-primary opacity-75-hover fw-semibold">{{ $value->game_amount ?? '' }}</a>
                                                                 </div>
                                                             </div>
 
@@ -186,7 +186,7 @@
                                                                 <div class="text-gray-700 fw-semibold fs-6">Prize Fees
 
                                                                     <a href="#"
-                                                                        class="text-primary opacity-75-hover fw-semibold">{{ $value->amount * 2 ?? '' }}</a>
+                                                                        class="text-primary opacity-75-hover fw-semibold">{{ $value->game_amount ?? '' }}</a>
                                                                 </div>
                                                             </div>
 
@@ -234,7 +234,7 @@
                                                                 <div class="text-gray-700 fw-semibold fs-6">Prize Fees
 
                                                                     <a href="#"
-                                                                        class="text-primary opacity-75-hover fw-semibold">{{ $values->amount * 2 ?? '' }}</a>
+                                                                        class="text-primary opacity-75-hover fw-semibold">{{ $values->game_amount ?? '' }}</a>
                                                                 </div>
                                                             </div>
 
