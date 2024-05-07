@@ -208,7 +208,7 @@
     @livewireScripts()
 
     <script src="/assets/plugins/global/plugins.bundle.js"></script>
-    {{-- <script src="/assets/js/scripts.bundle.js"></script> --}}
+    <script src="/assets/js/scripts.bundle.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
         Livewire.on('message', (event) => {
