@@ -1,8 +1,8 @@
 <div>
     @include('components.header',['title'=>'Battles'])
+    <div class="container-fluid" id="kt_content_container">
     <div class="row gy-5 g-xl-10">
-        <div class="col-xl-1"></div>
-        <div class="col-10">
+        <div class="col-12">
             <div class="card card-flush">
                 <div class="card-body pt-5">
                     <div class="d-flex flex-column gap-5">
@@ -11,7 +11,6 @@
                             <input type="text" class="form-control form-control-solid" placeholder="Amount"
                                 wire:model="amount">
                         </div>
-                        <div class="separator my-7"></div>
                         <button type="button" class="btn btn-primary w-100" wire:click="setAmount">Set</button>
 
                     </div>
@@ -20,9 +19,8 @@
             </div>
             <div class="col-xl-1"></div>
         </div>
-        <div class="row gy-5 g-xl-10">
-            <div class="col-xl-1"></div>
-            <div class="col-xl-10 mb-xl-10">
+        <div class="row gy-5 g-xl-12">
+            <div class="col-xl-12 mb-xl-12">
 
                 <div class="card card-flush h-lg-100">
 
@@ -340,7 +338,6 @@
                 </div>
 
             </div>
-            <div class="col-xl-1"></div>
         </div>
     </div>
     <div class="modal fade" id="kt_modal_invite_friends" tabindex="-1" aria-hidden="true" wire:ignore.self>
@@ -399,5 +396,6 @@
 
         </div>
 
+    </div>
     </div>
 </div>
