@@ -179,7 +179,7 @@
 
 
                                                                 <div class="text-gray-700 fw-semibold fs-6">Entry
-                                                                    Fees:{{ $value->amount ?? '' }}
+                                                                    Fees:{{ $value->game_amount ?? '' }}
                                                                 </div>
 
 

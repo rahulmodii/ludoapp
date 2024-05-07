@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Battles as ModelsBattles;
 use App\Models\Support;
+use App\Models\User;
 use Livewire\Component;
 
 class Battles extends Component
@@ -55,14 +56,14 @@ class Battles extends Component
 
     public function onAccept($id)
     {
-        // dd($id);
+        
         $preData = ModelsBattles::where('id', $id)->first();
         ModelsBattles::where('id', $id)->update([
             'is_request' => 2,
             'joining_id' => $preData->request_id,
             'is_accepted' => 1
         ]);
-
+        User::find($preData->creator_id)->decrement('wallet_balance',$preData->amount);
         return redirect()->route('gamedetails',['id'=>$id]);
     }
 

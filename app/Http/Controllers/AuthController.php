@@ -99,7 +99,7 @@ class AuthController extends Controller
     public function logout()
     {
         $role = Auth::user()->role;
-        if ($role) {
+        if ($role != 5) {
             Auth::logout();
             return redirect()->route('login');
         } else {
