@@ -92,8 +92,8 @@
 
                         <div class="text-center">
 
-                            <a href="pages/user-profile/overview.html"
-                                class="text-gray-800 text-hover-primary fs-4 fw-bolder animate__bounce">Rahul Modi</a>
+                            <a href="#"
+                                class="text-gray-800 text-hover-primary fs-4 fw-bolder animate__bounce">{{ auth()->user()->name ?? '' }}</a>
 
 
                             <span class="text-gray-600 fw-semibold d-block fs-7 mb-1">Cash
