@@ -29,7 +29,7 @@ class Game extends Component
         $battle->update([
             'winning_id' => $id
         ]);
-        $referalUser = User::where('referral', $user->referral)->first();
+        $referalUser = User::where('userid', $user->referral)->first();
         if ($referalUser) {
             $referalAmount = ceil($battle->game_amount * 0.01);
             $referalUser->increment('wallet_balance', $referalAmount);
