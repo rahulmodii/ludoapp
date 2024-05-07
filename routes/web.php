@@ -19,7 +19,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/battels', function () {
+    Route::get('/battels/{id}', function () {
         return view('battels');
     })->name('battels');
     Route::get('/support', function () {

@@ -448,7 +448,7 @@
                         <div class="card-footer d-flex flex-stack pt-0">
                             <!--begin::Link-->
                             <a class="btn btn-sm btn-primary flex-shrink-0 me-2"
-                                href="{{ route('battels') }}">Play Now</a>
+                                href="{{ route('battels',['id'=>encrypt(1)]) }}">Play Now</a>
                             <!--end::Link-->
                             <!--begin::Link-->
                             {{-- <a class="btn btn-sm btn-light flex-shrink-0"
@@ -487,7 +487,7 @@
                         <div class="card-footer d-flex flex-stack pt-0">
                             <!--begin::Link-->
                             <a class="btn btn-sm btn-primary flex-shrink-0 me-2"
-                                  href="{{ route('battels') }}">Play Now</a>
+                                  href="{{ route('battels',['id'=>encrypt(2)]) }}">Play Now</a>
                             <!--end::Link-->
                             <!--begin::Link-->
                             {{-- <a class="btn btn-sm btn-light flex-shrink-0"
