@@ -1,4 +1,5 @@
 <div>
+    @include('components.header',['title'=>'Battles'])
     <div class="row gy-5 g-xl-10">
         <div class="col-xl-1"></div>
         <div class="col-10">
