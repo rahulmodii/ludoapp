@@ -17,6 +17,12 @@ class WalletSupport extends Component
         return $this->dispatch('message','Wallet Balance Added Succssfully!');
     }
 
+    public function onReject($id){
+        $request = Wallet::find($id);
+        $request->update(['status' => 2]);
+        return $this->dispatch('message','Wallet Balance Request Denied!');
+    }
+
     public function render()
     {
         $data = Wallet::where('status', 0)->orderBy('id', 'desc')->get();
