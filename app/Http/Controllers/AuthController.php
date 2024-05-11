@@ -57,7 +57,7 @@ class AuthController extends Controller
             'numbers' => $numbers,
         ]);
         Verification::create($payload);
-        return redirect()->route('verify', ['phone' => $request->mobile, 'otp' => $otp]);
+        return redirect()->route('verify', ['phone' => $request->mobile]);
     }
 
     /**
