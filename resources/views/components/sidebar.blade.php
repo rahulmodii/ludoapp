@@ -190,7 +190,7 @@
                             </div> --}}
 
 
-                            <div class="menu-item">
+                            {{-- <div class="menu-item">
                                 <!--begin:Menu link-->
                                 <a class="menu-link" href="{{ route('notifications') }}">
                                     <span class="menu-bullet">
@@ -199,7 +199,7 @@
                                     <span class="menu-title">Notification</span>
                                 </a>
                                 <!--end:Menu link-->
-                            </div>
+                            </div> --}}
 
                             <div class="menu-item">
                                 <!--begin:Menu link-->
