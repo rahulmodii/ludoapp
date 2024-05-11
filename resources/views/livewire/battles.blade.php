@@ -66,7 +66,8 @@
 
                                         <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">Running Battles</span>
 
-                                        <span class="bullet-custom position-absolute z-index-2 bottom-0 w-100 h-4px bg-primary rounded"></span>
+                                        <span
+                                            class="bullet-custom position-absolute z-index-2 bottom-0 w-100 h-4px bg-primary rounded"></span>
 
                                     </a>
                                 </li>
@@ -270,50 +271,60 @@
 
 
                                             <div class="card-toolbar">
-                                                <a href="apps/ecommerce/sales/details.html"
-                                                    class="btn btn-sm btn-light">Order Details</a>
+                                                <a class="btn btn-danger fw-semibold" data-bs-toggle="modal"
+                                                data-bs-target="#kt_modal_invite_friends">Rules</a>
                                             </div>
 
                                         </div>
 
 
                                         <div class="card-body">
+                                            @foreach ($runningBattles as $runningBattle)
+                                                <div class="pe-6 me-n6">
 
-                                            <div class=" pe-6 me-n6">
+                                                    <div
+                                                        class="border border-dashed border-gray-300 rounded px-7 py-3 mb-6">
 
-                                                <div
-                                                    class="border border-dashed border-gray-300 rounded px-7 py-3 mb-6">
+                                                        <div class="d-flex flex-stack mb-3">
 
-                                                    <div class="d-flex flex-stack mb-3">
+                                                            <div class="me-3">
+                                                                <img src="assets/media/stock/ecommerce/210.png"
+                                                                    class="w-50px ms-n1 me-1" alt="">
+                                                                <span
+                                                                    class=" text-hover-primary fw-bold">{{ optional($runningBattle->creator)->name }}
+                                                                    <br />
+                                                                    <span>PLAYING FOR
+                                                                        <img class="mx-1"
+                                                                            src="https://d37om4gxfn0aox.cloudfront.net/static-content/front/images/global-rupeeIcon.png"
+                                                                            width="21px"
+                                                                            alt="">{{ $runningBattle->amount ?? '' }}
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                            <span class="badge badge-light-success">V/S</span>
+                                                            <div class="me-3">
 
-                                                        <div class="me-3">
-
-                                                            <img src="assets/media/stock/ecommerce/210.png"
-                                                                class="w-50px ms-n1 me-1" alt="">
-
-
-                                                            <a href="apps/ecommerce/catalog/edit-product.html"
-                                                                class="text-gray-800 text-hover-primary fw-bold">Elephant
-                                                                1802</a>
+                                                                <img src="assets/media/stock/ecommerce/210.png"
+                                                                    class="w-50px ms-n1 me-1" alt="">
+                                                                <span 
+                                                                    class=" text-hover-primary fw-bold">{{ optional($runningBattle->joinee)->name }}
+                                                                    <br />
+                                                                    <span>Prize
+                                                                        <img class="mx-1"
+                                                                            src="https://d37om4gxfn0aox.cloudfront.net/static-content/front/images/global-rupeeIcon.png"
+                                                                            width="21px"
+                                                                            alt="">{{ $runningBattle->game_amount ?? '' }}
+                                                                    </span>
+                                                                </span>
+                                                            </div>
 
                                                         </div>
-                                                        <span class="badge badge-light-success">V/S</span>
-                                                        <div class="me-3">
 
-                                                            <img src="assets/media/stock/ecommerce/210.png"
-                                                                class="w-50px ms-n1 me-1" alt="">
-
-
-                                                            <a href="apps/ecommerce/catalog/edit-product.html"
-                                                                class="text-gray-800 text-hover-primary fw-bold">Elephant
-                                                                1802</a>
-
-                                                        </div>
 
                                                     </div>
-                                                </div>
 
-                                            </div>
+                                                </div>
+                                            @endforeach
 
                                         </div>
 

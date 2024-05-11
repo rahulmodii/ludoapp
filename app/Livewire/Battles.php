@@ -13,15 +13,16 @@ class Battles extends Component
     public $game_id;
     public $tabId;
 
-    public function mount($id,$tabId)
+    public function mount($id, $tabId)
     {
         $this->tabId = $tabId;
         $id = decrypt($id);
         $this->game_id = $id;
     }
 
-    public function adjustTab($id){
-        return redirect()->route('battels',['id'=>encrypt($this->game_id),'tabId'=>$id]);
+    public function adjustTab($id)
+    {
+        return redirect()->route('battels', ['id' => encrypt($this->game_id), 'tabId' => $id]);
     }
 
 
@@ -34,7 +35,7 @@ class Battles extends Component
                     'numeric',
                     'min:100',
                     'max:500',
-                    function($attribute, $value, $fail) use ($walletBalance) {
+                    function ($attribute, $value, $fail) use ($walletBalance) {
                         if ($value > $walletBalance) {
                             $fail('The ' . $attribute . ' must be less than or equal to your wallet balance.');
                         }
@@ -49,7 +50,7 @@ class Battles extends Component
                     'numeric',
                     'min:500',
                     'max:25000',
-                    function($attribute, $value, $fail) use ($walletBalance) {
+                    function ($attribute, $value, $fail) use ($walletBalance) {
                         if ($value > $walletBalance) {
                             $fail('The ' . $attribute . ' must be less than or equal to your wallet balance.');
                         }
@@ -117,6 +118,7 @@ class Battles extends Component
         $preData = ModelsBattles::where('joining_id', auth()->user()->id)->where('is_accepted', 1)->orderBy('id', 'desc')->get();
         $data = ModelsBattles::where('creator_id', auth()->user()->id)->where('is_accepted', 0)->orderBy('id', 'desc')->get();
         $newData = ModelsBattles::where('creator_id', "!=", auth()->user()->id)->where('joining_id', 0)->orderBy('id', 'desc')->get();
-        return view('livewire.battles', compact('data', 'newData', 'preData'));
+        $runningBattles = ModelsBattles::whereNull('winning_id')->where('joining_id', '!=', 0)->orderBy('id', 'desc')->get();
+        return view('livewire.battles', compact('data', 'newData', 'preData', 'runningBattles'));
     }
 }
