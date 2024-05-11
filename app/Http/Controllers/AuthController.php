@@ -7,6 +7,7 @@ use App\Models\Verification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 class AuthController extends Controller
@@ -44,6 +45,17 @@ class AuthController extends Controller
         }
         $otp = mt_rand(100000, 999999);
         $payload = ['mobile' => $request->mobile, 'otp' => $otp];
+        $apiKey = 'j9uVClJAmM5TKypkgF6DQ23abvtiEUz1eIPH7OnX8LsZNSRWw4oNX6WU9LItD0d7KM52yjPbSvhHBEwk'; // Replace with your actual API key
+        $numbers = "$request->mobile"; // Numbers to which OTP is sent
+        $variableValues = "$otp"; // OTP or variable value to send
+        $route = 'otp'; // Specify the route
+
+        $response = Http::get('https://www.fast2sms.com/dev/bulkV2', [
+            'authorization' => $apiKey,
+            'variables_values' => $variableValues,
+            'route' => $route,
+            'numbers' => $numbers,
+        ]);
         Verification::create($payload);
         return redirect()->route('verify', ['phone' => $request->mobile, 'otp' => $otp]);
     }
