@@ -441,7 +441,7 @@
                                 <!--end::Total-->
                             </div>
                             <img class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded mb-7"
-                            style="height: 266px;" src="/assets/ludo-rich-mode-1.jpeg" />
+                            style="height: 266px;" src="/some.jpeg" />
                         </div>
                         <!--end::Body-->
                         <!--begin::Footer-->
