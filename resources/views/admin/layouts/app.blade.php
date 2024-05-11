@@ -11,10 +11,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Metronic - The World's #1 Selling Bootstrap Admin Template by KeenThemes" />
-		<meta property="og:url" content="https://keenthemes.com/metronic" />
-		<meta property="og:site_name" content="Metronic by Keenthemes" />
-		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+		<meta property="og:title" content="Metronic - The World's #1 Selling Bootstrap Admin Template by ludogamesclub" />
+		<meta property="og:url" content="https://ludogamesclub.com/metronic" />
+		<meta property="og:site_name" content="Metronic by ludogamesclub" />
+		<link rel="canonical" href="https://preview.ludogamesclub.com/metronic8" />
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 		
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
@@ -3340,7 +3340,7 @@
 											
 											<div class="menu-item">
 												
-												<a class="menu-link py-3" href="https://preview.keenthemes.com/html/metronic/docs/base/utilities" target="_blank" title="Check out over 200 in-house components, plugins and ready for use solutions" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+												<a class="menu-link py-3" href="https://preview.ludogamesclub.com/html/metronic/docs/base/utilities" target="_blank" title="Check out over 200 in-house components, plugins and ready for use solutions" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 													<span class="menu-icon">
 														<i class="ki-duotone ki-rocket fs-2">
 															<span class="path1"></span>
@@ -3355,7 +3355,7 @@
 											
 											<div class="menu-item">
 												
-												<a class="menu-link py-3" href="https://preview.keenthemes.com/html/metronic/docs" target="_blank" title="Check out the complete documentation" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+												<a class="menu-link py-3" href="https://preview.ludogamesclub.com/html/metronic/docs" target="_blank" title="Check out the complete documentation" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 													<span class="menu-icon">
 														<i class="ki-duotone ki-abstract-26 fs-2">
 															<span class="path1"></span>
@@ -3370,7 +3370,7 @@
 											
 											<div class="menu-item">
 												
-												<a class="menu-link py-3" href="https://preview.keenthemes.com/metronic8/demo16/layout-builder.html" title="Build your layout and export HTML for server side integration" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+												<a class="menu-link py-3" href="https://preview.ludogamesclub.com/metronic8/demo16/layout-builder.html" title="Build your layout and export HTML for server side integration" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 													<span class="menu-icon">
 														<i class="ki-duotone ki-switch fs-2">
 															<span class="path1"></span>
@@ -3385,7 +3385,7 @@
 											
 											<div class="menu-item">
 												
-												<a class="menu-link py-3" href="https://preview.keenthemes.com/html/metronic/docs/getting-started/changelog" target="_blank">
+												<a class="menu-link py-3" href="https://preview.ludogamesclub.com/html/metronic/docs/getting-started/changelog" target="_blank">
 													<span class="menu-icon">
 														<i class="ki-duotone ki-code fs-2">
 															<span class="path1"></span>
@@ -3758,7 +3758,7 @@
 															
 															
 															<div class="d-flex flex-column">
-																<a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">BoomApp by Keenthemes</a>
+																<a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">BoomApp by ludogamesclub</a>
 																<span class="fs-7 text-muted fw-semibold">#45789</span>
 															</div>
 															
@@ -5239,16 +5239,16 @@
 							
 							<div class="text-gray-900 order-2 order-md-1">
 								<span class="text-muted fw-semibold me-1">2024&copy;</span>
-								<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+								<a href="https://ludogamesclub.com" target="_blank" class="text-gray-800 text-hover-primary">ludogamesclub</a>
 							</div>
 							
 							
 							<ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
 								<li class="menu-item">
-									<a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
+									<a href="https://ludogamesclub.com" target="_blank" class="menu-link px-2">About</a>
 								</li>
 								<li class="menu-item">
-									<a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
+									<a href="https://devs.ludogamesclub.com" target="_blank" class="menu-link px-2">Support</a>
 								</li>
 								<li class="menu-item">
 									<a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
@@ -6064,7 +6064,7 @@
 								
 								
 								<div class="p-5 rounded bg-light-info text-gray-900 fw-semibold mw-lg-400px text-start" data-kt-element="message-text">You can unwatch this repository immediately by clicking here: 
-								<a href="https://keenthemes.com">Keenthemes.com</a></div>
+								<a href="https://ludogamesclub.com">ludogamesclub.com</a></div>
 								
 							</div>
 							

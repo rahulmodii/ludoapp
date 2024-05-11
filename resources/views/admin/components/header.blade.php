@@ -3699,7 +3699,7 @@ data-kt-sticky-offset="{default: '200px', lg: '300px'}">
                     <div class="menu-item">
 
                         <a class="menu-link py-3"
-                            href="https://preview.keenthemes.com/html/metronic/docs/base/utilities"
+                            href="https://preview.ludogamesclub.com/html/metronic/docs/base/utilities"
                             target="_blank"
                             title="Check out over 200 in-house components, plugins and ready for use solutions"
                             data-bs-toggle="tooltip" data-bs-trigger="hover"
@@ -3719,7 +3719,7 @@ data-kt-sticky-offset="{default: '200px', lg: '300px'}">
                     <div class="menu-item">
 
                         <a class="menu-link py-3"
-                            href="https://preview.keenthemes.com/html/metronic/docs"
+                            href="https://preview.ludogamesclub.com/html/metronic/docs"
                             target="_blank" title="Check out the complete documentation"
                             data-bs-toggle="tooltip" data-bs-trigger="hover"
                             data-bs-dismiss="click" data-bs-placement="right">
@@ -3738,7 +3738,7 @@ data-kt-sticky-offset="{default: '200px', lg: '300px'}">
                     <div class="menu-item">
 
                         <a class="menu-link py-3"
-                            href="https://preview.keenthemes.com/metronic8/demo16/layout-builder.html"
+                            href="https://preview.ludogamesclub.com/metronic8/demo16/layout-builder.html"
                             title="Build your layout and export HTML for server side integration"
                             data-bs-toggle="tooltip" data-bs-trigger="hover"
                             data-bs-dismiss="click" data-bs-placement="right">
@@ -3757,7 +3757,7 @@ data-kt-sticky-offset="{default: '200px', lg: '300px'}">
                     <div class="menu-item">
 
                         <a class="menu-link py-3"
-                            href="https://preview.keenthemes.com/html/metronic/docs/getting-started/changelog"
+                            href="https://preview.ludogamesclub.com/html/metronic/docs/getting-started/changelog"
                             target="_blank">
                             <span class="menu-icon">
                                 <i class="ki-duotone ki-code fs-2">
@@ -4215,7 +4215,7 @@ data-kt-sticky-offset="{default: '200px', lg: '300px'}">
                                     <div class="d-flex flex-column">
                                         <a href="#"
                                             class="fs-6 text-gray-800 text-hover-primary fw-semibold">BoomApp
-                                            by Keenthemes</a>
+                                            by ludogamesclub</a>
                                         <span class="fs-7 text-muted fw-semibold">#45789</span>
                                     </div>
 

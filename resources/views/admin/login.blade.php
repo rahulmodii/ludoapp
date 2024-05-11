@@ -13,10 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Metronic - The World's #1 Selling Bootstrap Admin Template by KeenThemes" />
-    <meta property="og:url" content="https://keenthemes.com/metronic" />
-    <meta property="og:site_name" content="Metronic by Keenthemes" />
-    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+    <meta property="og:title" content="Metronic - The World's #1 Selling Bootstrap Admin Template by ludogamesclub" />
+    <meta property="og:url" content="https://ludogamesclub.com/metronic" />
+    <meta property="og:site_name" content="Metronic by ludogamesclub" />
+    <link rel="canonical" href="https://preview.ludogamesclub.com/metronic8" />
     <link rel="shortcut icon" href="/assets/media/logos/favicon.ico" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />

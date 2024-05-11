@@ -38,7 +38,7 @@ class AuthController extends Controller
                 'name' => $userid,
                 'mobile' => $mobile,
                 'password' => Hash::make($mobile),
-                'email' => "$userid@ludoking.com",
+                'email' => "$userid@ludogameclub.com",
                 'userid' => $userid,
                 'referral'=>$referral
             ]);
