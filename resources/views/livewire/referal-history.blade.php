@@ -9,14 +9,7 @@
                     <!--begin::Title-->
                     <h3 class="card-title align-items-start flex-column">
                         <span class="card-label fw-bold text-gray-800">Referal Activity</span>
-                        {{-- <span class="text-gray-500 pt-1 fw-semibold fs-6">Counted in Millions</span> --}}
                     </h3>
-                    <!--end::Title-->
-                    <!--begin::Toolbar-->
-                    {{-- <div class="card-toolbar">
-                        <a href="#" class="btn btn-sm btn-light">PDF Report</a>
-                    </div> --}}
-                    <!--end::Toolbar-->
                 </div>
                 <!--end::Header-->
                 <!--begin::Body-->
