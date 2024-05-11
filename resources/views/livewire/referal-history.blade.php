@@ -1,90 +1,79 @@
 <div>
     @include('components.header', ['title' => 'Referal History'])
     <div class="container-fluid" id="kt_content_container">
-        <div class="card card-flush ">
-            <!--begin::Header-->
-            <div class="card-header pt-5">
-                <!--begin::Title-->
-                <h3 class="card-title align-items-start flex-column">
-                    <span class="card-label fw-bold text-gray-900">Latest activities</span>
-                    <span class="text-gray-500 pt-2 fw-semibold fs-6"></span>
-                </h3>
-                <!--end::Title-->
-
-                <!--begin::Toolbar-->
-                <div class="card-toolbar">
-                    <!--begin::Menu-->
-                    <button class="btn btn-icon btn-color-gray-500 btn-active-color-primary justify-content-end"
-                        data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">
-                        <i class="ki-duotone ki-dots-square fs-1 text-gray-500 me-n1"><span class="path1"></span><span
-                                class="path2"></span><span class="path3"></span><span class="path4"></span></i>
-                    </button>
-
-
-                   
+        <div class="col-xl-12 mb-5 mb-xl-10">
+            <!--begin::Table widget 9-->
+            <div class="card card-flush h-xl-100">
+                <!--begin::Header-->
+                <div class="card-header pt-5">
+                    <!--begin::Title-->
+                    <h3 class="card-title align-items-start flex-column">
+                        <span class="card-label fw-bold text-gray-800">Referal Activity</span>
+                        {{-- <span class="text-gray-500 pt-1 fw-semibold fs-6">Counted in Millions</span> --}}
+                    </h3>
+                    <!--end::Title-->
+                    <!--begin::Toolbar-->
+                    {{-- <div class="card-toolbar">
+                        <a href="#" class="btn btn-sm btn-light">PDF Report</a>
+                    </div> --}}
+                    <!--end::Toolbar-->
                 </div>
-                <!--end::Toolbar-->
-            </div>
-            <!--end::Header-->
+                <!--end::Header-->
+                <!--begin::Body-->
+                <div class="card-body py-3">
+                    <!--begin::Table container-->
+                    <div class="table-responsive">
+                        <!--begin::Table-->
+                        <table class="table table-row-dashed align-middle gs-0 gy-4">
+                            <!--begin::Table head-->
+                            <thead>
+                                <tr class="fs-7 fw-bold border-0 text-gray-500">
+                                    <th class="min-w-150px" colspan="2">Activity</th>
+                                    <th class="min-w-150px" colspan="2">Date Time</th>
+                                    {{-- <th class="min-w-150px text-end pe-0" colspan="2">SESSIONS</th> --}}
+                                    {{-- <th class="text-end min-w-150px" colspan="2">CONVERSION RATE</th> --}}
+                                </tr>
+                            </thead>
+                            <!--end::Table head-->
+                            <!--begin::Table body-->
+                            <tbody>
+                                @foreach ($data as $value)
+                                    <tr>
+                                        <td class="" colspan="2">
+                                            <a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">User
+                                                {{ $value->name }} joined from your code.</a>
+                                        </td>
+                                        <td class="" colspan="2">
+                                            <a
+                                                class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">{{ $value->created_at->format('d-m-y h:i:s') }}</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
 
-            <!--begin::Body-->
-            <div class="card-body pt-6">
-                <!--begin::Timeline-->
-                @foreach ($data as $value)
-                    <div class="timeline-label">
-                        <!--begin::Item-->
-                        <div class="timeline-item">
-                            <!--begin::Label-->
-                            <div class="timeline-label fw-bold text-gray-800 fs-6">
-                                {{ $value->created_at->format('d-m-y') }}</div>
-                            <!--end::Label-->
+                                @foreach ($referals as $valu)
+                                    <tr>
+                                        <td class="" colspan="2">
+                                            <a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">You earned
+                                                Rs{{ $valu->amount ?? '' }} as a referal win.</a>
+                                        </td>
+                                        <td class="" colspan="2">
+                                            <a
+                                                class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">{{ $value->created_at->format('d-m-y h:i:s') }}</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
 
-                            <!--begin::Badge-->
-                            <div class="timeline-badge">
-                                <i class="ki-duotone ki-abstract-8 text-gray-600 fs-3"><span class="path1"></span><span
-                                        class="path2"></span></i>
-                            </div>
-                            <!--end::Badge-->
 
-                            <!--begin::Text-->
-                            <div class="fw-semibold text-gray-700 ps-3 fs-7">
-                                User {{ $value->name }} joined from your code.
-                            </div>
-                            <!--end::Text-->
-                        </div>
-
+                            </tbody>
+                            <!--end::Table body-->
+                        </table>
+                        <!--end::Table-->
                     </div>
-                @endforeach
-
-                @foreach ($referals as $valu)
-                    <div class="timeline-label">
-                        <!--begin::Item-->
-                        <div class="timeline-item">
-                            <!--begin::Label-->
-                            <div class="timeline-label fw-bold text-gray-800 fs-6">
-                                {{ $valu->created_at->format('d-m-y') }}</div>
-                            <!--end::Label-->
-
-                            <!--begin::Badge-->
-                            <div class="timeline-badge">
-                                <i class="ki-duotone ki-abstract-8 text-gray-600 fs-3"><span class="path1"></span><span
-                                        class="path2"></span></i>
-                            </div>
-                            <!--end::Badge-->
-
-                            <!--begin::Text-->
-                            <div class="fw-semibold text-gray-700 ps-3 fs-7">
-                                You earned Rs{{ $valu->amount  ?? ''}} as a referal win.
-                            </div>
-                            <!--end::Text-->
-                        </div>
-
-                    </div>
-                @endforeach
-
-                <!--end::Timeline-->
+                    <!--end::Table container-->
+                </div>
+                <!--end::Body-->
             </div>
-            <!--end: Card Body-->
+            <!--end::Table Widget 9-->
         </div>
     </div>
 </div>
