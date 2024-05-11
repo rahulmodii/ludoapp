@@ -11,13 +11,19 @@ class Battles extends Component
 {
     public $amount;
     public $game_id;
+    public $tabId;
 
-    public function mount($id)
+    public function mount($id,$tabId)
     {
-        // dd($id);
+        $this->tabId = $tabId;
         $id = decrypt($id);
         $this->game_id = $id;
     }
+
+    public function adjustTab($id){
+        return redirect()->route('battels',['id'=>encrypt($this->game_id),'tabId'=>$id]);
+    }
+
 
     public function setAmount()
     {

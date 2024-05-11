@@ -33,25 +33,19 @@
 
                             <h3 class="card-title align-items-start flex-column">
                                 <span class="card-label fw-bold text-gray-800">Battles</span>
-                                {{-- <span class="text-gray-500 mt-1 fw-semibold fs-6">59 Active Shipments</span> --}}
                             </h3>
-
-
                             <div class="card-toolbar">
                             </div>
-
                         </div>
-
-
                         <div class="card-body">
 
                             <ul class="nav nav-pills nav-pills-custom row position-relative mx-0 mb-9" role="tablist">
 
                                 <li class="nav-item col-6 mx-0 p-0" role="presentation">
 
-                                    <a class="nav-link d-flex justify-content-center w-100 border-0 h-100 active"
-                                        data-bs-toggle="pill" href="#kt_list_widget_10_tab_1" aria-selected="false"
-                                        role="tab" tabindex="-1">
+                                    <a class="nav-link d-flex justify-content-center w-100 border-0 h-100 {{ $tabId == '1' ? 'active' : '' }} "
+                                        data-bs-toggle="pill" aria-selected="false" role="tab" tabindex="-1"
+                                        wire:click="adjustTab('1')">
 
                                         <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">Open Battles</span>
 
@@ -66,23 +60,17 @@
 
                                 <li class="nav-item col-6 mx-0 px-0" role="presentation">
 
-                                    <a class="nav-link d-flex justify-content-center w-100 border-0 h-100"
-                                        data-bs-toggle="pill" href="#kt_list_widget_10_tab_2" aria-selected="false"
-                                        role="tab" tabindex="-1">
+                                    <a class="nav-link d-flex justify-content-center w-100 border-0 h-100 {{ $tabId == '2' ? 'active' : '' }}"
+                                        data-bs-toggle="pill" aria-selected="false" role="tab" tabindex="-1"
+                                        wire:click="adjustTab('2')">
 
                                         <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">Running Battles</span>
 
 
-                                        <span
-                                            class="bullet-custom position-absolute z-index-2 bottom-0 w-100 h-4px bg-primary rounded"></span>
+                                        <span class="bullet-custom position-absolute z-index-2 bottom-0 w-100 h-4px bg-primary rounded"></span>
 
                                     </a>
-
                                 </li>
-
-
-
-
                                 <span class="position-absolute z-index-1 bottom-0 w-100 h-4px bg-light rounded"></span>
 
                             </ul>
@@ -90,7 +78,7 @@
 
                             <div class="tab-content">
 
-                                <div class="tab-pane fade active show" id="kt_list_widget_10_tab_1" role="tabpanel">
+                                <div class="tab-pane fade {{ $tabId == '1' ? 'active show' : '' }} " role="tabpanel">
                                     <div class="card h-md-100">
 
                                         <div class="card-header border-0 pt-5">
@@ -113,7 +101,6 @@
 
                                                 <div class="tab-pane fade show active"
                                                     id="kt_timeline_widget_3_tab_content_4" role="tabpanel">
-
                                                     <div wire:poll>
                                                         @foreach ($preData as $value)
                                                             <div class="d-flex align-items-center mb-6">
@@ -183,7 +170,8 @@
 
                                                                     <div class="text-gray-800 fw-semibold fs-2">
                                                                         CHALLENGE
-                                                                        FROM {{ optional($value->creator)->name ?? '' }}
+                                                                        FROM
+                                                                        {{ optional($value->creator)->name ?? '' }}
                                                                     </div>
 
 
@@ -267,20 +255,11 @@
 
                                                     </div>
                                                 </div>
-
-
-
                                             </div>
-
                                         </div>
-
                                     </div>
-
-
-
-
                                 </div>
-                                <div class="tab-pane fade" id="kt_list_widget_10_tab_2" role="tabpanel">
+                                <div class="tab-pane fade {{ $tabId == '2' ? 'active show' : '' }}" role="tabpanel">
                                     <div class="card card-flush h-xl-100">
 
                                         <div class="card-header pt-7">

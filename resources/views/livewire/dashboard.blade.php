@@ -1,8 +1,7 @@
 <div>
     <div id="kt_header" class="header">
         <!--begin::Container-->
-        <div class="container-fluid d-flex align-items-center flex-wrap justify-content-between"
-            id="kt_header_container">
+        <div class="container-fluid d-flex align-items-center flex-wrap justify-content-between" id="kt_header_container">
             <!--begin::Page title-->
             <div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-2 pb-5 pb-lg-0 pt-7 pt-lg-0"
                 data-kt-swapper="true" data-kt-swapper-mode="prepend"
@@ -35,9 +34,8 @@
             <div class="d-flex align-items-center flex-shrink-0">
                 <!--begin::Search-->
                 <div id="kt_header_search" class="header-search d-flex align-items-center w-lg-250px"
-                    data-kt-search-keypress="true" data-kt-search-min-length="2"
-                    data-kt-search-enter="enter" data-kt-search-layout="menu"
-                    data-kt-search-responsive="lg" data-kt-menu-trigger="auto"
+                    data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter"
+                    data-kt-search-layout="menu" data-kt-search-responsive="lg" data-kt-menu-trigger="auto"
                     data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end">
                     <!--begin::Tablet and mobile search toggle-->
                     <div data-kt-search-element="toggle"
@@ -54,7 +52,7 @@
                         class="menu menu-sub menu-sub-dropdown py-7 px-7 overflow-hidden w-300px w-md-350px">
                         <!--begin::Wrapper-->
                         <div data-kt-search-element="wrapper">
-                          
+
                             <!--end::Recently viewed-->
                             <!--begin::Empty-->
                             <div data-kt-search-element="empty" class="text-center d-none">
@@ -85,8 +83,7 @@
                             <!--end::Heading-->
                             <!--begin::Input group-->
                             <div class="mb-5">
-                                <input type="text"
-                                    class="form-control form-control-sm form-control-solid"
+                                <input type="text" class="form-control form-control-sm form-control-solid"
                                     placeholder="Contains the word" name="query" />
                             </div>
                             <!--end::Input group-->
@@ -96,32 +93,29 @@
                                 <div class="nav-group nav-group-fluid">
                                     <!--begin::Option-->
                                     <label>
-                                        <input type="radio" class="btn-check" name="type"
-                                            value="has" checked="checked" />
+                                        <input type="radio" class="btn-check" name="type" value="has"
+                                            checked="checked" />
                                         <span
                                             class="btn btn-sm btn-color-muted btn-active btn-active-primary">All</span>
                                     </label>
                                     <!--end::Option-->
                                     <!--begin::Option-->
                                     <label>
-                                        <input type="radio" class="btn-check" name="type"
-                                            value="users" />
+                                        <input type="radio" class="btn-check" name="type" value="users" />
                                         <span
                                             class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Users</span>
                                     </label>
                                     <!--end::Option-->
                                     <!--begin::Option-->
                                     <label>
-                                        <input type="radio" class="btn-check" name="type"
-                                            value="orders" />
+                                        <input type="radio" class="btn-check" name="type" value="orders" />
                                         <span
                                             class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Orders</span>
                                     </label>
                                     <!--end::Option-->
                                     <!--begin::Option-->
                                     <label>
-                                        <input type="radio" class="btn-check" name="type"
-                                            value="projects" />
+                                        <input type="radio" class="btn-check" name="type" value="projects" />
                                         <span
                                             class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Projects</span>
                                     </label>
@@ -133,15 +127,15 @@
                             <!--begin::Input group-->
                             <div class="mb-5">
                                 <input type="text" name="assignedto"
-                                    class="form-control form-control-sm form-control-solid"
-                                    placeholder="Assigned to" value="" />
+                                    class="form-control form-control-sm form-control-solid" placeholder="Assigned to"
+                                    value="" />
                             </div>
                             <!--end::Input group-->
                             <!--begin::Input group-->
                             <div class="mb-5">
                                 <input type="text" name="collaborators"
-                                    class="form-control form-control-sm form-control-solid"
-                                    placeholder="Collaborators" value="" />
+                                    class="form-control form-control-sm form-control-solid" placeholder="Collaborators"
+                                    value="" />
                             </div>
                             <!--end::Input group-->
                             <!--begin::Input group-->
@@ -150,17 +144,15 @@
                                 <div class="nav-group nav-group-fluid">
                                     <!--begin::Option-->
                                     <label>
-                                        <input type="radio" class="btn-check" name="attachment"
-                                            value="has" checked="checked" />
-                                        <span
-                                            class="btn btn-sm btn-color-muted btn-active btn-active-primary">Has
+                                        <input type="radio" class="btn-check" name="attachment" value="has"
+                                            checked="checked" />
+                                        <span class="btn btn-sm btn-color-muted btn-active btn-active-primary">Has
                                             attachment</span>
                                     </label>
                                     <!--end::Option-->
                                     <!--begin::Option-->
                                     <label>
-                                        <input type="radio" class="btn-check" name="attachment"
-                                            value="any" />
+                                        <input type="radio" class="btn-check" name="attachment" value="any" />
                                         <span
                                             class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Any</span>
                                     </label>
@@ -171,9 +163,8 @@
                             <!--end::Input group-->
                             <!--begin::Input group-->
                             <div class="mb-5">
-                                <select name="timezone" aria-label="Select a Timezone"
-                                    data-control="select2" data-dropdown-parent="#kt_header_search"
-                                    data-placeholder="date_period"
+                                <select name="timezone" aria-label="Select a Timezone" data-control="select2"
+                                    data-dropdown-parent="#kt_header_search" data-placeholder="date_period"
                                     class="form-select form-select-sm form-select-solid">
                                     <option value="next">Within the next</option>
                                     <option value="last">Within the last</option>
@@ -187,15 +178,14 @@
                                 <!--begin::Col-->
                                 <div class="col-6">
                                     <input type="number" name="date_number"
-                                        class="form-control form-control-sm form-control-solid"
-                                        placeholder="Lenght" value="" />
+                                        class="form-control form-control-sm form-control-solid" placeholder="Lenght"
+                                        value="" />
                                 </div>
                                 <!--end::Col-->
                                 <!--begin::Col-->
                                 <div class="col-6">
-                                    <select name="date_typer" aria-label="Select a Timezone"
-                                        data-control="select2" data-dropdown-parent="#kt_header_search"
-                                        data-placeholder="Period"
+                                    <select name="date_typer" aria-label="Select a Timezone" data-control="select2"
+                                        data-dropdown-parent="#kt_header_search" data-placeholder="Period"
                                         class="form-select form-select-sm form-select-solid">
                                         <option value="days">Days</option>
                                         <option value="weeks">Weeks</option>
@@ -211,8 +201,7 @@
                                 <button type="reset"
                                     class="btn btn-sm btn-light fw-bold btn-active-light-primary me-2"
                                     data-kt-search-element="advanced-options-form-cancel">Cancel</button>
-                                <a href="utilities/search/horizontal.html"
-                                    class="btn btn-sm fw-bold btn-primary"
+                                <a href="utilities/search/horizontal.html" class="btn btn-sm fw-bold btn-primary"
                                     data-kt-search-element="advanced-options-form-search">Search</a>
                             </div>
                             <!--end::Actions-->
@@ -249,8 +238,7 @@
                             <div class="py-4 border-bottom">
                                 <label
                                     class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
-                                    <span
-                                        class="form-check-label text-gray-700 fs-6 fw-semibold ms-0 me-2">Affiliate
+                                    <span class="form-check-label text-gray-700 fs-6 fw-semibold ms-0 me-2">Affiliate
                                         Programs</span>
                                     <input class="form-check-input" type="checkbox" value="1" />
                                 </label>
@@ -432,8 +420,7 @@
                                     <span
                                         class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-4 d-block">Ludo
                                         Classic Only</span>
-                                    <span
-                                        class="text-gray-500 mt-1 fw-bold fs-6 animate__bounce">LIVE</span>
+                                    <span class="text-gray-500 mt-1 fw-bold fs-6 animate__bounce">LIVE</span>
                                 </div>
                                 <!--end::Title-->
                                 <!--begin::Total-->
@@ -441,14 +428,14 @@
                                 <!--end::Total-->
                             </div>
                             <img class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded mb-7"
-                            style="height: 266px;" src="/some.jpeg" />
+                                style="height: 266px;" src="/some.jpeg" />
                         </div>
                         <!--end::Body-->
                         <!--begin::Footer-->
                         <div class="card-footer d-flex flex-stack pt-0">
                             <!--begin::Link-->
                             <a class="btn btn-sm btn-primary flex-shrink-0 me-2"
-                                href="{{ route('battels',['id'=>encrypt(1)]) }}">Play Now</a>
+                                href="{{ route('battels', ['id' => encrypt(1), 'tabId' => 1]) }}">Play Now</a>
                             <!--end::Link-->
                             <!--begin::Link-->
                             {{-- <a class="btn btn-sm btn-light flex-shrink-0"
@@ -478,8 +465,8 @@
                                 <!--end::Total-->
                             </div>
                             <img class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded mb-7"
-                            style="height: 266px;" src="/assets/ludo-rich-mode-1.jpeg" />
-                            
+                                style="height: 266px;" src="/assets/ludo-rich-mode-1.jpeg" />
+
 
                         </div>
                         <!--end::Body-->
@@ -487,7 +474,7 @@
                         <div class="card-footer d-flex flex-stack pt-0">
                             <!--begin::Link-->
                             <a class="btn btn-sm btn-primary flex-shrink-0 me-2"
-                                  href="{{ route('battels',['id'=>encrypt(2)]) }}">Play Now</a>
+                                href="{{ route('battels', ['id' => encrypt(2), 'tabId' => 1]) }}">Play Now</a>
                             <!--end::Link-->
                             <!--begin::Link-->
                             {{-- <a class="btn btn-sm btn-light flex-shrink-0"
