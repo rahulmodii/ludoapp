@@ -17,7 +17,8 @@ class Wallet extends Component
     public $isKYC = false;
 
 
-    public function mount(){
+    public function mount()
+    {
         $isKYCCheck = User::where('id', auth()->user()->id)->whereNull('aadhar_number')->first();
         if (!$isKYCCheck) {
             $this->isKYC = true;
@@ -36,14 +37,15 @@ class Wallet extends Component
             'type' => 1
         ]);
 
-       return $this->dispatch('message', 'Request raised successfully!');
+        return $this->dispatch('message', 'Request raised successfully!');
     }
 
     public function withdraw()
     {
 
         // dd($this->withdraw_amount);
-        if(auth()->user()->wallet_balance >= $this->withdraw_amount){
+        $this->validate(['withdraw_amount' => 'required|numeric|min:190']);
+        if (auth()->user()->wallet_balance >= $this->withdraw_amount) {
             ModelsWallet::create([
                 'user_id' => auth()->user()->id,
                 'name' => auth()->user()->name,
@@ -51,7 +53,7 @@ class Wallet extends Component
                 'type' => 2
             ]);
             return $this->dispatch('message', 'Request raised successfully!');
-        }else{
+        } else {
             return $this->dispatch('message', 'Not Enough Balance!');
         }
     }

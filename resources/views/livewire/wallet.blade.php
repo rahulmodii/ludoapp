@@ -364,7 +364,7 @@
 
                             <input type="text" class="form-control form-control-solid"
                                 placeholder="Withdraw Amount" wire:model='withdraw_amount'
-                                @if (!$isKYC) disabled="disabled" @endif />
+                                @if (!$isKYC) disabled="disabled" @endif  />
                             <div style="color: red;margin-top:5px">
                                 @error('withdraw_amount')
                                     {{ $message }}

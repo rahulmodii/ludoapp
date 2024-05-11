@@ -410,81 +410,78 @@
             <div class="row g-5 g-lg-10">
                 <!--begin::Col-->
                 <div class="col-xxl-6 col-md-6 mb-xxl-10">
-                    <div class="card card-flush h-xl-100">
-                        <!--begin::Body-->
-                        <div class="card-body text-center pb-5">
-                            <!--begin::Overlay-->
-                            <div class="d-flex align-items-end flex-stack mb-1">
-                                <!--begin::Title-->
-                                <div class="text-start">
-                                    <span
-                                        class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-4 d-block">Ludo
-                                        Classic Only</span>
-                                    <span class="text-gray-500 mt-1 fw-bold fs-6 animate__bounce">LIVE</span>
+                    <a href="{{ route('battels', ['id' => encrypt(1), 'tabId' => 1]) }}">
+                        <div class="card card-flush h-xl-100">
+                            <!--begin::Body-->
+                            <div class="card-body text-center pb-5">
+                                <!--begin::Overlay-->
+                                <div class="d-flex align-items-end flex-stack mb-1">
+                                    <!--begin::Title-->
+                                    <div class="text-start">
+                                        <span
+                                            class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-4 d-block">Ludo
+                                            Classic Only</span>
+                                        <span class="text-gray-500 mt-1 fw-bold fs-6 animate__bounce">LIVE</span>
+                                    </div>
+                                    <!--end::Title-->
+                                    <!--begin::Total-->
+                                    <span class="text-gray-600 text-end fw-bold fs-6">Rs 100 - 500</span>
+                                    <!--end::Total-->
                                 </div>
-                                <!--end::Title-->
-                                <!--begin::Total-->
-                                <span class="text-gray-600 text-end fw-bold fs-6">Rs 100 - 500</span>
-                                <!--end::Total-->
+                                <img class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded mb-7"
+                                    style="height: 266px;" src="/some.jpeg" />
                             </div>
-                            <img class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded mb-7"
-                                style="height: 266px;" src="/some.jpeg" />
-                        </div>
-                        <!--end::Body-->
-                        <!--begin::Footer-->
-                        <div class="card-footer d-flex flex-stack pt-0">
-                            <!--begin::Link-->
-                            <a class="btn btn-sm btn-primary flex-shrink-0 me-2"
-                                href="{{ route('battels', ['id' => encrypt(1), 'tabId' => 1]) }}">Play Now</a>
-                            <!--end::Link-->
-                            <!--begin::Link-->
-                            {{-- <a class="btn btn-sm btn-light flex-shrink-0"
+                            <!--end::Body-->
+                            <!--begin::Footer-->
+                            <div class="card-footer d-flex flex-stack pt-0">
+                                <!--begin::Link-->
+                                <a class="btn btn-sm btn-primary flex-shrink-0 me-2"
+                                    href="{{ route('battels', ['id' => encrypt(1), 'tabId' => 1]) }}">Play Now</a>
+                                <!--end::Link-->
+                                <!--begin::Link-->
+                                {{-- <a class="btn btn-sm btn-light flex-shrink-0"
                                 href="apps/ecommerce/sales/listing.html">View Item</a> --}}
-                            <!--end::Link-->
+                                <!--end::Link-->
+                            </div>
+                            <!--end::Footer-->
                         </div>
-                        <!--end::Footer-->
-                    </div>
+                    </a>
                 </div>
-
                 <div class="col-xxl-6 col-md-6 mb-xxl-10">
-                    <div class="card card-flush h-xl-100">
-                        <!--begin::Body-->
-                        <div class="card-body text-center pb-5">
-                            <!--begin::Overlay-->
-                            <div class="d-flex align-items-end flex-stack mb-1">
-                                <!--begin::Title-->
-                                <div class="text-start">
-                                    <span
-                                        class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-4 d-block">Ludo
-                                        Classic Only</span>
-                                    <span class="text-gray-500 mt-1 fw-bold fs-6">LIVE</span>
+                    <a href="{{ route('battels', ['id' => encrypt(2), 'tabId' => 1]) }}">
+                        <div class="card card-flush h-xl-100">
+                            <!--begin::Body-->
+                            <div class="card-body text-center pb-5">
+                                <!--begin::Overlay-->
+                                <div class="d-flex align-items-end flex-stack mb-1">
+                                    <!--begin::Title-->
+                                    <div class="text-start">
+                                        <span
+                                            class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-4 d-block">Ludo
+                                            Classic Only</span>
+                                        <span class="text-gray-500 mt-1 fw-bold fs-6">LIVE</span>
+                                    </div>
+                                    <!--end::Title-->
+                                    <!--begin::Total-->
+                                    <span class="text-gray-600 text-end fw-bold fs-6">Rs 500 - 25000</span>
+                                    <!--end::Total-->
                                 </div>
-                                <!--end::Title-->
-                                <!--begin::Total-->
-                                <span class="text-gray-600 text-end fw-bold fs-6">Rs 500 - 25000</span>
-                                <!--end::Total-->
+                                <img class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded mb-7"
+                                    style="height: 266px;" src="/assets/ludo-rich-mode-1.jpeg" />
+
+
                             </div>
-                            <img class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded mb-7"
-                                style="height: 266px;" src="/assets/ludo-rich-mode-1.jpeg" />
-
-
+                            <!--end::Body-->
+                            <!--begin::Footer-->
+                            <div class="card-footer d-flex flex-stack pt-0">
+                                <!--begin::Link-->
+                                <a class="btn btn-sm btn-primary flex-shrink-0 me-2"
+                                    href="{{ route('battels', ['id' => encrypt(2), 'tabId' => 1]) }}">Play Now</a>
+                            </div>
+                            <!--end::Footer-->
                         </div>
-                        <!--end::Body-->
-                        <!--begin::Footer-->
-                        <div class="card-footer d-flex flex-stack pt-0">
-                            <!--begin::Link-->
-                            <a class="btn btn-sm btn-primary flex-shrink-0 me-2"
-                                href="{{ route('battels', ['id' => encrypt(2), 'tabId' => 1]) }}">Play Now</a>
-                            <!--end::Link-->
-                            <!--begin::Link-->
-                            {{-- <a class="btn btn-sm btn-light flex-shrink-0"
-                                href="apps/ecommerce/sales/listing.html">View Item</a> --}}
-                            <!--end::Link-->
-                        </div>
-                        <!--end::Footer-->
-                    </div>
+                    </a>
                 </div>
-
             </div>
 
         </div>
