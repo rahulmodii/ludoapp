@@ -110,7 +110,7 @@
 
                                 <div class="text-center mb-10">
 
-                                    <h1 class="text-gray-900 mb-3">Two-Factor Verification</h1>
+                                    <h1 class="text-gray-900 mb-3">Verify Otp</h1>
 
 
                                     <div class="text-muted fw-semibold fs-5 mb-5">Enter the verification code we sent to

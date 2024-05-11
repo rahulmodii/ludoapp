@@ -2140,7 +2140,7 @@ data-kt-sticky-offset="{default: '200px', lg: '300px'}">
 
                                                     <div class="menu-item p-0 m-0">
 
-                                                        <a href="utilities/modals/wizards/two-factor-authentication.html"
+                                                        <a href=""
                                                             class="menu-link">
                                                             <span class="menu-title">Two Factor
                                                                 Auth</span>
