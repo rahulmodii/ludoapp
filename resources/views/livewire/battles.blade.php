@@ -66,7 +66,6 @@
 
                                         <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">Running Battles</span>
 
-
                                         <span class="bullet-custom position-absolute z-index-2 bottom-0 w-100 h-4px bg-primary rounded"></span>
 
                                     </a>
