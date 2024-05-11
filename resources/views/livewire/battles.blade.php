@@ -175,13 +175,11 @@
                                                                     </div>
 
 
-                                                                    <div class="text-gray-700 fw-semibold fs-6">Entry
-                                                                        Fees:{{ $value->game_amount ?? '' }}
+                                                                    <div class="text-gray-700 fw-semibold fs-6">Entry Fees:{{ $value->amount ?? '' }}
                                                                     </div>
 
 
-                                                                    <div class="text-gray-700 fw-semibold fs-6">Prize
-                                                                        Fees
+                                                                    <div class="text-gray-700 fw-semibold fs-6">Prize Fees
 
                                                                         <a href="#"
                                                                             class="text-primary opacity-75-hover fw-semibold">{{ $value->game_amount ?? '' }}</a>
@@ -193,6 +191,9 @@
                                                                     <a class="btn btn-sm btn-danger"
                                                                         wire:click="onDelete('{{ $value->id }}')">Delete</a>
                                                                 @else
+                                                                    @if ($value->is_accepted)
+                                                                    <a class="btn btn-sm btn-primary" href="{{ route('gamedetails',['id'=>$value->id]) }}">Join</a>
+                                                                    @else 
                                                                     <div style="display: flex;flex-direction:column">
                                                                         <div style="display: flex;gap:10px">
                                                                             <a class="btn btn-sm btn-success"
@@ -204,6 +205,8 @@
                                                                             class="text-gray-500 pt-1 fw-semibold fs-6">Request
                                                                             from {{ $value->requestie->name }}</span>
                                                                     </div>
+                                                                    @endif
+
                                                                 @endif
 
 
@@ -265,7 +268,7 @@
                                         <div class="card-header pt-7">
 
                                             <h3 class="card-title align-items-start flex-column">
-                                                <span class="card-label fw-bold text-gray-900">Product Delivery</span>
+                                                <span class="card-label fw-bold text-gray-900">Running Battles</span>
                                                 {{-- <span class="text-gray-500 mt-1 fw-semibold fs-6">1M Products Shipped so far</span> --}}
                                             </h3>
 
@@ -316,6 +319,9 @@
                                                                             alt="">{{ $runningBattle->game_amount ?? '' }}
                                                                     </span>
                                                                 </span>
+                                                                @if ($runningBattle->creator_id == auth()->user()->id || $runningBattle->joining_id == auth()->user()->id )
+                                                                 <a class="btn btn-sm btn-primary" href="{{ route('gamedetails',['id'=>$runningBattle->id]) }}">Join</a>
+                                                                @endif
                                                             </div>
 
                                                         </div>

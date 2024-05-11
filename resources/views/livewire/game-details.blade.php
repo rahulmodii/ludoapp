@@ -114,11 +114,11 @@
 
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <div style="text-align: center">
-                            <input type="text" class="form-control mb-2" wire:model="room_code" placeholder="Room Code" maxlength="8">
+                        <div style="text-align: center" wire:poll.15s>
+                            <input type="text" class="form-control mb-2" wire:model="room_code"
+                                placeholder="Room Code" maxlength="8">
                             @if ($data->creator_id == auth()->user()->id)
-                            <a class="btn btn-danger fw-semibold" wire:click="saveCode">Save Code</a>
-
+                                <a class="btn btn-danger fw-semibold" wire:click="saveCode">Save Code</a>
                             @endif
                         </div>
                         <!--end::Input-->
@@ -293,8 +293,9 @@
                                 <option value="Others">Others</option>
                             </select>
                         @elseif ($matchstatus == '1')
-                        <label class="fs-6 fw-semibold form-label">Upload Proof</label>
-                        <input type="file" wire:model="image" class="form-control form-control-lg form-control-solid" value="044 3276 454 935">
+                            <label class="fs-6 fw-semibold form-label">Upload Proof</label>
+                            <input type="file" wire:model="image"
+                                class="form-control form-control-lg form-control-solid" value="044 3276 454 935">
                         @endif
 
                         <!--end::Add contact group-->

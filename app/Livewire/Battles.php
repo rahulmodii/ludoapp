@@ -67,7 +67,7 @@ class Battles extends Component
         $gameAmount = $Amount - $commissionAmount;
         $payload = [
             "creator_id" => auth()->user()->id,
-            "game_id" => 1,
+            "game_id" => $this->game_id,
             "amount" => $this->amount,
             'game_amount' => $gameAmount
         ];
@@ -109,16 +109,30 @@ class Battles extends Component
             'is_accepted' => 1
         ]);
         User::find($preData->creator_id)->decrement('wallet_balance', $preData->amount);
+        User::find($preData->request_id)->decrement('wallet_balance', $preData->amount);
         return redirect()->route('gamedetails', ['id' => $id]);
     }
 
     public function render()
     {
 
-        $preData = ModelsBattles::where('joining_id', auth()->user()->id)->where('is_accepted', 1)->orderBy('id', 'desc')->get();
-        $data = ModelsBattles::where('creator_id', auth()->user()->id)->where('is_accepted', 0)->orderBy('id', 'desc')->get();
-        $newData = ModelsBattles::where('creator_id', "!=", auth()->user()->id)->where('joining_id', 0)->orderBy('id', 'desc')->get();
-        $runningBattles = ModelsBattles::whereNull('winning_id')->where('joining_id', '!=', 0)->orderBy('id', 'desc')->get();
+        // Fetch all relevant battles in a single query
+        $battles = ModelsBattles::where('game_id',$this->game_id)->where('is_cancelled', 0)
+            ->orderBy('id', 'desc')
+            ->get();
+
+        // Filter the collections in memory
+        $preData = $battles->where('joining_id', auth()->user()->id)
+            ->where('is_accepted', 1);
+
+        $data = $battles->where('creator_id', auth()->user()->id);
+
+        $newData = $battles->where('creator_id', '!=', auth()->user()->id)
+            ->where('joining_id', 0);
+
+        $runningBattles = $battles->whereNull('winning_id')
+            ->where('joining_id', '!=', 0);
+
         return view('livewire.battles', compact('data', 'newData', 'preData', 'runningBattles'));
     }
 }
