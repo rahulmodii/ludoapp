@@ -1,5 +1,5 @@
 <div>
-    @include('components.header',['title'=>'Support'])
+    @include('components.header', ['title' => 'Support'])
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <!--begin::Container-->
         <div class="container-fluid">
@@ -16,7 +16,8 @@
                 <!--begin::Card body-->
                 <div class="card-body pt-0 pb-5">
                     <!--begin::Form-->
-                    <form class="form fv-plugins-bootstrap5 fv-plugins-framework" method="POST" wire:submit.prevent="store">
+                    <form class="form fv-plugins-bootstrap5 fv-plugins-framework" method="POST"
+                        wire:submit.prevent="store">
                         @csrf
                         <div class="fv-row mb-7 fv-plugins-icon-container">
                             <!--begin::Label-->
@@ -67,11 +68,26 @@
                             <!--begin::Input-->
                             <input type="text" class="form-control form-control-solid" wire:model="commission">
                         </div>
-                      
+
+
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <img src="{{ asset('/storage/' . $data->login_image) }}" height="100px" width="100px" />
+                            <label class="fs-6 fw-semibold mb-2 required">Login Image</label>
+
+                            <input type="file" class="form-control form-control-solid" wire:model="login_image" style="margin:10px">
+                        </div>
+
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <img src="{{ asset('/storage/' . $data->logo) }}" height="100px" width="100px" style="margin:10px" />
+                            <label class="fs-6 fw-semibold mb-2 required">Logo</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="file" class="form-control form-control-solid" wire:model="logo">
+                        </div>
+
                         <div class="d-flex justify-content-end">
                             <!--begin::Button-->
-                            <button type="submit" id="kt_ecommerce_customer_profile_submit"
-                                class="btn btn-primary">
+                            <button type="submit" id="kt_ecommerce_customer_profile_submit" class="btn btn-primary">
                                 <span class="indicator-label">Save</span>
                                 <span class="indicator-progress">Please wait...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>

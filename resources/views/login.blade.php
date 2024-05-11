@@ -77,9 +77,9 @@
                 <div class="d-flex flex-column flex-center pb-0 pb-lg-10 p-10 w-100">
                     <!--begin::Image-->
                     <img class="theme-light-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20"
-                        src="assets/media/auth/agency.png" alt="" />
+                        src="{{ loginImage() }}" alt="" />
                     <img class="theme-dark-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20"
-                        src="assets/media/auth/agency-dark.png" alt="" />
+                        src="{{ loginImage() }}" alt="" />
                     <!--end::Image-->
                     <!--begin::Title-->
                     <h1 class="text-gray-800 fs-2qx fw-bold text-center mb-7">Welcome to App</h1>
@@ -150,9 +150,9 @@
                             <!--end::Languages-->
                             <!--begin::Links-->
                             <div class="d-flex fw-semibold text-primary fs-base gap-5">
-                                <a href="pages/team.html" target="_blank">Terms</a>
-                                <a href="pages/pricing/column.html" target="_blank">Plans</a>
-                                <a href="pages/contact.html" target="_blank">Contact Us</a>
+                                <a href="" target="_blank">Terms</a>
+                                <a href="" target="_blank">Plans</a>
+                                <a href="" target="_blank">Contact Us</a>
                             </div>
                             <!--end::Links-->
                         </div>

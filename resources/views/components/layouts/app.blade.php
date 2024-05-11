@@ -72,10 +72,9 @@
                 <div class="aside-logo flex-column-auto px-9 mb-9 mb-lg-17 mx-auto" id="kt_aside_logo">
 
                     <a href="/">
-                        <img alt="Logo" src="/assets/media/logos/default.svg"
-                            class="h-30px logo theme-light-show" />
-                        <img alt="Logo" src="/assets/media/logos/default-dark.svg"
-                            class="h-30px logo theme-dark-show" />
+
+                        <img alt="Logo" src="{{ logo() }}" class="h-30px logo theme-light-show" />
+                        <img alt="Logo" src="{{ logo() }}" class="h-30px logo theme-dark-show" />
                     </a>
 
                 </div>
@@ -246,7 +245,7 @@
             }).showToast();
         })
 
-        Livewire.on('refreshPage',(event)=>{
+        Livewire.on('refreshPage', (event) => {
             window.location.reload()
         })
     </script>
