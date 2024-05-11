@@ -177,7 +177,7 @@
                                 </a>
                                 <!--end:Menu link-->
                             </div>
-
+{{-- 
                             <div class="menu-item">
                                 <!--begin:Menu link-->
                                 <a class="menu-link" href="{{ route('notifications') }}">
@@ -187,7 +187,7 @@
                                     <span class="menu-title">Penalty History</span>
                                 </a>
                                 <!--end:Menu link-->
-                            </div>
+                            </div> --}}
 
 
                             <div class="menu-item">
