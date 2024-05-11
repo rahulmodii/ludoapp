@@ -61,7 +61,7 @@
         <!--begin::Page bg image-->
         <style>
             body {
-                background-image: url('assets/media/auth/bg10.jpeg');
+                background-image: url('/bgimage.jpeg');
             }
 
             [data-bs-theme="dark"] body {
@@ -76,19 +76,14 @@
                 <!--begin::Content-->
                 <div class="d-flex flex-column flex-center pb-0 pb-lg-10 p-10 w-100">
                     <!--begin::Image-->
-                    <img class="theme-light-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20"
-                        src="{{ loginImage() }}" alt="" />
-                    <img class="theme-dark-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20"
-                        src="{{ loginImage() }}" alt="" />
+
                     <!--end::Image-->
                     <!--begin::Title-->
-                    <h1 class="text-gray-800 fs-2qx fw-bold text-center mb-7">Welcome to App</h1>
+                    {{-- <h1 class="text-gray-800 fs-2qx fw-bold text-center mb-7"></h1> --}}
                     <!--end::Title-->
                     <!--begin::Text-->
                     <div class="text-gray-600 fs-base text-center fw-semibold">
-                        By proceeding, you agree to our Terms of Use, Privacy Policy and that you are 18 years or older.
-                        You are not playing from Assam, Odisha, Nagaland, Sikkim, Meghalaya, Andhra Pradesh, or
-                        Telangana.
+
                     </div>
                     <!--end::Text-->
                 </div>
@@ -104,21 +99,31 @@
                         <!--begin::Wrapper-->
                         <div class="d-flex flex-center flex-column flex-column-fluid pb-15 pb-lg-20">
                             <!--begin::Form-->
-                            <form class="form w-100"   action="{{ route('sendotp') }}" method="POST">
+                            <form class="form w-100" action="{{ route('sendotp') }}" method="POST">
                                 @csrf
                                 <!--begin::Heading-->
                                 <div class="text-center mb-11">
                                     <!--begin::Title-->
+                                    <img class="theme-light-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20"
+                                        src="{{ loginImage() }}" alt="" />
+                                    <img class="theme-dark-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20"
+                                        src="{{ loginImage() }}" alt="" />
+                                    <h1 class="text-gray-900 fw-bolder mb-3">Welcome to App</h1>
                                     <h1 class="text-gray-900 fw-bolder mb-3">Login In</h1>
                                     <!--end::Title-->
                                     <!--begin::Subtitle-->
-                                    <div class="text-gray-500 fw-semibold fs-6">Your Game Login</div>
+                                    <div class="text-gray-500 fw-semibold fs-6"> By proceeding, you agree to our Terms
+                                        of Use, Privacy Policy and that you are 18 years or older.
+                                        You are not playing from Assam, Odisha, Nagaland, Sikkim, Meghalaya, Andhra
+                                        Pradesh, or
+                                        Telangana.</div>
                                     <!--end::Subtitle=-->
                                 </div>
-                              
+
                                 <div class="fv-row mb-8">
                                     <!--begin::Email-->
-                                    <input type="hidden" placeholder="" name="referral" value="{{ request()->get('referral') }}" autocomplete="off"
+                                    <input type="hidden" placeholder="" name="referral"
+                                        value="{{ request()->get('referral') }}" autocomplete="off"
                                         class="form-control bg-transparent" />
                                     <input type="text" placeholder="Mobile" name="mobile" autocomplete="off"
                                         class="form-control bg-transparent" />
@@ -145,14 +150,13 @@
                         <div class="d-flex flex-stack">
                             <!--begin::Languages-->
                             <div class="me-10">
-                                
+
                             </div>
                             <!--end::Languages-->
                             <!--begin::Links-->
                             <div class="d-flex fw-semibold text-primary fs-base gap-5">
-                                <a href="" target="_blank">Terms</a>
-                                <a href="" target="_blank">Plans</a>
-                                <a href="" target="_blank">Contact Us</a>
+                                <a href="{{ route('terms') }}" target="_blank">Terms</a>
+                                <a href="{{ route('privacy') }}" target="_blank">Privacy</a>
                             </div>
                             <!--end::Links-->
                         </div>
