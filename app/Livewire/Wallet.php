@@ -13,6 +13,7 @@ class Wallet extends Component
     use WithFileUploads;
     public $amount;
     public $proof;
+    public $upi_id;
     public $withdraw_amount;
     public $isKYC = false;
 
@@ -34,7 +35,7 @@ class Wallet extends Component
             'name' => auth()->user()->name,
             'amount' => $this->amount,
             'proof' => $proof,
-            'type' => 1
+            'type' => 1,
         ]);
 
         return $this->dispatch('message', 'Request raised successfully!');
@@ -44,13 +45,14 @@ class Wallet extends Component
     {
 
         // dd($this->withdraw_amount);
-        $this->validate(['withdraw_amount' => 'required|numeric|min:190']);
+        $this->validate(['withdraw_amount' => 'required|numeric|min:190','upi_id'=>'required']);
         if (auth()->user()->wallet_balance >= $this->withdraw_amount) {
             ModelsWallet::create([
                 'user_id' => auth()->user()->id,
                 'name' => auth()->user()->name,
                 'amount' => $this->withdraw_amount,
-                'type' => 2
+                'type' => 2,
+                'upi_id'=>$this->upi_id
             ]);
             return $this->dispatch('message', 'Request raised successfully!');
         } else {

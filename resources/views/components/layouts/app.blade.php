@@ -85,9 +85,8 @@
                     <div class="d-flex align-items-center flex-column">
 
                         <div class="symbol symbol-75px mb-4">
-                            <img src="/assets/media/avatars/300-1.jpg" alt="" />
+                            <img src="{{ auth()->user()->profile }}" alt="" />
                         </div>
-
 
                         <div class="text-center">
 
@@ -103,13 +102,7 @@
                     </div>
 
                 </div>
-
-
                 @include('components.sidebar')
-
-
-
-
             </div>
 
 

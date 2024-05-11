@@ -35,9 +35,10 @@
                             <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
                                 <th class="min-w-125px">Name</th>
                                 <th class="min-w-125px">Mobile</th>
+                                <th class="min-w-125px">Wallet Amount</th>
                                 <th class="min-w-125px">Request Type</th>
                                 <th class="min-w-125px">Amount</th>
-                                <th class="min-w-125px">Proof</th>
+                                <th class="min-w-125px">Proof/UPI Id</th>
                                 <th class="min-w-100px">Actions</th>
                             </tr>
                         </thead>
@@ -46,9 +47,15 @@
                                 <tr>
                                     <td>{{ $value->user->name ?? '' }}</td>
                                     <td>{{ $value->user->mobile ?? '' }}</td>
+                                    <td>{{ $value->user->wallet_balance ?? '' }}</td>
                                     <td>{{ $value->type == 1 ? 'Deposit' : 'Withdrawl' }}</td>
                                     <td>{{ $value->amount ?? '' }}</td>
-                                    <td><a href="{{ asset('/storage/' . $value->proof) ?? '' }}" target="_blank">Proof</a>
+                                    <td>
+                                        @if ($value->type == 1)
+                                        <a href="{{ asset('/storage/' . $value->proof) ?? '' }}" target="_blank">Proof</a>
+                                        @else
+                                            {{ $value->upi_id ?? '' }}
+                                        @endif
                                     </td>
                                     <td>
                                         <div>

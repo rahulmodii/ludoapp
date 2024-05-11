@@ -11,7 +11,7 @@
                     <div class="d-flex flex-center flex-column py-5">
                         <!--begin::Avatar-->
                         <div class="symbol symbol-100px symbol-circle mb-7">
-                            <img src="assets/media/avatars/300-6.jpg" alt="image">
+                            <img src="{{ auth()->user()->profile ?? '' }}" alt="image">
                         </div>
                         <!--end::Avatar-->
                         <!--begin::Name-->

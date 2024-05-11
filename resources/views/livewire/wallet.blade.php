@@ -364,17 +364,39 @@
 
                             <input type="text" class="form-control form-control-solid"
                                 placeholder="Withdraw Amount" wire:model='withdraw_amount'
-                                @if (!$isKYC) disabled="disabled" @endif  />
-                            <div style="color: red;margin-top:5px">
-                                @error('withdraw_amount')
-                                    {{ $message }}
-                                @enderror
-                            </div>
-                            @if (!$isKYC)
+                                @if (!$isKYC) disabled="disabled" @endif />
                                 <div style="color: red;margin-top:5px">
-                                    Please Complete KYC for Withdrawl.
+                                    @error('withdraw_amount')
+                                        {{ $message }}
+                                    @enderror
                                 </div>
-                            @endif
+                                @if (!$isKYC)
+                                    <div style="color: red;margin-top:5px">
+                                        Please Complete KYC for Withdrawl.
+                                    </div>
+                                @endif
+                        </div>
+
+                        <div class="d-flex flex-column mb-8 fv-row">
+
+                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                                <span class="required">Upi Id</span>
+                                {{-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i> --}}
+                            </label>
+
+                            <input type="text" class="form-control form-control-solid"
+                                placeholder="Upi Id" wire:model='upi_id'
+                                @if (!$isKYC) disabled="disabled" @endif />
+                                <div style="color: red;margin-top:5px">
+                                    @error('upi_id')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                                @if (!$isKYC)
+                                    <div style="color: red;margin-top:5px">
+                                        Please Complete KYC for Withdrawl.
+                                    </div>
+                                @endif
                         </div>
 
 
