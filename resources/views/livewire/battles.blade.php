@@ -132,7 +132,7 @@
 
                                                                 @if ($value->joining_id == auth()->user()->id)
                                                                     <a class="btn btn-sm btn-primary"
-                                                                        href="{{ route('gamedetails', ['id' => $value->id]) }}">Start</a>
+                                                                        href="{{ route('gamedetails', ['id' => encrypt($value->id)]) }}">Start</a>
                                                                 @else
                                                                     @if ($value->is_request == 0)
                                                                         <a class="btn btn-sm btn-danger"

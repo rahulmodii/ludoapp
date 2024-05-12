@@ -19,7 +19,7 @@ class GameDetails extends Component
 
     public function mount($id)
     {
-        $this->currentId = $id;
+        $this->currentId = decrypt($id);
         $data = Battles::find($this->currentId);
         if ($data) {
             $this->room_code = $data->room_code;
