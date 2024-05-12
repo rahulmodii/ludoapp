@@ -24,7 +24,7 @@
             <!--end::Aside mobile toggle-->
             <!--begin::Logo-->
             <a href="/" class="d-flex align-items-center">
-                <img alt="Logo" src="assets/media/logos/default-small.svg" class="h-30px" />
+                <img alt="Logo" src="{{ logo() }}" class="h-30px" />
             </a>
             <!--end::Logo-->
         </div>
