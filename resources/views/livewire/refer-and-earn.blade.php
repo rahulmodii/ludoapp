@@ -23,9 +23,7 @@
                             <h4 class=" fw-bold mb-0">Total Earnings: {{ $totalCount ?? '' }}</h4>
                         </div>
                     </div>
-                    <a href="whatsapp://send?text={{ url('/') }}?referral={{ auth()->user()->userid }}" data-action="share/whatsapp/share">Share via Whatsapp</a>
-                    <a href="{{ url('/') }}?referral={{ auth()->user()->userid }}"
-                        class="btn btn-primary er fs-6 px-8 py-4" target="_blank">Share on Whatsapp</a>
+                    <a href="whatsapp://send?text={{ url('/') }}?referral={{ auth()->user()->userid }}" data-action="share/whatsapp/share" class="btn btn-primary er fs-6 px-8 py-4">Share via Whatsapp</a>
                 </div>
                 <!--end::Heading-->
                 <!--begin::Illustration-->
