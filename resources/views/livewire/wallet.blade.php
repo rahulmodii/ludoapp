@@ -204,7 +204,7 @@
                                 <span class="fs-2qx fw-bold"><img height="26px" width="26px"
                                         src="https://d37om4gxfn0aox.cloudfront.net/static-content/front/images/global-rupeeIcon.png"
                                         alt="">
-                                    0.00</span>
+                                    {{ auth()->user()->wallet_balance ?? '' }}</span>
                             </div>
                             <!--end::Title-->
                             <!--begin::Text-->
@@ -270,8 +270,17 @@
                         <div class="mb-13 text-center">
 
                             <h1 class="mb-3">Deposit</h1>
-                            <h4 class="mb-3">Deposit amount in upi
-                                <a href="upi://pay?pa={{ $upiId ?? '' }}&pn=JohnDoe&cu=INR">{{ $upiId ?? '' }}</a>
+                            <h4 class="mb-3">
+                                <span>Deposit amount in upi {{ $upiId ?? '' }}</span>
+                                <br />
+                                <br />
+                                <span>
+                                    <input hidden="text" value="{{ $upiId ?? '' }}" id="upiid" />
+                                    <button type="button" class="btn btn-primary"
+                                        onclick="copyUpiId('{{ $upiId ?? '' }}')">Copy UPI</button>
+                                </span>
+                                {{-- <a href="upi://pay?pa={{ $upiId ?? '' }}&cu=INR">{{ $upiId ?? '' }}</a> --}}
+
                             </h4>
                         </div>
 
@@ -301,14 +310,29 @@
                             <input type="file" class="form-control form-control-solid" placeholder="Name"
                                 wire:model='proof' required />
                         </div>
-                        <div class="text-center">
-                            <button type="reset" id="kt_modal_new_target_cancel"
-                                class="btn btn-light me-3">Cancel</button>
-                            <button type="submit" class="btn btn-primary">
-                                <span class="indicator-label">Submit</span>
-                                <span class="indicator-progress">Please wait...
-                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                            </button>
+                        <div wire:loading.remove wire:target="proof">
+                            <div class="text-center">
+                                <button type="reset" id="kt_modal_new_target_cancel"
+                                    class="btn btn-light me-3">Cancel</button>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <span class="indicator-label">Submit</span>
+                                    <span class="indicator-progress">Please wait...
+                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div wire:loading wire:target="proof">
+                            <div class="text-center">
+                                <button type="reset" id="kt_modal_new_target_cancel"
+                                    class="btn btn-light me-3" disabled>Cancel</button>
+
+                                <button type="submit" class="btn btn-primary" disabled>
+                                    <span class="indicator-label">Uploading Proof</span>
+                                    <span class="indicator-progress">Please wait...
+                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                </button>
+                            </div>
                         </div>
 
                     </form>
@@ -365,16 +389,16 @@
                             <input type="text" class="form-control form-control-solid"
                                 placeholder="Withdraw Amount" wire:model='withdraw_amount'
                                 @if (!$isKYC) disabled="disabled" @endif />
+                            <div style="color: red;margin-top:5px">
+                                @error('withdraw_amount')
+                                    {{ $message }}
+                                @enderror
+                            </div>
+                            @if (!$isKYC)
                                 <div style="color: red;margin-top:5px">
-                                    @error('withdraw_amount')
-                                        {{ $message }}
-                                    @enderror
+                                    Please Complete KYC for Withdrawl.
                                 </div>
-                                @if (!$isKYC)
-                                    <div style="color: red;margin-top:5px">
-                                        Please Complete KYC for Withdrawl.
-                                    </div>
-                                @endif
+                            @endif
                         </div>
 
                         <div class="d-flex flex-column mb-8 fv-row">
@@ -384,19 +408,18 @@
                                 {{-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i> --}}
                             </label>
 
-                            <input type="text" class="form-control form-control-solid"
-                                placeholder="Upi Id" wire:model='upi_id'
-                                @if (!$isKYC) disabled="disabled" @endif />
+                            <input type="text" class="form-control form-control-solid" placeholder="Upi Id"
+                                wire:model='upi_id' @if (!$isKYC) disabled="disabled" @endif />
+                            <div style="color: red;margin-top:5px">
+                                @error('upi_id')
+                                    {{ $message }}
+                                @enderror
+                            </div>
+                            @if (!$isKYC)
                                 <div style="color: red;margin-top:5px">
-                                    @error('upi_id')
-                                        {{ $message }}
-                                    @enderror
+                                    Please Complete KYC for Withdrawl.
                                 </div>
-                                @if (!$isKYC)
-                                    <div style="color: red;margin-top:5px">
-                                        Please Complete KYC for Withdrawl.
-                                    </div>
-                                @endif
+                            @endif
                         </div>
 
 

@@ -117,13 +117,14 @@
                         <div style="text-align: center" wire:poll.15s>
                             <input type="text" class="form-control mb-2" wire:model="room_code"
                                 placeholder="Room Code" maxlength="8" id="roomcode">
-                                <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" onclick="copy()">
-                                    <i class="ki-duotone ki-save-2 fs-3">
-                                        <span class="path1"></span>
-                                        <span class="path2"></span>
-                                    </i>
-                                </button>
-                            @if ($data->creator_id == auth()->user()->id && ($room_code == "" || $room_code == null))
+                            <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto"
+                                onclick="copy()">
+                                <i class="ki-duotone ki-save-2 fs-3">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </button>
+                            @if ($data->creator_id == auth()->user()->id && ($room_code == '' || $room_code == null))
                                 <a class="btn btn-danger fw-semibold" wire:click="saveCode">Save Code</a>
                             @endif
                         </div>
@@ -309,8 +310,18 @@
                         <div class="separator my-7"></div>
                         <!--begin::Separator-->
                         <!--begin::Add new contact-->
-                        <button class="btn btn-primary w-100" type="submit">
-                            Submit</button>
+                        @if ($matchstatus == '1')
+                        <div wire:loading.remove wire:target="image">
+                            <button class="btn btn-primary w-100" type="submit"> Submit</button>
+                        </div>
+                        <div wire:loading wire:target="image">
+                            <button class="btn btn-primary w-100" type="submit" disabled>Uploading</button>
+                        </div>
+                        @else
+                        <button class="btn btn-primary w-100" type="submit"> Submit</button>
+                        @endif
+                        
+
                     </form>
                     <!--end::Add new contact-->
                 </div>
