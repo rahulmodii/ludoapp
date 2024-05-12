@@ -86,7 +86,7 @@
                     <div class="d-flex align-items-center flex-column">
 
                         <div class="symbol symbol-75px mb-4">
-                            <img src="{{ auth()->user()->profile }}" alt="" />
+                            <img src="/assets/media/avatars/300-1.jpg" alt="" />
                         </div>
 
                         <div class="text-center">
