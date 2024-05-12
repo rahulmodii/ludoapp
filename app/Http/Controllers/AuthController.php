@@ -17,7 +17,9 @@ class AuthController extends Controller
      */
     public function index()
     {
-        // dd("here");
+        if (Auth::check()) {
+           return redirect('dashboard');
+        }
         return view('login');
     }
 
@@ -87,7 +89,7 @@ class AuthController extends Controller
             $user = User::where('mobile', $verification->mobile)->first();
             // dd($user);
             Verification::where('otp', $otp)->delete();
-            Auth::login($user);
+            Auth::login($user,true);
             return redirect()->route('dashboard');
         }else{
             return redirect()->back()->with('message', 'Wrong Otp');
