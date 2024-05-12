@@ -175,11 +175,13 @@
                                                                     </div>
 
 
-                                                                    <div class="text-gray-700 fw-semibold fs-6">Entry Fees:{{ $value->amount ?? '' }}
+                                                                    <div class="text-gray-700 fw-semibold fs-6">Entry
+                                                                        Fees:{{ $value->amount ?? '' }}
                                                                     </div>
 
 
-                                                                    <div class="text-gray-700 fw-semibold fs-6">Prize Fees
+                                                                    <div class="text-gray-700 fw-semibold fs-6">Prize
+                                                                        Fees
 
                                                                         <a href="#"
                                                                             class="text-primary opacity-75-hover fw-semibold">{{ $value->game_amount ?? '' }}</a>
@@ -192,21 +194,23 @@
                                                                         wire:click="onDelete('{{ $value->id }}')">Delete</a>
                                                                 @else
                                                                     @if ($value->is_accepted)
-                                                                    <a class="btn btn-sm btn-primary" href="{{ route('gamedetails',['id'=>$value->id]) }}">Join</a>
-                                                                    @else 
-                                                                    <div style="display: flex;flex-direction:column">
-                                                                        <div style="display: flex;gap:10px">
-                                                                            <a class="btn btn-sm btn-success"
-                                                                                wire:click="onAccept('{{ $value->id }}')">Accept</a>
-                                                                            <a class="btn btn-sm btn-danger"
-                                                                                wire:click="onReject('{{ $value->id }}')">Reject</a>
+                                                                        <a class="btn btn-sm btn-primary"
+                                                                            href="{{ route('gamedetails', ['id' => $value->id]) }}">Join</a>
+                                                                    @else
+                                                                        <div
+                                                                            style="display: flex;flex-direction:column">
+                                                                            <div style="display: flex;gap:10px">
+                                                                                <a class="btn btn-sm btn-success"
+                                                                                    wire:click="onAccept('{{ $value->id }}')">Accept</a>
+                                                                                <a class="btn btn-sm btn-danger"
+                                                                                    wire:click="onReject('{{ $value->id }}')">Reject</a>
+                                                                            </div>
+                                                                            <span
+                                                                                class="text-gray-500 pt-1 fw-semibold fs-6">Request
+                                                                                from
+                                                                                {{ $value->requestie->name }}</span>
                                                                         </div>
-                                                                        <span
-                                                                            class="text-gray-500 pt-1 fw-semibold fs-6">Request
-                                                                            from {{ $value->requestie->name }}</span>
-                                                                    </div>
                                                                     @endif
-
                                                                 @endif
 
 
@@ -230,7 +234,10 @@
 
 
                                                                     <div class="text-gray-700 fw-semibold fs-6">Entry
-                                                                        Fees:{{ $values->amount ?? '' }}
+                                                                        Fees:<img class="mx-1"
+                                                                        src="https://d37om4gxfn0aox.cloudfront.net/static-content/front/images/global-rupeeIcon.png"
+                                                                        width="21px"
+                                                                        alt="">{{ $values->amount ?? '' }}
                                                                     </div>
 
 
@@ -238,7 +245,10 @@
                                                                         Fees
 
                                                                         <a href="#"
-                                                                            class="text-primary opacity-75-hover fw-semibold">{{ $values->game_amount ?? '' }}</a>
+                                                                            class="text-primary opacity-75-hover fw-semibold"><img class="mx-1"
+                                                                            src="https://d37om4gxfn0aox.cloudfront.net/static-content/front/images/global-rupeeIcon.png"
+                                                                            width="21px"
+                                                                            alt="">{{ $values->game_amount ?? '' }}</a>
                                                                     </div>
                                                                 </div>
 
@@ -275,7 +285,7 @@
 
                                             <div class="card-toolbar">
                                                 <a class="btn btn-danger fw-semibold" data-bs-toggle="modal"
-                                                data-bs-target="#kt_modal_invite_friends">Rules</a>
+                                                    data-bs-target="#kt_modal_invite_friends">Rules</a>
                                             </div>
 
                                         </div>
@@ -309,7 +319,7 @@
 
                                                                 <img src="assets/media/stock/ecommerce/210.png"
                                                                     class="w-50px ms-n1 me-1" alt="">
-                                                                <span 
+                                                                <span
                                                                     class=" text-hover-primary fw-bold">{{ optional($runningBattle->joinee)->name }}
                                                                     <br />
                                                                     <span>Prize
@@ -319,8 +329,9 @@
                                                                             alt="">{{ $runningBattle->game_amount ?? '' }}
                                                                     </span>
                                                                 </span>
-                                                                @if ($runningBattle->creator_id == auth()->user()->id || $runningBattle->joining_id == auth()->user()->id )
-                                                                 <a class="btn btn-sm btn-primary" href="{{ route('gamedetails',['id'=>$runningBattle->id]) }}">Join</a>
+                                                                @if ($runningBattle->creator_id == auth()->user()->id || $runningBattle->joining_id == auth()->user()->id)
+                                                                    <a class="btn btn-sm btn-primary"
+                                                                        href="{{ route('gamedetails', ['id' =>encrypt($runningBattle->id)]) }}">Join</a>
                                                                 @endif
                                                             </div>
 
