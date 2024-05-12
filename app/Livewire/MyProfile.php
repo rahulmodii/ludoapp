@@ -10,9 +10,11 @@ class MyProfile extends Component
 {
     public $email;
     public $aadhar_number;
+    public $name;
 
     public function mount()
     {
+        $this->name = auth()->user()->name;
         $this->email = auth()->user()->email;
         $this->aadhar_number = auth()->user()->aadhar_number;
     }
@@ -29,6 +31,13 @@ class MyProfile extends Component
         $id = auth()->user()->id;
         User::find($id)->update(['aadhar_number' => $this->aadhar_number]);
         return $this->dispatch('message', 'Saved Aadhaar SuccessFully!');
+    }
+
+
+    public function updatedName()
+    {
+       
+        User::find(auth()->user()->id)->update(['name' => $this->name, 'username' => $this->name]);
     }
 
     public function render()

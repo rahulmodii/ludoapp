@@ -12,20 +12,27 @@ class WalletSupport extends Component
     public function onAccept($id)
     {
         $request = Wallet::find($id);
-        $user = User::find($request->user_id)->increment('wallet_balance', $request->amount);
-        $request->update(['status' => 1]);
-        return $this->dispatch('message','Wallet Balance Added Succssfully!');
+        if ($request->type == 1) {
+            $user = User::find($request->user_id)->increment('wallet_balance', $request->amount);
+            $request->update(['status' => 1]);
+        } else {
+            $user = User::find($request->user_id)->decrement('wallet_balance', $request->amount);
+            $request->update(['status' => 1]);
+        }
+
+        return $this->dispatch('message', 'Wallet Balance Added Succssfully!');
     }
 
-    public function onReject($id){
+    public function onReject($id)
+    {
         $request = Wallet::find($id);
         $request->update(['status' => 2]);
-        return $this->dispatch('message','Wallet Balance Request Denied!');
+        return $this->dispatch('message', 'Wallet Balance Request Denied!');
     }
 
     public function render()
     {
-        $data = Wallet::where('status', 0)->orderBy('id', 'desc')->get();
+        $data = Wallet::orderBy('id', 'desc')->get();
         return view('livewire.wallet-support', compact('data'));
     }
 }

@@ -21,7 +21,7 @@ class GameDetails extends Component
     {
         $this->currentId = $id;
         $data = Battles::find($this->currentId);
-        if ($data->room_code) {
+        if ($data) {
             $this->room_code = $data->room_code;
         }
     }

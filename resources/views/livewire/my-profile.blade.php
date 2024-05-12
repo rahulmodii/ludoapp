@@ -15,8 +15,9 @@
                         </div>
                         <!--end::Avatar-->
                         <!--begin::Name-->
-                        <a href="#"
-                            class="fs-3 text-gray-800 text-hover-primary fw-bold mb-3">{{ auth()->user()->userid ?? '' }}</a>
+                        <a class="fs-3 text-gray-800 text-hover-primary fw-bold mb-3">
+                          <input type="text" class="form-control" wire:model.live="name"  /> 
+                        </a>
                         <!--end::Name-->
                         <!--begin::Position-->
                         <div class="mb-9">
@@ -28,16 +29,7 @@
                         <!--end::Position-->
                         <!--begin::Info-->
                         <!--begin::Info heading-->
-                        <div class="fw-bold mb-3">Assigned Tickets
-                            <span class="ms-2" ddata-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true"
-                                data-bs-content="Number of support tickets assigned, closed and pending this week.">
-                                <i class="ki-duotone ki-information fs-7">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                    <span class="path3"></span>
-                                </i>
-                            </span>
-                        </div>
+
                         <!--end::Info heading-->
                         <div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-750px px-7 py-3 mb-5" style="justify-content: space-between">
                             <!--begin::Title-->

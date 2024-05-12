@@ -52,18 +52,24 @@
                                     <td>{{ $value->amount ?? '' }}</td>
                                     <td>
                                         @if ($value->type == 1)
-                                        <a href="{{ asset('/storage/' . $value->proof) ?? '' }}" target="_blank">Proof</a>
+                                            <a href="{{ asset('/storage/' . $value->proof) ?? '' }}"
+                                                target="_blank">Proof</a>
                                         @else
                                             {{ $value->upi_id ?? '' }}
                                         @endif
                                     </td>
                                     <td>
-                                        <div>
-                                            <a class="btn btn-sm btn-success"
-                                                wire:click="onAccept('{{ $value->id }}')">Accept</a>
-                                            <a class="btn btn-sm btn-danger"
-                                                wire:click="onReject('{{ $value->id }}')">Reject</a>
-                                        </div>
+                                        @if ($value->status == 0)
+                                            <div>
+                                                <a class="btn btn-sm btn-success"
+                                                    wire:click="onAccept('{{ $value->id }}')">Accept</a>
+                                                <a class="btn btn-sm btn-danger"
+                                                    wire:click="onReject('{{ $value->id }}')">Reject</a>
+                                            </div>
+                                        @else
+                                        Done
+                                        @endif
+
                                     </td>
                                 </tr>
                             @endforeach

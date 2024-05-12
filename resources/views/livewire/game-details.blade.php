@@ -95,7 +95,7 @@
             <div class="card card-flush py-4 mb-5">
                 <!--begin::Card header-->
                 <div class="card-header">
-                    <div class="card-title">
+                    <div class="card-title" style="display: flex;flex-direction:column;align-items: center;">
                         <h2>Play ludo game in Ludo King App</h2>
                     </div>
                 </div>
