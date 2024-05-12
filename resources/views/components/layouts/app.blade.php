@@ -12,7 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="ludogameclub - The World's #1 Selling Bootstrap Admin Template by ludogamesclub" />
+    <meta property="og:title"
+        content="ludogameclub - The World's #1 Selling Bootstrap Admin Template by ludogamesclub" />
     <meta property="og:url" content="https://ludogamesclub.com/ludogameclub" />
     <meta property="og:site_name" content="ludogameclub by ludogamesclub" />
     <link rel="canonical" href="https://preview.ludogamesclub.com/ludogameclub8" />
@@ -186,6 +187,22 @@
         Livewire.on('refreshPage', (event) => {
             window.location.reload()
         })
+    </script>
+    <script>
+        function copy() {
+            // Get the text field
+            var copyText = document.getElementById("roomcode");
+
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+
+            // Alert the copied text
+            alert("Copied the text: " + copyText.value);
+        }
     </script>
 </body>
 
