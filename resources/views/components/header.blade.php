@@ -32,39 +32,13 @@
         <!--begin::Topbar-->
         <div class="d-flex align-items-center flex-shrink-0">
             <!--begin::Search-->
-            <div id="kt_header_search" class="header-search d-flex align-items-center w-lg-250px"
-                data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter"
-                data-kt-search-layout="menu" data-kt-search-responsive="lg" data-kt-menu-trigger="auto"
-                data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end">
-                <!--begin::Tablet and mobile search toggle-->
-                <div data-kt-search-element="toggle"
-                    class="search-toggle-mobile d-flex d-lg-none align-items-center">
-                    <div
-                        class="d-flex btn btn-icon btn-color-gray-700 btn-active-color-primary btn-outline w-40px h-40px">
-                        <i class="ki-duotone ki-magnifier fs-1">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                        </i>
-                    </div>
-                </div>
-                <div data-kt-search-element="content"
-                    class="menu menu-sub menu-sub-dropdown py-7 px-7 overflow-hidden w-300px w-md-350px">
-                 
-                    <!--end::Preferences-->
-                </div>
-                <!--end::Menu-->
-            </div>
+          
             <!--end::Search-->
             <!--begin::Activities-->
             <div class="d-flex align-items-center ms-3 ms-lg-4">
                 <!--begin::Drawer toggle-->
-                <div class="btn btn-icon btn-color-gray-700 btn-active-color-primary btn-outline w-40px h-40px"
-                    id="kt_activities_toggle">
-                    <i class="ki-duotone ki-notification-bing fs-1">
-                        <span class="path1"></span>
-                        <span class="path2"></span>
-                        <span class="path3"></span>
-                    </i>
+                <div class="btn btn-icon btn-color-gray-700 btn-active-color-primary btn-outline w-40px h-40px" id="kt_activities_toggle">
+                   hinhhd
                 </div>
                 <!--end::Drawer toggle-->
             </div>
