@@ -195,7 +195,7 @@
                                                                 @else
                                                                     @if ($value->is_accepted)
                                                                         <a class="btn btn-sm btn-primary"
-                                                                            href="{{ route('gamedetails', ['id' => $value->id]) }}">Join</a>
+                                                                            href="{{ route('gamedetails', ['id' => encrypt($value->id)]) }}">Join</a>
                                                                     @else
                                                                         <div
                                                                             style="display: flex;flex-direction:column">
