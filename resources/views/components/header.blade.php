@@ -37,8 +37,20 @@
             <!--begin::Activities-->
             <div class="d-flex align-items-center ms-3 ms-lg-4">
                 <!--begin::Drawer toggle-->
-                <div class="btn btn-icon btn-color-gray-700 btn-active-color-primary btn-outline w-40px h-40px" id="kt_activities_toggle">
-                   hinhhd
+                <div class="d-flex flex-stack" style="border: 0.5px solid grey;">
+                    <!--begin::Title-->
+                    <a href="{{ route('wallet') }}" class="text-primary opacity-75-hover fs-6 fw-semibold">Rs
+                        {{ auth()->user()->wallet_balance ?? '' }}</a>
+                    <!--end::Title-->
+                    <!--begin::Action-->
+                    <a href="{{ route('wallet') }}"
+                        class="btn btn-icon btn-sm h-auto btn-color-gray-500 btn-active-color-primary">
+                        <i class="ki-duotone ki-bank text-danger">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>
+                    </a>
+                    <!--end::Action-->
                 </div>
                 <!--end::Drawer toggle-->
             </div>

@@ -46,17 +46,17 @@
                     <!--begin::Drawer toggle-->
                     <div class="d-flex flex-stack" style="border: 0.5px solid grey;">
                         <!--begin::Title-->
-                        <a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Rs
+                        <a href="{{ route('wallet') }}" class="text-primary opacity-75-hover fs-6 fw-semibold">Rs
                             {{ auth()->user()->wallet_balance ?? '' }}</a>
                         <!--end::Title-->
                         <!--begin::Action-->
-                        <button type="button"
+                        <a href="{{ route('wallet') }}"
                             class="btn btn-icon btn-sm h-auto btn-color-gray-500 btn-active-color-primary">
                             <i class="ki-duotone ki-bank text-danger">
                                 <span class="path1"></span>
                                 <span class="path2"></span>
                             </i>
-                        </button>
+                        </a>
                         <!--end::Action-->
                     </div>
                     <!--end::Drawer toggle-->
