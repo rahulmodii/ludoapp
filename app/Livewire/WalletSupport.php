@@ -26,6 +26,10 @@ class WalletSupport extends Component
     public function onReject($id)
     {
         $request = Wallet::find($id);
+        if ($request->type != 1) {
+            $user = User::find($request->user_id)->increment('wallet_balance', $request->amount);
+            $request->update(['status' => 1]);
+        }
         $request->update(['status' => 2]);
         return $this->dispatch('message', 'Wallet Balance Request Denied!');
     }
