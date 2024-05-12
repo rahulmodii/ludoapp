@@ -13,7 +13,7 @@
                         <br/>
                     <small class="text-muted fs-6 fw-semibold ms-1 pt-1" style="color: red !important">रेफर करें और अपनी रेफ़रल जीत का 1% कमाएँ।
                         यदि आपका रेफ़रल 10000/- जीतता है, तो आपको 100/- मिलेंगे। हमारे साथ खूब कमाएँ।</small>
-                        <br/>
+                    <br/>
                     <small class="text-muted fs-6 fw-semibold ms-1 pt-1" style="color: red !important">Refer And Earn 1% Of Your Refferal Win.
                         If Your Referral Win 10000/-, You Will Get 100/- . Earn Big With Us.</small>
                 </h1>
