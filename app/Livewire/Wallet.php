@@ -57,6 +57,7 @@ class Wallet extends Component
                     'type' => 2,
                     'upi_id'=>$this->upi_id
                 ]);
+                User::where('id',auth()->user()->id)->decrement('wallet_balance',$this->withdraw_amount);
                 return $this->dispatch('message', 'Request raised successfully!');
             }else{
                 return $this->dispatch('message', 'Game in Process Please Complete Game Before withdrawl!');
