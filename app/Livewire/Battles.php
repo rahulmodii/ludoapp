@@ -28,6 +28,10 @@ class Battles extends Component
 
     public function setAmount()
     {
+        $transactions = ModelsBattles::where(['creator_id' => auth()->user()->id, 'is_cancelled' => 0, 'joining_id' => 0])->count();
+        if ($transactions != 0) {
+            return $this->dispatch('messageNew', 'Battle Already in Progress!!');
+        }
         $walletBalance = auth()->user()->wallet_balance;
         if ($this->game_id == 1) {
             $this->validate([
@@ -117,7 +121,7 @@ class Battles extends Component
     {
 
         // Fetch all relevant battles in a single query
-        $battles = ModelsBattles::where('game_id',$this->game_id)->where('is_cancelled', 0)
+        $battles = ModelsBattles::where('game_id', $this->game_id)->where('is_cancelled', 0)
             ->orderBy('id', 'desc')
             ->get();
 

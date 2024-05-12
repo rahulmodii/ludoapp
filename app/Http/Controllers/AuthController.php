@@ -56,6 +56,7 @@ class AuthController extends Controller
             'route' => $route,
             'numbers' => $numbers,
         ]);
+        // dd($response->body());
         Verification::create($payload);
         return redirect()->route('verify', ['phone' => $request->mobile]);
     }
@@ -87,6 +88,8 @@ class AuthController extends Controller
             // dd($user);
             Auth::login($user);
             return redirect()->route('dashboard');
+        }else{
+            return redirect()->back()->with('message', 'Wrong Otp');
         }
     }
     /**
