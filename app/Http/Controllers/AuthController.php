@@ -86,7 +86,7 @@ class AuthController extends Controller
         if ($verification) {
             $user = User::where('mobile', $verification->mobile)->first();
             // dd($user);
-            Verification::where('otp', $otp)->destroy();
+            Verification::where('otp', $otp)->delete();
             Auth::login($user);
             return redirect()->route('dashboard');
         }else{
