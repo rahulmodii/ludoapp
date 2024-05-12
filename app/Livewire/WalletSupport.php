@@ -13,10 +13,10 @@ class WalletSupport extends Component
     {
         $request = Wallet::find($id);
         if ($request->type == 1) {
-            $user = User::find($request->user_id)->increment('wallet_balance', $request->amount);
+            User::find($request->user_id)->increment('wallet_balance', $request->amount);
             $request->update(['status' => 1]);
         } else {
-            $user = User::find($request->user_id)->decrement('wallet_balance', $request->amount);
+            // User::find($request->user_id)->decrement('wallet_balance', $request->amount);
             $request->update(['status' => 1]);
         }
 
