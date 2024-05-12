@@ -10,11 +10,13 @@
                 <h1 class="d-flex flex-column text-gray-900 fw-bold my-0 fs-1">Our Games
                     <small class="text-muted fs-6 fw-semibold ms-1 pt-1">Commission Rates:
                         10% commission will be charged on battle amount.बैटल राशि पर 10% कमीशन लिया जाएगा।</small>
-                        <br/>
-                    <small class="text-muted fs-6 fw-semibold ms-1 pt-1" style="color: red !important">रेफर करें और अपनी रेफ़रल जीत का 1% कमाएँ।
+                    <br />
+                    <small class="text-muted fs-6 fw-semibold ms-1 pt-1" style="color: red !important">रेफर करें और अपनी
+                        रेफ़रल जीत का 1% कमाएँ।
                         यदि आपका रेफ़रल 10000/- जीतता है, तो आपको 100/- मिलेंगे। हमारे साथ खूब कमाएँ।</small>
-                    <br/>
-                    <small class="text-muted fs-6 fw-semibold ms-1 pt-1" style="color: red !important">Refer And Earn 1% Of Your Refferal Win.
+                    <br />
+                    <small class="text-muted fs-6 fw-semibold ms-1 pt-1" style="color: red !important">Refer And Earn 1%
+                        Of Your Refferal Win.
                         If Your Referral Win 10000/-, You Will Get 100/- . Earn Big With Us.</small>
                 </h1>
                 <!--end::Heading-->
@@ -142,7 +144,8 @@
                         <!--end::Menu item-->
                         <!--begin::Menu item-->
                         <div class="menu-item px-3 my-0">
-                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="system">
+                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                data-kt-value="system">
                                 <span class="menu-icon" data-kt-element="icon">
                                     <i class="ki-duotone ki-screen fs-2">
                                         <span class="path1"></span>
