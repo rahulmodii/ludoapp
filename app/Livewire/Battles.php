@@ -66,7 +66,8 @@ class Battles extends Component
 
         $config = Support::first();
         $Amount = $this->amount * 2;
-        $commissionAmount = $Amount * $config->commission / 100;
+        $commissionRate = $config->commission / 100;
+        $commissionAmount = $Amount * $commissionRate;
         $commissionAmount = ceil($commissionAmount);
         $gameAmount = $Amount - $commissionAmount;
         $payload = [
@@ -75,7 +76,7 @@ class Battles extends Component
             "amount" => $this->amount,
             'game_amount' => $gameAmount
         ];
-        // dd($payload);
+        User::find(auth()->user()->id)->decrement('wallet_balance', $this->amount);
         ModelsBattles::create($payload);
         $this->amount = "";
         return $this->dispatch('messageNew', 'Game Created Successfully!');
@@ -105,9 +106,6 @@ class Battles extends Component
 
     public function onAccept($id)
     {
-
-
-
         $preData = ModelsBattles::where('id', $id)->first();
 
         $requester_balance = User::find($preData->request_id);
@@ -120,7 +118,6 @@ class Battles extends Component
             'joining_id' => $preData->request_id,
             'is_accepted' => 1
         ]);
-        User::find($preData->creator_id)->decrement('wallet_balance', $preData->amount);
         User::find($preData->request_id)->decrement('wallet_balance', $preData->amount);
         return redirect()->route('gamedetails', ['id' => encrypt($id)]);
     }
