@@ -84,7 +84,11 @@ class Battles extends Component
 
     public function onPlay($id)
     {
-
+        $preData = ModelsBattles::where('id', $id)->first();
+        $requester_balance = User::find($preData->request_id);
+        if ((int)$requester_balance->wallet_balance < (int)$preData->amount) {
+            return $this->dispatch('messageNew', 'Not Enough Balance to play!!');
+        }
         ModelsBattles::find($id)->update([
             'is_request' => 1,
             'request_id' => auth()->user()->id
@@ -108,10 +112,7 @@ class Battles extends Component
     {
         $preData = ModelsBattles::where('id', $id)->first();
 
-        $requester_balance = User::find($preData->request_id);
-        if ((int)$requester_balance->wallet_balance < (int)$preData->amount) {
-            return $this->dispatch('messageNew', 'Not Enough Balance to play!!');
-        }
+
 
         ModelsBattles::where('id', $id)->update([
             'is_request' => 2,
