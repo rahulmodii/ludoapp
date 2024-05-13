@@ -106,7 +106,15 @@ class Battles extends Component
     public function onAccept($id)
     {
 
+
+
         $preData = ModelsBattles::where('id', $id)->first();
+
+        $requester_balance = User::find($preData->request_id);
+        if ($requester_balance->wallet_balance < $preData->amount) {
+            return $this->dispatch('messageNew', 'Not Enough Balance to play!!');
+        }
+
         ModelsBattles::where('id', $id)->update([
             'is_request' => 2,
             'joining_id' => $preData->request_id,
@@ -114,7 +122,7 @@ class Battles extends Component
         ]);
         User::find($preData->creator_id)->decrement('wallet_balance', $preData->amount);
         User::find($preData->request_id)->decrement('wallet_balance', $preData->amount);
-        return redirect()->route('gamedetails', ['id' => $id]);
+        return redirect()->route('gamedetails', ['id' => encrypt($id)]);
     }
 
     public function render()

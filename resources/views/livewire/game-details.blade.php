@@ -311,16 +311,16 @@
                         <!--begin::Separator-->
                         <!--begin::Add new contact-->
                         @if ($matchstatus == '1')
-                        <div wire:loading.remove wire:target="image">
-                            <button class="btn btn-primary w-100" type="submit"> Submit</button>
-                        </div>
-                        <div wire:loading wire:target="image">
-                            <button class="btn btn-primary w-100" type="submit" disabled>Uploading</button>
-                        </div>
+                            <div wire:loading.remove wire:target="image">
+                                <button class="btn btn-primary w-100" type="submit"> Submit</button>
+                            </div>
+                            <div wire:loading wire:target="image">
+                                <button class="btn btn-primary w-100" type="submit" disabled>Uploading</button>
+                            </div>
                         @else
-                        <button class="btn btn-primary w-100" type="submit"> Submit</button>
+                            <button class="btn btn-primary w-100" type="submit"> Submit</button>
                         @endif
-                        
+
 
                     </form>
                     <!--end::Add new contact-->

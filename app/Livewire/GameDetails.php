@@ -28,7 +28,7 @@ class GameDetails extends Component
 
     public function onSubmit()
     {
-        // dd($this->matchstatus);
+        
         $proof = "";
         if ($this->image) {
             $proof = $this->image->store('proof', 'public');
