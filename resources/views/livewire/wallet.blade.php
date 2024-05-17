@@ -309,6 +309,11 @@
 
                             <input type="file" class="form-control form-control-solid" placeholder="Name"
                                 wire:model='proof' required />
+                                <div style="color: red;margin-top:5px">
+                                    @error('proof')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
                         </div>
                         <div wire:loading.remove wire:target="proof">
                             <div class="text-center">

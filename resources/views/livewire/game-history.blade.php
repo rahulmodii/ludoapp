@@ -21,8 +21,10 @@
                             <!--begin::Table head-->
                             <thead>
                                 <tr class="fs-7 fw-bold border-0 text-gray-500">
-                                    <th class="min-w-150px" colspan="2">Activity</th>
-                                    <th class="min-w-150px" colspan="2">Date Time</th>
+                                    <th class="min-w-150px" colspan="1">Id</th>
+                                    <th class="min-w-150px" colspan="1">Amount</th>
+                                    <th class="min-w-150px" colspan="1">Status</th>
+                                    <th class="min-w-150px" colspan="1">Date Time</th>
                                     {{-- <th class="min-w-150px text-end pe-0" colspan="2">SESSIONS</th> --}}
                                     {{-- <th class="text-end min-w-150px" colspan="2">CONVERSION RATE</th> --}}
                                 </tr>
@@ -32,13 +34,26 @@
                             <tbody>
                                 @foreach ($data as $value)
                                     <tr>
-                                        <td class="" colspan="2">
-                                            <a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">User
-                                                You won against {{ optional($value->joinee)->name }}</a>
+                                        <td>
+                                            OrderId#{{ $value->id ?? ''}}
                                         </td>
-                                        <td class="" colspan="2">
-                                            <a
-                                                class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">{{ $value->created_at->format('d-m-y h:i:s') }}</a>
+                                        <td>
+                                            {{ $value->amount ?? "" }}
+                                        </td>
+                                        <td>
+                                            @if ($value->winning_id)
+                                            @if ($value->winning_id == auth()->user()->id)
+                                                You Won
+                                            @else
+                                                You Lost
+                                            @endif
+                                            @else   
+                                            Cancelled 
+                                            @endif
+                                            
+                                        </td>
+                                        <td class="">
+                                            <a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">{{ $value->created_at->format('d-m-y h:i:s') }}</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -55,5 +70,5 @@
             <!--end::Table Widget 9-->
         </div>
     </div>
-    
+
 </div>

@@ -63,7 +63,6 @@ class Battles extends Component
             ]);
         }
 
-
         $config = Support::first();
         $Amount = $this->amount * 2;
         $commissionRate = $config->commission / 100;
@@ -105,7 +104,10 @@ class Battles extends Component
 
     public function onDelete($id)
     {
-        ModelsBattles::destroy($id);
+        $preQuery = ModelsBattles::find($id);
+        $user = User::find(auth()->user()->id);
+        $user->increment('wallet_balance', $preQuery->amount);
+        $preQuery->delete();
     }
 
     public function onAccept($id)
@@ -128,20 +130,21 @@ class Battles extends Component
 
         // Fetch all relevant battles in a single query
         $battles = ModelsBattles::where('game_id', $this->game_id)->where('is_cancelled', 0)
+            ->whereNull('winning_id')
             ->orderBy('id', 'desc')
             ->get();
 
-        // Filter the collections in memory
+
         $preData = $battles->where('joining_id', auth()->user()->id)
+            ->where('joining_id_match_status', 0)
             ->where('is_accepted', 1);
 
-        $data = $battles->where('creator_id', auth()->user()->id);
+        $data = $battles->where('creator_id_match_status', 0)->where('creator_id', auth()->user()->id);
 
         $newData = $battles->where('creator_id', '!=', auth()->user()->id)
             ->where('joining_id', 0);
 
-        $runningBattles = $battles->whereNull('winning_id')
-            ->where('joining_id', '!=', 0);
+        $runningBattles = $battles->where('joining_id_match_status', 0)->where('creator_id_match_status', 0)->whereNull('winning_id')->where('joining_id', '!=', 0);
 
         return view('livewire.battles', compact('data', 'newData', 'preData', 'runningBattles'));
     }

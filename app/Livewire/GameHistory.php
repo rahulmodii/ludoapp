@@ -9,7 +9,13 @@ class GameHistory extends Component
 {
     public function render()
     {
-        $data = Battles::where('winning_id',auth()->user()->id)->orderBy('id','desc')->get();
-        return view('livewire.game-history',compact('data'));
+        $data = Battles::where(function ($query) {
+            $query->where('creator_id', auth()->user()->id)
+                ->orWhere('joining_id', auth()->user()->id);
+        })
+        ->orderBy('id', 'desc')
+        ->get();
+
+        return view('livewire.game-history', compact('data'));
     }
 }

@@ -29,7 +29,8 @@
                                             src="https://d37om4gxfn0aox.cloudfront.net/static-content/front/images/global-rupeeIcon.png"
                                             width="21px" alt="">{{ $data->game_amount }}</span>
                                 </div>
-                                <span class="badge badge-lg badge-light-success fw-bold my-2 fs-8">On Going</span>
+                                <span class="badge badge-lg badge-light-success fw-bold my-2 fs-8">Game Id #
+                                    {{ $data->id ?? '' }}</span>
                             </div>
                             <!--end::Section-->
                         </div>
@@ -80,7 +81,7 @@
                                     <span class="fs-6 text-gray-500 fw-semibold d-block">Opponent</span>
                                     <!--end::Title-->
                                     <!--begin::Title-->
-                                    <span class="fs-6 fw-bold text-gray-800">{{ $data->joinee->name }}</span>
+                                    <span class="fs-6 fw-bold text-gray-800">{{ optional($data->joinee)->name }}</span>
                                     <!--end::Title-->
                                 </div>
                                 <!--end::Timeline content-->
@@ -114,19 +115,21 @@
 
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <div style="text-align: center" wire:poll.15s>
+                        <div style="text-align: center" wire:poll.15s="refreshSubscribers">
                             <input type="text" class="form-control mb-2" wire:model="room_code"
                                 placeholder="Room Code" maxlength="8" id="roomcode">
                             <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto"
                                 onclick="copy()">
-                                <i class="ki-duotone ki-save-2 fs-3">
+                                <i class="ki-duotone ki-copy fs-3">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
                                 </i>
                             </button>
-                            @if ($data->creator_id == auth()->user()->id && ($room_code == '' || $room_code == null))
-                                <a class="btn btn-danger fw-semibold" wire:click="saveCode">Save Code</a>
-                            @endif
+                        </div>
+                        <div style="text-align: center">
+                        @if ($data->creator_id == auth()->user()->id && ($room_code == '' || $room_code == null))
+                            <a class="btn btn-danger fw-semibold" wire:click="saveCode">Save Code</a>
+                        @endif
                         </div>
                         <!--end::Input-->
                         <!--begin::Description-->
@@ -301,8 +304,7 @@
                             </select>
                         @elseif ($matchstatus == '1')
                             <label class="fs-6 fw-semibold form-label">Upload Proof</label>
-                            <input type="file" wire:model="image"
-                                class="form-control form-control-lg form-control-solid" value="044 3276 454 935">
+                            <input type="file" wire:model="image" class="form-control form-control-lg form-control-solid" accept="image/png, image/gif, image/jpeg" >
                         @endif
 
                         <!--end::Add contact group-->
