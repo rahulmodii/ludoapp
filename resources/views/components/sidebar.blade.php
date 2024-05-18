@@ -6,7 +6,7 @@
             data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_user, #kt_aside_footer"
             data-kt-scroll-wrappers="#kt_aside, #kt_aside_menu, #kt_aside_menu_wrapper" data-kt-scroll-offset="0">
             <!--begin::Menu-->
-            @if (auth()->user()->role == "5")
+            @if (auth()->user()->role == '5')
                 <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold hover show" id="#kt_aside_menu"
                     data-kt-menu="true">
                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -50,6 +50,14 @@
                                         <span class="bullet bullet-dot"></span>
                                     </span>
                                     <span class="menu-title">Games Support</span>
+                                </a>
+                                <a class="menu-link" href="{{ route('users') }}"
+                                    title="Check out over 200 in-house components" data-bs-toggle="tooltip"
+                                    data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Users Support</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
@@ -121,8 +129,7 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link"
-                                    href="{{ route('wallet') }}">
+                                <a class="menu-link" href="{{ route('wallet') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -134,8 +141,7 @@
 
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link"
-                                    href="{{ route('gamehistory') }}">
+                                <a class="menu-link" href="{{ route('gamehistory') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -146,8 +152,7 @@
 
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link"
-                                    href="{{ route('transaction') }}">
+                                <a class="menu-link" href="{{ route('transaction') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -177,7 +182,7 @@
                                 </a>
                                 <!--end:Menu link-->
                             </div>
-{{-- 
+                            {{-- 
                             <div class="menu-item">
                                 <!--begin:Menu link-->
                                 <a class="menu-link" href="{{ route('notifications') }}">

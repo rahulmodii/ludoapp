@@ -68,6 +68,10 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/walletsupport',function(){
                 return view('admin.walletsupport');
             })->name('walletsupport');
+            
+            Route::get('/users',function(){
+                return view('admin.users');
+            })->name('users');
         });
     });
 
