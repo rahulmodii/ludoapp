@@ -14,12 +14,6 @@
                             <span class="card-label fw-bold text-gray-800">Transaction Activity</span>
                             {{-- <span class="text-gray-500 pt-1 fw-semibold fs-6">Counted in Millions</span> --}}
                         </h3>
-                        <!--end::Title-->
-                        <!--begin::Toolbar-->
-                        {{-- <div class="card-toolbar">
-                            <a href="#" class="btn btn-sm btn-light">PDF Report</a>
-                        </div> --}}
-                        <!--end::Toolbar-->
                     </div>
                     <!--end::Header-->
                     <!--begin::Body-->
@@ -44,8 +38,24 @@
                                     @foreach ($data as $value)
                                         <tr>
                                             <td class="" colspan="1">
-                                                <span class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">
-                                                    {{ $value->amount }}</span>
+                                                @if ($value->type == 1)
+                                                <span class="fw-bold mb-1 fs-6 text-success">
+                                                    {{ $value->amount }}
+                                                    (<i class="ki-duotone ki-plus fs-5 text-success ms-n1">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>)
+                                                </span>
+                                                @else
+                                                <span class="fw-bold mb-1 fs-6 text-danger">
+                                                    
+                                                    {{ $value->amount }}
+                                                    (<i class="ki-duotone ki-minus fs-5 text-danger ms-n1">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>)
+                                                </span>
+                                                @endif
                                             </td>
                                             <td class="" colspan="1">
                                                 @if ($value->type == 1)
@@ -53,7 +63,7 @@
                                                         class="text-gray-800 text-primary fw-semibold fs-7 d-block text-start ps-0"
                                                         target="_blank">Proof</a>
                                                 @else
-                                                    No Proof required
+                                                   {{$value->upi_id ?? ''}}
                                                 @endif
 
                                             </td>
