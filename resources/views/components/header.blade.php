@@ -32,15 +32,18 @@
         <!--begin::Topbar-->
         <div class="d-flex align-items-center flex-shrink-0">
             <!--begin::Search-->
-          
+
             <!--end::Search-->
             <!--begin::Activities-->
             <div class="d-flex align-items-center ms-3 ms-lg-4">
                 <!--begin::Drawer toggle-->
                 <div class="d-flex flex-stack" style="border: 0.5px solid grey;">
                     <!--begin::Title-->
-                    <a href="{{ route('wallet') }}" class="text-primary opacity-75-hover fs-6 fw-semibold">Rs
-                        {{ auth()->user()->wallet_balance ?? '' }}</a>
+                    @if (auth()->user()->id != 5)
+                        <a href="{{ route('wallet') }}" class="text-primary opacity-75-hover fs-6 fw-semibold">Rs
+                            {{ auth()->user()->wallet_balance ?? '' }}</a>
+                   
+
                     <!--end::Title-->
                     <!--begin::Action-->
                     <a href="{{ route('wallet') }}"
@@ -50,6 +53,7 @@
                             <span class="path2"></span>
                         </i>
                     </a>
+                    @endif
                     <!--end::Action-->
                 </div>
                 <!--end::Drawer toggle-->
@@ -103,8 +107,7 @@
                     data-kt-menu="true" data-kt-element="theme-mode-menu">
                     <!--begin::Menu item-->
                     <div class="menu-item px-3 my-0">
-                        <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
-                            data-kt-value="light">
+                        <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="light">
                             <span class="menu-icon" data-kt-element="icon">
                                 <i class="ki-duotone ki-night-day fs-2">
                                     <span class="path1"></span>
@@ -125,8 +128,7 @@
                     <!--end::Menu item-->
                     <!--begin::Menu item-->
                     <div class="menu-item px-3 my-0">
-                        <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
-                            data-kt-value="dark">
+                        <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="dark">
                             <span class="menu-icon" data-kt-element="icon">
                                 <i class="ki-duotone ki-moon fs-2">
                                     <span class="path1"></span>
@@ -139,8 +141,7 @@
                     <!--end::Menu item-->
                     <!--begin::Menu item-->
                     <div class="menu-item px-3 my-0">
-                        <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
-                            data-kt-value="system">
+                        <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="system">
                             <span class="menu-icon" data-kt-element="icon">
                                 <i class="ki-duotone ki-screen fs-2">
                                     <span class="path1"></span>

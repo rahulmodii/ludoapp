@@ -94,9 +94,11 @@
                             <a href="#"
                                 class="text-gray-800 text-hover-primary fs-4 fw-bolder animate__bounce">{{ auth()->user()->name ?? '' }}</a>
 
+                            @if (auth()->user()->role != 5)
+                                <span class="text-gray-600 fw-semibold d-block fs-7 mb-1">Cash
+                                    {{ auth()->user()->wallet_balance ?? '' }}.00</span>
+                            @endif
 
-                            <span class="text-gray-600 fw-semibold d-block fs-7 mb-1">Cash
-                                {{ auth()->user()->wallet_balance ?? '' }}.00</span>
 
                         </div>
 

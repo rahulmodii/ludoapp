@@ -33,6 +33,7 @@
                     <table class="table align-middle table-row-dashed fs-6 gy-5">
                         <thead>
                             <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
+                                <th class="min-w-125px">Game Id</th>
                                 <th class="min-w-125px">Actions</th>
                                 <th class="min-w-125px">Creator Name</th>
                                 <th class="min-w-125px">Creator Mobile</th>
@@ -44,23 +45,25 @@
                                 <th class="min-w-125px">Creator Proof</th>
                                 <th class="min-w-125px">Joinee Response</th>
                                 <th class="min-w-125px">Joinee Proof</th>
-                             
+
                             </tr>
                         </thead>
                         <tbody class="text-gray-600 fw-semibold">
                             @foreach ($data as $value)
                                 <tr>
+                                    <td>Order Id#{{ $value->id ?? '' }}</td>
                                     <td>
                                         @if ($value->winning_id)
-                                       Winner is {{ $value->winner->name ?? '' }}
-                                        @else    
-                                        <div style="display:flex;gap: 10px;flex-direction:column">
-                                            <a class="btn btn-sm btn-success"
-                                                wire:click="makeWinner('{{ $value->id }}','{{ $value->creator_id }}')">Make Creator Winner</a>
-                                            <a class="btn btn-sm btn-danger"
-                                                wire:click="makeWinner('{{ $value->id }}','{{ $value->joining_id }}')">Make Joinee Winner</a>
-                                        </div>
+                                            Winner is {{ $value->winner->name ?? '' }}
+                                        @else
+                                            @if ($value->creator_id_match_status == $value->joining_id_match_status && $value->creator_id_match_status != 1 && $value->joining_id_match_status != 3)
+                                                <div style="display:flex;gap: 10px;flex-direction:column">
+                                                    <a class="btn btn-sm btn-success" wire:click="makeWinner('{{ $value->id }}','{{ $value->creator_id }}')">Make Creator Winner</a>
+                                                    <a class="btn btn-sm btn-danger" wire:click="makeWinner('{{ $value->id }}','{{ $value->joining_id }}')">Make Joinee Winner</a>
+                                                </div>
+                                            @endif
                                         @endif
+                                    </td>
                                     </td>
                                     <td>{{ $value->creator->name ?? '' }}</td>
                                     <td>{{ $value->creator->mobile ?? '' }}</td>
@@ -105,7 +108,6 @@
                                             @case(3)
                                                 Cancel
                                                 {{ $value->joining_id_cancel_status ?? '' }}
-
                                             @break
 
                                             Not Started
