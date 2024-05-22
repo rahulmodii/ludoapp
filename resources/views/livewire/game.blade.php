@@ -56,10 +56,12 @@
                                         @if ($value->winning_id)
                                             Winner is {{ $value->winner->name ?? '' }}
                                         @else
-                                        <div style="display:flex;gap: 10px;flex-direction:column">
-                                            <a class="btn btn-sm btn-success" wire:click="makeWinner('{{ $value->id }}','{{ $value->creator_id }}')">Make Creator Winner</a>
-                                            <a class="btn btn-sm btn-danger" wire:click="makeWinner('{{ $value->id }}','{{ $value->joining_id }}')">Make Joinee Winner</a>
-                                        </div>
+                                            @if ($value->creator_id_match_status != 3 && $value->joining_id_match_status != 3)
+                                                <div style="display:flex;gap: 10px;flex-direction:column">
+                                                    <a class="btn btn-sm btn-success" wire:click="makeWinner('{{ $value->id }}','{{ $value->creator_id }}')">Make Creator Winner</a>
+                                                    <a class="btn btn-sm btn-danger" wire:click="makeWinner('{{ $value->id }}','{{ $value->joining_id }}')">Make Joinee Winner</a>
+                                                </div>
+                                            @endif
                                         @endif
                                     </td>
                                     </td>
