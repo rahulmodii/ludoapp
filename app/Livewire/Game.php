@@ -46,6 +46,8 @@ class Game extends Component
     public function render()
     {
         $data = Battles::where('is_accepted', 1)->orderBy('id', 'desc')->get();
-        return view('livewire.game', compact('data'));
+        $userCount = User::where('role','!=',5)->count();
+        $commission= Battles::whereNotNull('winning_id')->sum('commission');
+        return view('livewire.game', compact('data','userCount','commission'));
     }
 }
