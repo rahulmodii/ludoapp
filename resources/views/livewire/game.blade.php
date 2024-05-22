@@ -30,7 +30,7 @@
                                             <span class="fs-4 fw-semibold text-gray-500 me-1 align-self-start">Count</span>
                                             <!--end::Currency-->
                                             <!--begin::Amount-->
-                                            <span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">{{ $userCount ?? '' }}</span>
+                                            <span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">{{ count($data) ?? '' }}</span>
                                             <!--end::Amount-->
                                             <!--begin::Badge-->
                                             <span class="badge badge-light-success fs-base">
