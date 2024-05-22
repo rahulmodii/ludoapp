@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Battles;
+use App\Models\ReferalAmount;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -121,6 +122,23 @@ class GameDetails extends Component
             User::find($battle->joining_id)->increment('wallet_balance', $battle->game_amount);
             $battle->update(['winning_id' => $battle->joining_id]);
         }
+        
+        $finalbattle = Battles::find($this->currentId);
+        if ($finalbattle->winning_id) {
+            $winningUser = User::find($finalbattle->winning_id);
+            $referalUser = User::where('userid', $winningUser->referral)->first();
+            if ($referalUser) {
+                $referalAmount = ceil($battle->game_amount * 0.02);
+                $referalUser->increment('wallet_balance', $referalAmount);
+                ReferalAmount::create([
+                    'battle_id' => $this->currentId,
+                    'user_id' => $finalbattle->winning_id,
+                    'amount' => $referalAmount,
+                    'parent_id' => $referalUser->id
+                ]);
+            }
+        }
+
 
         return redirect()->route('battels', ['id' => encrypt(1), 'tabId' => 1]);
     }
