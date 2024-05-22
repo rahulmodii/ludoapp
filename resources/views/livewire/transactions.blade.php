@@ -28,7 +28,6 @@
                                         <th class="min-w-150px">Amount</th>
                                         <th class="min-w-150px">Proof</th>
                                         <th class="min-w-150px">Type</th>
-                                        <th class="min-w-150px">Status</th>
                                         <th class="min-w-150px">Date Time</th>
                                     </tr>
                                 </thead>
