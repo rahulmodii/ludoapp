@@ -22,7 +22,6 @@
                             <thead>
                                 <tr class="fs-7 fw-bold border-0 text-gray-500">
                                     <th class="min-w-150px" colspan="1">Id</th>
-                                    <th class="min-w-150px" colspan="1">Amount</th>
                                     <th class="min-w-150px" colspan="1">Game Amount</th>
                                     <th class="min-w-150px" colspan="1">Status</th>
                                     <th class="min-w-150px" colspan="1">Date Time</th>
@@ -36,28 +35,30 @@
                                 @foreach ($data as $value)
                                     <tr>
                                         <td>
-                                            OrderId#{{ $value->id ?? ''}}
-                                        </td>
-                                        <td>
-                                            {{ $value->amount ?? "" }}
-                                        </td>
-                                        <td>
-                                            {{ $value->game_amount ?? "" }}
+                                            OrderId#{{ $value->id ?? '' }}
                                         </td>
                                         <td>
                                             @if ($value->winning_id)
-                                            @if ($value->winning_id == auth()->user()->id)
-                                                You Won
+                                                @if ($value->winning_id == auth()->user()->id)
+                                                    {{ $value->game_amount }}
+                                                    (<i class="ki-duotone ki-plus fs-5 text-success ms-n1">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>)
+                                                @else
+                                                {{ $value->game_amount }}
+                                                    (<i class="ki-duotone ki-minus fs-5 text-danger ms-n1">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>)
+                                                @endif
                                             @else
-                                                You Lost
+                                                Cancelled
                                             @endif
-                                            @else   
-                                            Cancelled 
-                                            @endif
-                                            
                                         </td>
                                         <td class="">
-                                            <a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">{{ $value->created_at->format('d-m-y h:i:s') }}</a>
+                                            <a
+                                                class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">{{ $value->created_at->format('d-m-y h:i:s') }}</a>
                                         </td>
                                     </tr>
                                 @endforeach
