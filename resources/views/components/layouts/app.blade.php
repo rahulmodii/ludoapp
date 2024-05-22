@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>ludogameclub</title>
+    <title>{{ config('app.name') }}</title>
     <meta charset="utf-8" />
     <meta name="description"
         content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
@@ -17,8 +17,8 @@
     <meta property="og:url" content="https://ludogamesclub.com/ludogameclub" />
     <meta property="og:site_name" content="ludogameclub by ludogamesclub" />
     <link rel="canonical" href="https://preview.ludogamesclub.com/ludogameclub8" />
-    <link rel="shortcut icon" href="/assets/media/logos/favicon.ico" />
-
+    <link rel="shortcut icon" href="/favicon_io/favicon.ico" />
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 
 
@@ -221,6 +221,7 @@
             alert("Copied the text: " + copyText.value);
         }
     </script>
+
 </body>
 
 </html>

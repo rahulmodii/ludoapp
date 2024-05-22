@@ -1,0 +1,17 @@
+{
+    "name": "LudoGameClub",
+    "short_name": "LGC",
+    "start_url": "/index.php",
+    "background_color": "#6777ef",
+    "description": "Ludo Game khelo and jeeto real money",
+    "display": "fullscreen",
+    "theme_color": "#6777ef",
+    "icons": [
+        {
+            "src": "favicon_io/android-chrome-192x192.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
