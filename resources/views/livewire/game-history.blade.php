@@ -23,6 +23,7 @@
                                 <tr class="fs-7 fw-bold border-0 text-gray-500">
                                     <th class="min-w-150px" colspan="1">Id</th>
                                     <th class="min-w-150px" colspan="1">Amount</th>
+                                    <th class="min-w-150px" colspan="1">Game Amount</th>
                                     <th class="min-w-150px" colspan="1">Status</th>
                                     <th class="min-w-150px" colspan="1">Date Time</th>
                                     {{-- <th class="min-w-150px text-end pe-0" colspan="2">SESSIONS</th> --}}
@@ -39,6 +40,9 @@
                                         </td>
                                         <td>
                                             {{ $value->amount ?? "" }}
+                                        </td>
+                                        <td>
+                                            {{ $value->game_amount ?? "" }}
                                         </td>
                                         <td>
                                             @if ($value->winning_id)
