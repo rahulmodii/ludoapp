@@ -73,7 +73,8 @@ class Battles extends Component
             "creator_id" => auth()->user()->id,
             "game_id" => $this->game_id,
             "amount" => $this->amount,
-            'game_amount' => $gameAmount
+            'game_amount' => $gameAmount,
+            'commission' => $commissionAmount,
         ];
         User::find(auth()->user()->id)->decrement('wallet_balance', $this->amount);
         ModelsBattles::create($payload);
