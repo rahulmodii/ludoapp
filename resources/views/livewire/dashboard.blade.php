@@ -178,7 +178,7 @@
             <!--begin::Row-->
             <div class="row g-5 g-lg-10">
                 <!--begin::Col-->
-                <div class="col-xxl-6 col-md-6 mb-xxl-10">
+                <div class="col-xxl-12 col-md-12 mb-xxl-10">
                     <a href="{{ route('battels', ['id' => encrypt(1), 'tabId' => 1]) }}">
                         <div class="card card-flush h-xl-100">
                             <!--begin::Body-->
@@ -194,11 +194,11 @@
                                     </div>
                                     <!--end::Title-->
                                     <!--begin::Total-->
-                                    <span class="text-gray-600 text-end fw-bold fs-6">Rs 100 - 500</span>
+                                    <span class="text-gray-600 text-end fw-bold fs-6">Rs 100 - 25000</span>
                                     <!--end::Total-->
                                 </div>
                                 <img class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded mb-7"
-                                    style="height: 266px;" src="/some.jpeg" />
+                                    style="height: 266px;" src="/game.jpeg" />
                             </div>
                             <!--end::Body-->
                             <!--begin::Footer-->
@@ -216,7 +216,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-xxl-6 col-md-6 mb-xxl-10">
+                {{-- <div class="col-xxl-6 col-md-6 mb-xxl-10">
                     <a href="{{ route('battels', ['id' => encrypt(2), 'tabId' => 1]) }}">
                         <div class="card card-flush h-xl-100">
                             <!--begin::Body-->
@@ -250,7 +250,7 @@
                             <!--end::Footer-->
                         </div>
                     </a>
-                </div>
+                </div> --}}
             </div>
 
         </div>

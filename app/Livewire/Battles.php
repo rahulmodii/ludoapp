@@ -38,7 +38,7 @@ class Battles extends Component
                 'amount' => [
                     'numeric',
                     'min:100',
-                    'max:500',
+                    'max:25000',
                     function ($attribute, $value, $fail) use ($walletBalance) {
                         if ($value > $walletBalance) {
                             $fail('The ' . $attribute . ' must be less than or equal to your wallet balance.');
@@ -114,9 +114,6 @@ class Battles extends Component
     public function onAccept($id)
     {
         $preData = ModelsBattles::where('id', $id)->first();
-
-
-
         ModelsBattles::where('id', $id)->update([
             'is_request' => 2,
             'joining_id' => $preData->request_id,
