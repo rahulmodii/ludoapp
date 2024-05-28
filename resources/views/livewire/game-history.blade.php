@@ -45,7 +45,7 @@
                                                         <span class="path2"></span>
                                                     </i>)
                                                 @else
-                                                {{ $value->game_amount }}
+                                                {{ $value->amount }}
                                                     (<i class="ki-duotone ki-minus fs-5 text-danger ms-n1">
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
