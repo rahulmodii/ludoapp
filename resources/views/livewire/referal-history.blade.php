@@ -51,7 +51,7 @@
                                         </td>
                                         <td class="" colspan="2">
                                             <a
-                                                class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">{{ $value->created_at->format('d-m-y h:i:s') }}</a>
+                                                class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">{{ $value->created_at->format('d-m-Y h:i') }}</a>
                                         </td>
                                     </tr>
                                 @endforeach
