@@ -17,6 +17,8 @@ class SupportForm extends Component
     public $commission;
     public $login_image;
     public $logo;
+    public $message_title;
+    public $message_description;
 
     public function mount()
     {
@@ -28,6 +30,8 @@ class SupportForm extends Component
             $this->email = $preData->email;
             $this->upi_id = $preData->upi_id;
             $this->commission = $preData->commission;
+            $this->message_title = $preData->message_title;
+            $this->message_description = $preData->message_description;
         }
     }
 
@@ -40,7 +44,9 @@ class SupportForm extends Component
             'mobile3' => $this->mobile3,
             'email' => $this->email,
             'upi_id' => $this->upi_id,
-            'commission' => $this->commission
+            'commission' => $this->commission,
+            'message_title' => $this->message_title,
+            'message_description' => $this->message_description
         ];
 
         if ($this->login_image) {

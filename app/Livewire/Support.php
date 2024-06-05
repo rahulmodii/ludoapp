@@ -2,12 +2,15 @@
 
 namespace App\Livewire;
 
+use App\Models\Support as ModelsSupport;
 use Livewire\Component;
 
 class Support extends Component
 {
     public function render()
     {
-        return view('livewire.support');
+        $data = ModelsSupport::first();
+        // dd($data);
+        return view('livewire.support',compact('data'));
     }
 }

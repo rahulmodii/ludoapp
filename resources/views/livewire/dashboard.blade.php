@@ -1,5 +1,6 @@
 <div>
-    <div id="kt_header" class="header">
+    @include('components.header', ['title' => 'Our Games'])
+    {{-- <div id="kt_header" class="header">
         <!--begin::Container-->
         <div class="container-fluid d-flex align-items-center flex-wrap justify-content-between" id="kt_header_container">
             <!--begin::Page title-->
@@ -171,11 +172,19 @@
             <!--end::Topbar-->
         </div>
         <!--end::Container-->
-    </div>
+    </div> --}}
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-        <!--begin::Container-->
         <div class="container-fluid" id="kt_content_container">
-            <!--begin::Row-->
+            <div class="d-flex flex-column text-gray-900 fw-bold my-0 fs-1">
+                <small class="text-muted fs-6 fw-semibold ms-1 pt-1">Commission Rates:
+                    10% commission will be charged on battle amount.बैटल राशि पर 10% कमीशन लिया जाएगा।</small>
+                <small class="text-muted fs-6 fw-semibold ms-1 pt-1" style="color: red !important">रेफर करें और अपनी
+                    रेफ़रल जीत का 1% कमाएँ।
+                    यदि आपका रेफ़रल 10000/- जीतता है, तो आपको 100/- मिलेंगे। हमारे साथ खूब कमाएँ।</small>
+                <small class="text-muted fs-6 fw-semibold ms-1 pt-1" style="color: red !important">Refer And Earn 1%
+                    Of Your Refferal Win.
+                    If Your Referral Win 10000/-, You Will Get 100/- . Earn Big With Us.</small>
+            </div>
             <div class="row g-5 g-lg-10">
                 <!--begin::Col-->
                 <div class="col-xxl-12 col-md-12 mb-xxl-10">
@@ -254,7 +263,6 @@
             </div>
 
         </div>
-        <!--end::Container-->
     </div>
 
 </div>

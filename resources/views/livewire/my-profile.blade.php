@@ -31,7 +31,7 @@
                         <!--begin::Info heading-->
 
                         <!--end::Info heading-->
-                        <div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-750px px-7 py-3 mb-5" style="justify-content: space-between">
+                        <div class="d-flex align-items-center border border-dashed border-gray-300 rounded  px-7 py-3 mb-5" style="justify-content: space-between">
                             <!--begin::Title-->
                             <a href="{{ route('wallet') }}" class="fs-5 text-gray-900 text-hover-primary fw-semibold w-375px min-w-200px">My Wallet</a>
                     

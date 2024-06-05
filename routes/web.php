@@ -2,17 +2,18 @@
 
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\AuthController;
-use App\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [AuthController::class, 'index'])->name('login');
+Route::get('/', function(){
+    return view('login');
+})->name('login');
 Route::post('/', [AuthController::class, 'sendotp'])->name('sendotp');
 Route::get('/verify/{phone?}/{referal?}', [AuthController::class, 'verify'])->name('verify');
 Route::post('/verify', [AuthController::class, 'verifyhandel'])->name('verifyhandel');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/admin/login',[AdminAuthController::class,'index'])->name('adminlogin');
-Route::post('/admin/login',[AdminAuthController::class,'store'])->name('handellogin');
+Route::post('/admin/login', [AdminAuthController::class,'store'])->name('handellogin');
 
 
 Route::middleware(['auth'])->group(function () {
@@ -23,7 +24,7 @@ Route::middleware(['auth'])->group(function () {
         return view('battels');
     })->name('battels');
     Route::get('/support', function () {
-        return view('contact');
+        return view('support');
     })->name('support');
     Route::get('/notifications', function () {
         return view('notification');

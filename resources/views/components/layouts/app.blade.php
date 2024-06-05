@@ -110,7 +110,7 @@
 
 
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-
+               
                 @yield('content')
 
                 <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">

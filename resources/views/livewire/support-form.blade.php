@@ -69,6 +69,22 @@
                             <input type="text" class="form-control form-control-solid" wire:model="commission">
                         </div>
 
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold mb-2 required">Message Title</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="text" class="form-control form-control-solid" wire:model="message_title">
+                        </div>
+
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold mb-2 required">Message Description</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="text" class="form-control form-control-solid" wire:model="message_description">
+                        </div>
+
 
                         <div class="fv-row mb-7 fv-plugins-icon-container">
                             <img src="{{ asset('/storage/' . $data->login_image) }}" height="100px" width="100px" />
