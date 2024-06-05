@@ -144,7 +144,7 @@
                 <div class="d-flex flex-column flex-center py-7 py-lg-15 px-5 px-md-15 w-100">
 
                     <a href="" class="mb-0 mb-lg-12">
-                        <img alt="Logo" src="{{ loginImage() }}" class="h-60px h-lg-75px" />
+                        {{-- <img alt="Logo" src="{{ loginImage() }}" class="h-60px h-lg-75px" /> --}}
                     </a>
 
 
@@ -156,14 +156,14 @@
                         Productive</h1>
 
 
-                    <div class="d-none d-lg-block text-white fs-base text-center">In this kind of post,
+                    {{-- <div class="d-none d-lg-block text-white fs-base text-center">In this kind of post,
                         <a href="#" class="opacity-75-hover text-warning fw-bold me-1">the blogger</a>introduces
                         a person they’ve interviewed
                         <br />and provides some background information about
                         <a href="#" class="opacity-75-hover text-warning fw-bold me-1">the interviewee</a>and
                         their
                         <br />work following this is a transcript of the interview.
-                    </div>
+                    </div> --}}
 
                 </div>
 
