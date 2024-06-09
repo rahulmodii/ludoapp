@@ -142,7 +142,7 @@ class Battles extends Component
         $newData = $battles->where('creator_id', '!=', auth()->user()->id)
             ->where('joining_id', 0);
 
-        $runningBattles = $battles->where('joining_id_match_status', 0)->where('creator_id_match_status', 0)->whereNull('winning_id')->where('joining_id', '!=', 0);
+        $runningBattles = $battles->whereNull('winning_id')->where('joining_id', '!=', 0);
 
         return view('livewire.battles', compact('data', 'newData', 'preData', 'runningBattles'));
     }
