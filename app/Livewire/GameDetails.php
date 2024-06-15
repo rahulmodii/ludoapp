@@ -17,6 +17,7 @@ class GameDetails extends Component
     public $match_proof;
     public $image;
     public $room_code;
+    public $currentStatus = 0;
 
     public function mount($id)
     {
@@ -24,6 +25,17 @@ class GameDetails extends Component
         $data = Battles::find($this->currentId);
         if ($data) {
             $this->room_code = $data->room_code;
+        }
+        // dd($data);
+        // dd($this->currentId);
+        if ($data->creator_id == auth()->user()->id) {
+            $this->currentStatus = $data->creator_id_match_status;
+            $this->matchstatus = $data->creator_id_match_status;
+        }
+
+        if ($data->joining_id == auth()->user()->id) {
+            $this->currentStatus = $data->joining_id_match_status;
+            $this->matchstatus = $data->joining_id_match_status;
         }
     }
 

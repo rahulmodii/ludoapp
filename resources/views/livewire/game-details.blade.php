@@ -127,9 +127,9 @@
                             </button>
                         </div>
                         <div style="text-align: center">
-                        @if ($data->creator_id == auth()->user()->id && ($room_code == '' || $room_code == null))
-                            <a class="btn btn-danger fw-semibold" wire:click="saveCode">Save Code</a>
-                        @endif
+                            @if ($data->creator_id == auth()->user()->id && ($room_code == '' || $room_code == null))
+                                <a class="btn btn-danger fw-semibold" wire:click="saveCode">Save Code</a>
+                            @endif
                         </div>
                         <!--end::Input-->
                         <!--begin::Description-->
@@ -282,6 +282,9 @@
                 <!--begin::Card body-->
                 <div class="card-body pt-5">
                     <form wire:submit.prevent="onSubmit">
+                        @if ($currentStatus != 0)
+                           <span style="color: red">You already submitted the result</span> <br/>
+                        @endif
                         <label class="fs-6 fw-semibold form-label">Match Status</label>
                         <select class="form-select form-select-solid form-select-sm" wire:model.live="matchstatus">
                             <option value="">--select option--</option>
@@ -304,7 +307,9 @@
                             </select>
                         @elseif ($matchstatus == '1')
                             <label class="fs-6 fw-semibold form-label">Upload Proof</label>
-                            <input type="file" wire:model="image" class="form-control form-control-lg form-control-solid" accept="image/png, image/gif, image/jpeg" >
+                            <input type="file" wire:model="image"
+                                class="form-control form-control-lg form-control-solid"
+                                accept="image/png, image/gif, image/jpeg">
                         @endif
 
                         <!--end::Add contact group-->
@@ -312,15 +317,17 @@
                         <div class="separator my-7"></div>
                         <!--begin::Separator-->
                         <!--begin::Add new contact-->
-                        @if ($matchstatus == '1')
-                            <div wire:loading.remove wire:target="image">
+                        @if ($currentStatus == 0)
+                            @if ($matchstatus == '1')
+                                <div wire:loading.remove wire:target="image">
+                                    <button class="btn btn-primary w-100" type="submit"> Submit</button>
+                                </div>
+                                <div wire:loading wire:target="image">
+                                    <button class="btn btn-primary w-100" type="submit" disabled>Uploading</button>
+                                </div>
+                            @else
                                 <button class="btn btn-primary w-100" type="submit"> Submit</button>
-                            </div>
-                            <div wire:loading wire:target="image">
-                                <button class="btn btn-primary w-100" type="submit" disabled>Uploading</button>
-                            </div>
-                        @else
-                            <button class="btn btn-primary w-100" type="submit"> Submit</button>
+                            @endif
                         @endif
 
 
