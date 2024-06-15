@@ -20,7 +20,7 @@ class Users extends Component
         $user = User::find($this->current_Id);
 
         Wallet::create([
-            'user_id' => $this->curent_Id,
+            'user_id' => $this->current_Id,
             'name' => $user->name,
             'amount' => $this->amount,
             'proof' => '',
