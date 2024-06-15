@@ -8,7 +8,8 @@
                 data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
                 <!--begin::Heading-->
                 <h1 class="d-flex flex-column text-gray-900 fw-bold my-0 fs-1">{{ $title ?? '' }}
-                    <small class="text-muted fs-6 fw-semibold ms-1 pt-1">Section for {{ $title ?? '' }} management</small>
+                    <small class="text-muted fs-6 fw-semibold ms-1 pt-1">Section for {{ $title ?? '' }}
+                        management</small>
                 </h1>
                 <!--end::Heading-->
             </div>
@@ -33,7 +34,7 @@
             <!--begin::Topbar-->
             <div class="d-flex align-items-center flex-shrink-0">
                 <!--begin::Search-->
-    
+
                 <!--end::Search-->
                 <!--begin::Activities-->
                 <div class="d-flex align-items-center ms-3 ms-lg-4">
@@ -43,17 +44,17 @@
                         @if (auth()->user()->role != 5)
                             <a href="{{ route('wallet') }}" class="text-primary opacity-75-hover fs-6 fw-semibold">Rs
                                 {{ auth()->user()->wallet_balance ?? '' }}</a>
-                       
-    
-                        <!--end::Title-->
-                        <!--begin::Action-->
-                        <a href="{{ route('wallet') }}"
-                            class="btn btn-icon btn-sm h-auto btn-color-gray-500 btn-active-color-primary">
-                            <i class="ki-duotone ki-bank text-danger">
-                                <span class="path1"></span>
-                                <span class="path2"></span>
-                            </i>
-                        </a>
+
+
+                            <!--end::Title-->
+                            <!--begin::Action-->
+                            <a href="{{ route('wallet') }}"
+                                class="btn btn-icon btn-sm h-auto btn-color-gray-500 btn-active-color-primary">
+                                <i class="ki-duotone ki-bank text-danger">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </a>
                         @endif
                         <!--end::Action-->
                     </div>
@@ -161,36 +162,39 @@
                 <!--end::Theme mode-->
                 <!--begin::Sidebar Toggler-->
                 <!--end::Sidebar Toggler-->
-                
+
             </div>
             <!--end::Topbar-->
         </div>
         <!--end::Container-->
     </div>
-    <div class="container-fluid d-flex">
-        <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed  flex-shrink-0 p-6" style="width: 100%">
-            <!--begin::Icon-->
-            <i class="ki-duotone ki-devices-2 fs-2tx text-primary me-4">
-                <span class="path1"></span>
-                <span class="path2"></span>
-                <span class="path3"></span>
-            </i>
-            <!--end::Icon-->
-            <!--begin::Wrapper-->
-            <div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
-                <!--begin::Content-->
-                <div class="mb-3 mb-md-0 fw-semibold">
-                    <h4 class="text-gray-900 fw-bold">{{ supportData()->message_title }}</h4>
-                    <div class="fs-6 text-gray-700 pe-7">{{ supportData()->message_description }}</div>
+    @if (supportData()->message_title != '' && supportData()->message_description != '')
+        <div class="container-fluid d-flex">
+            <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed  flex-shrink-0 p-6"
+                style="width: 100%">
+                <!--begin::Icon-->
+                <i class="ki-duotone ki-devices-2 fs-2tx text-primary me-4">
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                    <span class="path3"></span>
+                </i>
+                <!--end::Icon-->
+                <!--begin::Wrapper-->
+                <div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
+                    <!--begin::Content-->
+                    <div class="mb-3 mb-md-0 fw-semibold">
+                        <h4 class="text-gray-900 fw-bold">{{ supportData()->message_title }}</h4>
+                        <div class="fs-6 text-gray-700 pe-7">{{ supportData()->message_description }}</div>
+                    </div>
+                    <!--end::Content-->
+                    <!--begin::Action-->
+                    {{-- <a href="#" class="btn btn-primary px-6 align-self-center text-nowrap">Proceed</a> --}}
+                    <!--end::Action-->
                 </div>
-                <!--end::Content-->
-                <!--begin::Action-->
-                {{-- <a href="#" class="btn btn-primary px-6 align-self-center text-nowrap">Proceed</a> --}}
-                <!--end::Action-->
+                <!--end::Wrapper-->
             </div>
-            <!--end::Wrapper-->
         </div>
-    </div>
+    @endif
+
 
 </div>
-
