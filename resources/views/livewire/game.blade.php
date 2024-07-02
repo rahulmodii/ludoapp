@@ -27,10 +27,12 @@
                                         <!--begin::Info-->
                                         <div class="d-flex align-items-center">
                                             <!--begin::Currency-->
-                                            <span class="fs-4 fw-semibold text-gray-500 me-1 align-self-start">Count</span>
+                                            <span
+                                                class="fs-4 fw-semibold text-gray-500 me-1 align-self-start">Count</span>
                                             <!--end::Currency-->
                                             <!--begin::Amount-->
-                                            <span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">{{ count($data) ?? '' }}</span>
+                                            <span
+                                                class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">{{ count($data) ?? '' }}</span>
                                             <!--end::Amount-->
                                             <!--begin::Badge-->
                                             <span class="badge badge-light-success fs-base">
@@ -118,7 +120,8 @@
                                             <span class="fs-4 fw-semibold text-gray-500 me-1 align-self-start">Rs</span>
                                             <!--end::Currency-->
                                             <!--begin::Amount-->
-                                            <span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">{{ $commission ?? '' }}</span>
+                                            <span
+                                                class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">{{ $commission ?? '' }}</span>
                                             <!--end::Amount-->
                                             <!--begin::Badge-->
                                             <span class="badge badge-light-success fs-base">
@@ -203,10 +206,12 @@
                                         <!--begin::Info-->
                                         <div class="d-flex align-items-center">
                                             <!--begin::Currency-->
-                                            <span class="fs-4 fw-semibold text-gray-500 me-1 align-self-start">Count</span>
+                                            <span
+                                                class="fs-4 fw-semibold text-gray-500 me-1 align-self-start">Count</span>
                                             <!--end::Currency-->
                                             <!--begin::Amount-->
-                                            <span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">{{ $userCount ?? '' }}</span>
+                                            <span
+                                                class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">{{ $userCount ?? '' }}</span>
                                             <!--end::Amount-->
                                             <!--begin::Badge-->
                                             <span class="badge badge-light-success fs-base">
@@ -307,17 +312,23 @@
                                 <tr>
                                     <td>Order Id#{{ $value->id ?? '' }}</td>
                                     <td>
-                                        @if ($value->winning_id)
-                                            Winner is {{ $value->winner->name ?? '' }}
+                                        @if ($value->is_cancelled)
+                                        cancelled
                                         @else
-                                            <div style="display:flex;gap: 10px;flex-direction:column">
-                                                <a class="btn btn-sm btn-success"
-                                                    wire:click="makeWinner('{{ $value->id }}','{{ $value->creator_id }}')">Make
-                                                    Creator Winner</a>
-                                                <a class="btn btn-sm btn-danger"
-                                                    wire:click="makeWinner('{{ $value->id }}','{{ $value->joining_id }}')">Make
-                                                    Joinee Winner</a>
-                                            </div>
+                                            @if ($value->winning_id)
+                                                Winner is {{ $value->winner->name ?? '' }}
+                                            @else
+                                                <div style="display:flex;gap: 10px;flex-direction:column">
+                                                    <a class="btn btn-sm btn-success"
+                                                        wire:click="makeWinner('{{ $value->id }}','{{ $value->creator_id }}')">Make
+                                                        Creator Winner</a>
+                                                    <a class="btn btn-sm btn-danger"
+                                                        wire:click="makeWinner('{{ $value->id }}','{{ $value->joining_id }}')">Make
+                                                        Joinee Winner</a>
+                                                    <a class="btn btn-sm btn-primary"
+                                                        wire:click="cancelGame('{{ $value->id }}','{{ $value->joining_id }}')">Cancel</a>
+                                                </div>
+                                            @endif
                                         @endif
                                     </td>
                                     </td>
