@@ -35,7 +35,7 @@ class SupportForm extends Component
             $this->message_title = $preData->message_title;
             $this->message_description = $preData->message_description;
             $this->instagram_url = $preData->instagram_url;
-            $this->upi_qr = $preData->upi_qr;
+            // $this->upi_qr = $preData->upi_qr;
         }
     }
 
