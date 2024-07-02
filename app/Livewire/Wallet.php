@@ -71,10 +71,13 @@ class Wallet extends Component
 
     public function render()
     {
-        $upiId = Support::first();
-        if ($upiId) {
-            $upiId = $upiId->upi_id;
+        $support = Support::first();
+        if ($support) {
+            $upiId = $support->upi_id;
         }
-        return view('livewire.wallet', compact('upiId'));
+        if ($support) {
+            $qrCode = asset('/storage/'.$support->upi_qr);
+        }
+        return view('livewire.wallet', compact('upiId','qrCode'));
     }
 }

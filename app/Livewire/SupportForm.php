@@ -60,8 +60,8 @@ class SupportForm extends Component
         if ($this->logo) {
             $payload['logo'] = $this->logo->store('support', 'public');
         }
-        if ($this->logo) {
-            $payload['upi_qr'] = $this->logo->store('support', 'public');
+        if ($this->upi_qr) {
+            $payload['upi_qr'] = $this->upi_qr->store('support', 'public');
         }
         // dd($payload);
 

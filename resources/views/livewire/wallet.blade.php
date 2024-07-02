@@ -1,103 +1,105 @@
 <div>
     @include('components.header', ['title' => 'Wallet'])
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-    <div class="container-fluid" id="kt_content_container">
-        <!--begin::Card-->
-        <div style="display: flex;flex-direction:column;gap:20px">
-            <div class="card border-0 h-md-100" data-theme="light"
-                style="background: linear-gradient(112.14deg, #00D2FF 0%, #3A7BD5 100%)">
-                <!--begin::Body-->
-                <div class="card-body">
-                    <!--begin::Row-->
-                    <div class="row align-items-center h-100">
-                        <!--begin::Col-->
-                        <div class="col-7 ps-xl-13">
-                            <!--begin::Title-->
-                            <div class="text-white mb-6 pt-6">
-                                <span class="fs-4 fw-semibold me-2 d-block lh-1 pb-2 opacity-75">DEPOSIT CASH</span>
-                                <span class="fs-2qx fw-bold"><img height="26px" width="26px"
-                                        src="https://d37om4gxfn0aox.cloudfront.net/static-content/front/images/global-rupeeIcon.png"
-                                        alt="">
-                                    0.00</span>
-                            </div>
-                            <!--end::Title-->
-                            <!--begin::Text-->
-                            <span class="fw-semibold text-white fs-6 mb-8 d-block opacity-75">Can be used to play
-                                Tournaments & Battles.
-                                Cannot be withdrawn to Paytm or Bank.</span>
-                            <!--end::Text-->
-                            <!--begin::Items-->
+        <div class="container-fluid" id="kt_content_container">
+            <!--begin::Card-->
+            <div style="display: flex;flex-direction:column;gap:20px">
+                <div class="card border-0 h-md-100" data-theme="light"
+                    style="background: linear-gradient(112.14deg, #00D2FF 0%, #3A7BD5 100%)">
+                    <!--begin::Body-->
+                    <div class="card-body">
+                        <!--begin::Row-->
+                        <div class="row align-items-center h-100">
+                            <!--begin::Col-->
+                            <div class="col-7 ps-xl-13">
+                                <!--begin::Title-->
+                                <div class="text-white mb-6 pt-6">
+                                    <span class="fs-4 fw-semibold me-2 d-block lh-1 pb-2 opacity-75">DEPOSIT CASH</span>
+                                    <span class="fs-2qx fw-bold"><img height="26px" width="26px"
+                                            src="https://d37om4gxfn0aox.cloudfront.net/static-content/front/images/global-rupeeIcon.png"
+                                            alt="">
+                                        0.00</span>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Text-->
+                                <span class="fw-semibold text-white fs-6 mb-8 d-block opacity-75">Can be used to play
+                                    Tournaments & Battles.
+                                    Cannot be withdrawn to Paytm or Bank.</span>
+                                <!--end::Text-->
+                                <!--begin::Items-->
 
-                            <!--end::Items-->
-                            <!--begin::Action-->
-                            <div class="d-flex flex-column flex-sm-row d-grid gap-2">
-                                <a href="#" class="btn btn-success flex-shrink-0 me-lg-2"
-                                    data-bs-toggle="modal" data-bs-target="#kt_add_cash">Add Cash</a>
+                                <!--end::Items-->
+                                <!--begin::Action-->
+                                <div class="d-flex flex-column flex-sm-row d-grid gap-2">
+                                    <a href="#" class="btn btn-success flex-shrink-0 me-lg-2"
+                                        data-bs-toggle="modal" data-bs-target="#kt_add_cash">Add Cash</a>
+                                </div>
+                                <!--end::Action-->
                             </div>
-                            <!--end::Action-->
+                            <!--end::Col-->
+                            <!--begin::Col-->
+                            <div class="col-5 pt-10">
+                                <!--begin::Illustration-->
+                                <div class="bgi-no-repeat bgi-size-contain bgi-position-x-end h-225px"
+                                    style="background-image:url('assets/media/svg/illustrations/easy/5.svg"></div>
+                                <!--end::Illustration-->
+                            </div>
+                            <!--end::Col-->
                         </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-5 pt-10">
-                            <!--begin::Illustration-->
-                            <div class="bgi-no-repeat bgi-size-contain bgi-position-x-end h-225px"
-                                style="background-image:url('assets/media/svg/illustrations/easy/5.svg"></div>
-                            <!--end::Illustration-->
-                        </div>
-                        <!--end::Col-->
+                        <!--end::Row-->
                     </div>
-                    <!--end::Row-->
+                    <!--end::Body-->
                 </div>
-                <!--end::Body-->
-            </div>
-            <div class="card border-0 h-md-100" data-theme="light"
-                style="background: linear-gradient(112.14deg, #00D2FF 0%, #3A7BD5 100%)">
-                <!--begin::Body-->
-                <div class="card-body">
-                    <!--begin::Row-->
-                    <div class="row align-items-center h-100">
-                        <!--begin::Col-->
-                        <div class="col-7 ps-xl-13">
-                            <!--begin::Title-->
-                            <div class="text-white mb-6 pt-6">
-                                <span class="fs-4 fw-semibold me-2 d-block lh-1 pb-2 opacity-75">WINNINGS CASH</span>
-                                <span class="fs-2qx fw-bold"><img height="26px" width="26px"
-                                        src="https://d37om4gxfn0aox.cloudfront.net/static-content/front/images/global-rupeeIcon.png"
-                                        alt="">
-                                    {{ auth()->user()->wallet_balance ?? '' }}</span>
-                            </div>
-                            <!--end::Title-->
-                            <!--begin::Text-->
-                            <span class="fw-semibold text-white fs-6 mb-8 d-block opacity-75">Can be withdrawn to Paytm
-                                or Bank. Can be used to play Tournaments & Battles.</span>
+                <div class="card border-0 h-md-100" data-theme="light"
+                    style="background: linear-gradient(112.14deg, #00D2FF 0%, #3A7BD5 100%)">
+                    <!--begin::Body-->
+                    <div class="card-body">
+                        <!--begin::Row-->
+                        <div class="row align-items-center h-100">
+                            <!--begin::Col-->
+                            <div class="col-7 ps-xl-13">
+                                <!--begin::Title-->
+                                <div class="text-white mb-6 pt-6">
+                                    <span class="fs-4 fw-semibold me-2 d-block lh-1 pb-2 opacity-75">WINNINGS
+                                        CASH</span>
+                                    <span class="fs-2qx fw-bold"><img height="26px" width="26px"
+                                            src="https://d37om4gxfn0aox.cloudfront.net/static-content/front/images/global-rupeeIcon.png"
+                                            alt="">
+                                        {{ auth()->user()->wallet_balance ?? '' }}</span>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Text-->
+                                <span class="fw-semibold text-white fs-6 mb-8 d-block opacity-75">Can be withdrawn to
+                                    Paytm
+                                    or Bank. Can be used to play Tournaments & Battles.</span>
 
-                            <div class="d-flex flex-column flex-sm-row d-grid gap-2">
-                                <a href="#" class="btn btn-success flex-shrink-0 me-lg-2"
-                                    data-bs-toggle="modal" data-bs-target="#kt_withdraw">WITHDRAW</a>
-                                {{-- <a href="#" class="btn btn-primary flex-shrink-0"
+                                <div class="d-flex flex-column flex-sm-row d-grid gap-2">
+                                    <a href="#" class="btn btn-success flex-shrink-0 me-lg-2"
+                                        data-bs-toggle="modal" data-bs-target="#kt_withdraw">WITHDRAW</a>
+                                    {{-- <a href="#" class="btn btn-primary flex-shrink-0"
                                     style="background: rgba(255, 255, 255, 0.2)" data-bs-toggle="modal"
                                     data-bs-target="#kt_modal_create_app">Read Guides</a> --}}
+                                </div>
+                                <!--end::Action-->
                             </div>
-                            <!--end::Action-->
+                            <!--end::Col-->
+                            <!--begin::Col-->
+                            <div class="col-5 pt-10">
+                                <!--begin::Illustration-->
+                                <div class="bgi-no-repeat bgi-size-contain bgi-position-x-end h-225px"
+                                    style="background-image:url('assets/media/svg/illustrations/easy/5.svg"></div>
+                                <!--end::Illustration-->
+                            </div>
+                            <!--end::Col-->
                         </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-5 pt-10">
-                            <!--begin::Illustration-->
-                            <div class="bgi-no-repeat bgi-size-contain bgi-position-x-end h-225px"
-                                style="background-image:url('assets/media/svg/illustrations/easy/5.svg"></div>
-                            <!--end::Illustration-->
-                        </div>
-                        <!--end::Col-->
+                        <!--end::Row-->
                     </div>
-                    <!--end::Row-->
+                    <!--end::Body-->
                 </div>
-                <!--end::Body-->
-            </div>
 
+            </div>
+            <!--end::Card-->
         </div>
-        <!--end::Card-->
-    </div>
     </div>
     <div class="modal fade" id="kt_add_cash" tabindex="-1" aria-hidden="true" wire:ignore.self>
 
@@ -131,18 +133,26 @@
                         <div class="mb-13 text-center">
 
                             <h1 class="mb-3">Deposit</h1>
-                            <h4 class="mb-3">
-                                <span>Deposit amount in upi {{ $upiId ?? '' }}</span>
-                                <br />
-                                <br />
-                                <span>
-                                    <input hidden="text" value="{{ $upiId ?? '' }}" id="upiid" />
-                                    <button type="button" class="btn btn-primary"
-                                        onclick="copyUpiId('{{ $upiId ?? '' }}')">Copy UPI</button>
-                                </span>
-                                {{-- <a href="upi://pay?pa={{ $upiId ?? '' }}&cu=INR">{{ $upiId ?? '' }}</a> --}}
+                            @if ($upiId != '')
+                                <h4 class="mb-3">
+                                    <span>Deposit amount in upi {{ $upiId ?? '' }}</span>
+                                    <br />
+                                    <br />
+                                    <span>
+                                        <input hidden="text" value="{{ $upiId ?? '' }}" id="upiid" />
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="copyUpiId('{{ $upiId ?? '' }}')">Copy UPI</button>
+                                    </span>
+                                    {{-- <a href="upi://pay?pa={{ $upiId ?? '' }}&cu=INR">{{ $upiId ?? '' }}</a> --}}
 
-                            </h4>
+                                </h4>
+                            @endif
+                            @if ($qrCode)
+                                <span>Scan Qr Below and upload proof</span><br/>
+
+                                <img src="{{ $qrCode }}" height="200px"  width="200px"/>
+                            @endif
+
                         </div>
 
 
@@ -170,11 +180,11 @@
 
                             <input type="file" class="form-control form-control-solid" placeholder="Name"
                                 wire:model='proof' required />
-                                <div style="color: red;margin-top:5px">
-                                    @error('proof')
-                                        {{ $message }}
-                                    @enderror
-                                </div>
+                            <div style="color: red;margin-top:5px">
+                                @error('proof')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                         <div wire:loading.remove wire:target="proof">
                             <div class="text-center">
@@ -190,8 +200,8 @@
                         </div>
                         <div wire:loading wire:target="proof">
                             <div class="text-center">
-                                <button type="reset" id="kt_modal_new_target_cancel"
-                                    class="btn btn-light me-3" disabled>Cancel</button>
+                                <button type="reset" id="kt_modal_new_target_cancel" class="btn btn-light me-3"
+                                    disabled>Cancel</button>
 
                                 <button type="submit" class="btn btn-primary" disabled>
                                     <span class="indicator-label">Uploading Proof</span>
