@@ -232,44 +232,61 @@
 <div>
     @include('components.header', ['title' => 'Support'])
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-    <div class="container-fluid" id="kt_content_container">
-        <!--begin::Card-->
-        <div class="card">
-            <!--begin::Card body-->
-            <div class="card-body">
-                <!--begin::Heading-->
-                <div class="card-px text-center pt-15 pb-15">
-                    <!--begin::Title-->
-                    <h2 class="fs-2x fw-bold mb-0">Support timing is from 10:00 AM to 06:00 PM</h2>
-                    <h4 class="fs-2x fw-bold mb-0">(Monday to Saturday)</h4>
-                    <!--end::Title-->
-                    <!--begin::Description-->
-                    <p class="text-gray-500 fs-4 fw-semibold py-3">
-                        <a href="https://wa.me/918233656748?text=Hi+Please+Help.">WhatsApp @ +918233656748</a>
-                    </p>
-                    <p class="text-gray-500 fs-4 fw-semibold py-3">
-                        <a href="https://wa.me/918233656748?text=Hi+Please+Help.">WhatsApp @ +918233656748</a>
-                    </p>
-                    <p class="text-gray-500 fs-4 fw-semibold py-3">
-                        <a href="https://wa.me/918233656748?text=Hi+Please+Help.">WhatsApp @ +918233656748</a>
-                    </p>
-                    <!--end::Description-->
-                    <!--begin::Action-->
-                    <a href="#" class="btn btn-primary er fs-6 px-8 py-4" data-bs-toggle="modal"
-                        data-bs-target="#kt_modal_two_factor_authentication">support@gmail.com</a>
-                    <!--end::Action-->
+        <div class="container-fluid" id="kt_content_container">
+            <!--begin::Card-->
+            <div class="card">
+                <!--begin::Card body-->
+                <div class="card-body">
+                    <!--begin::Heading-->
+                    <div class="card-px text-center pt-15 pb-15">
+                        <!--begin::Title-->
+                        <h2 class="fs-2x fw-bold mb-0">Support timing is from 10:00 AM to 06:00 PM</h2>
+                        <h4 class="fs-2x fw-bold mb-0">(Monday to Saturday)</h4>
+                        <!--end::Title-->
+                        <!--begin::Description-->
+                        <p class="text-gray-500 fs-4 fw-semibold py-3">
+                            @if ($data->mobile1 != '')
+                                <a href="https://wa.me/91{{ $data->mobile1 }}?text=Hi+Please+Help.">WhatsApp @
+                                    +91{{ $data->mobile1 ?? '' }}</a>
+                            @endif
+                        </p>
+                        <p class="text-gray-500 fs-4 fw-semibold py-3">
+
+                            @if ($data->mobile2 != '')
+                                <a href="https://wa.me/91{{ $data->mobile2 }}?text=Hi+Please+Help.">WhatsApp @
+                                    +91{{ $data->mobile2 ?? '' }}</a>
+                            @endif
+                        </p>
+                        <p class="text-gray-500 fs-4 fw-semibold py-3">
+
+                            @if ($data->mobile3 != '')
+                                <a href="https://wa.me/91{{ $data->mobile3 }}?text=Hi+Please+Help.">WhatsApp @
+                                    +91{{ $data->mobile3 ?? '' }}</a>
+                            @endif
+                        </p>
+                        <!--end::Description-->
+                        <!--begin::Action-->
+                        @if ($data->email != '')
+                            <a href="mailto:{{ $data->email }}"
+                                class="btn btn-primary er fs-6 px-8 py-4">{{ $data->email ?? '' }}</a>
+                        @endif
+
+                        @if ($data->instagram_url != '')
+                            <a href="{{ $data->instagram_url }}" target="_blank"  class="btn btn-primary er fs-6 px-8 py-4">Follow on instagram</a>
+                        @endif
+                        <!--end::Action-->
+                    </div>
+                    <!--end::Heading-->
+                    <!--begin::Illustration-->
+                    <div class="text-center pb-15 px-5">
+                        <img src="assets/media/illustrations/dozzy-1/4.png" alt=""
+                            class="mw-100 h-200px h-sm-325px" />
+                    </div>
+                    <!--end::Illustration-->
                 </div>
-                <!--end::Heading-->
-                <!--begin::Illustration-->
-                <div class="text-center pb-15 px-5">
-                    <img src="assets/media/illustrations/dozzy-1/4.png" alt=""
-                        class="mw-100 h-200px h-sm-325px" />
-                </div>
-                <!--end::Illustration-->
+                <!--end::Card body-->
             </div>
-            <!--end::Card body-->
+            <!--end::Card-->
         </div>
-        <!--end::Card-->
-    </div>
     </div>
 </div>

@@ -19,6 +19,8 @@ class SupportForm extends Component
     public $logo;
     public $message_title;
     public $message_description;
+    public $instagram_url;
+    public $upi_qr;
 
     public function mount()
     {
@@ -32,6 +34,8 @@ class SupportForm extends Component
             $this->commission = $preData->commission;
             $this->message_title = $preData->message_title;
             $this->message_description = $preData->message_description;
+            $this->instagram_url = $preData->instagram_url;
+            $this->upi_qr = $preData->upi_qr;
         }
     }
 
@@ -46,7 +50,8 @@ class SupportForm extends Component
             'upi_id' => $this->upi_id,
             'commission' => $this->commission,
             'message_title' => $this->message_title,
-            'message_description' => $this->message_description
+            'message_description' => $this->message_description,
+            'instagram_url' => $this->instagram_url
         ];
 
         if ($this->login_image) {
@@ -54,6 +59,9 @@ class SupportForm extends Component
         }
         if ($this->logo) {
             $payload['logo'] = $this->logo->store('support', 'public');
+        }
+        if ($this->logo) {
+            $payload['upi_qr'] = $this->logo->store('support', 'public');
         }
         // dd($payload);
 

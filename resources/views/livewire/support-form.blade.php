@@ -43,6 +43,14 @@
                             <input type="text" class="form-control form-control-solid" wire:model="mobile3">
                         </div>
 
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold mb-2 required">Instagram Id</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="text" class="form-control form-control-solid" wire:model="instagram_url">
+                        </div>
+
 
                         <div class="fv-row mb-7 fv-plugins-icon-container">
                             <!--begin::Label-->
@@ -99,6 +107,14 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <input type="file" class="form-control form-control-solid" wire:model="logo">
+                        </div>
+
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <img src="{{ asset('/storage/' . $data->upi_qr) }}" height="100px" width="100px" style="margin:10px" />
+                            <label class="fs-6 fw-semibold mb-2 required">Upi Qr</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="file" class="form-control form-control-solid" wire:model="upi_qr">
                         </div>
 
                         <div class="d-flex justify-content-end">
